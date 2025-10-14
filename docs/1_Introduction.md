@@ -1,10 +1,8 @@
-# 1.1 Background
+# 1. Introduction
 
-MazeRunner is a software engineering project created as part of a course in Software Engineering.  
-The purpose of the project is to design and specify a small multiplayer web-based game that can be demonstrated during open-house events at the university. These events aim to attract high school students and provide insight into what computer science and engineering students create.
+## 1.1 Background
 
-In 2022, a demonstration game was built using the Ultraleap Stratos Inspire device, which provided hand-tracking and haptic feedback. However, the setup was unreliable and required expensive hardware that was not easily available.  
-This project seeks to replace that setup with a simpler and more robust solution that runs on regular laptops or mobile devices through a web browser.
+MazeRunner is a multiplayer web-based maze game designed for university open-house demonstrations. The project replaces an unreliable hardware-based demo with a simple, browser-based solution that showcases student technical skills to prospective students.
 
 The project is developed using **.NET (C#)** as the primary technology stack. The documentation and specifications are written in English, and the team consists of three members collaborating on design, planning, and analysis.
 
@@ -47,7 +45,14 @@ The task of this project is **not** to code the full game, but to clearly define
 
 The scope of this project is limited to **requirements specification and design documentation**.  
 The following aspects are explicitly excluded:
-- Full implementation of the game logic or networking.
+- Full implementation of the game logic or networking code
+- Deployment and hosting infrastructure setup
+- Performance optimization and load testing
+- Advanced graphics and animations
+- Integration with external payment or user management systems
+- Multi-language localization support
+- Advanced AI opponents or single-player mode
+- Mobile app development (focus only on web browser compatibility)
 - Graphical design and detailed game art.
 - Audio design or sound effects.
 - Server deployment and hosting.
