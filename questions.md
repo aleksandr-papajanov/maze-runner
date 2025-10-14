@@ -1,5 +1,7 @@
 1. Spelmekanik och Föremål
 
+- På vilket sätt ska spelet vara intuitivt att komma igång med (finns behov av ex. tutorial, introduktionssekvens)?
+
 - Vilka specifika föremål/bonusar finns i spelet och hur påverkar de spelarens framsteg (t.ex. acceleration, skydd)?
 
 - Vilka specifika föremål/åtgärder kan användas för att påverka motståndaren (t.ex. inbromsning, blockering, fällor)?
@@ -34,6 +36,8 @@
 
 - Behöver statistik visas i realtid (t.ex. hastighet, procentuellt framsteg, använda bonusar)?
 
+- Hur ska en spelomgång presenteras på storbildsskärmen (en spelare i taget,split-screen, översiktskart)?
+
 - Finns det krav på designen/stilen på spelet (t.ex. retro, minimalistiskt, futuristiskt)?
 
 - Krävs det ljud (bakgrundsmusik, ljudeffekter för aktivering/interaktion)?
@@ -55,3 +59,5 @@
 - Hur ska spelarnas positioner och tillstånd synkroniseras för att minimera effekten av nätverksfördröjning (lagg)?
 
 - Vilken är den minsta uppsättningen funktioner som måste vara fungerande för en framgångsrik demonstration på öppet hus-dagen?
+
+- Finns det krav på tillgänglighet för spelare med funktionsvariationer (ex. färgblindhet, motoriska begränsningar)?
