@@ -1,3 +1,3 @@
-# Source Code
+# Diagrams
 
-This folder contains the source code for the MazeRunner application.
+This folder will contain UML and architectural diagrams for MazeRunner project.
