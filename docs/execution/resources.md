@@ -1,7 +1,7 @@
 # 4.6 Resource Requirements
 
 ## Human Resources
-- **Total Effort**: 24 person-hours across 3 team members
+- **Total Effort**: 16 person-hours across 2 team members
 - **Skill Requirements**: Systems analysis, technical writing, UML diagramming, React + C# knowledge
 - **External Dependencies**: Josef Hallberg availability for 45-60 minute interview
 

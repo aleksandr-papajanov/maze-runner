@@ -70,15 +70,16 @@ Each main document links to focused sub-modules:
 
 ## 👥 Team Information
 
-- **Team Size**: 3 members
+- **Team Size**: 2 members
 - **Project Duration**: 8 hours documentation phase
-- **Methodology**: Agile with defined roles and responsibilities
+- **Methodology**: Collaborative approach with shared responsibilities
 - **Stakeholder**: Josef Hallberg (LTU Computer Science Department)
 
-### Roles
-- **Project Lead & Requirements Analyst**: Stakeholder communication, requirements documentation
-- **System Designer & Technical Architect**: System design, UML diagrams, technical specifications  
-- **Quality Analyst & Documentation Specialist**: Quality assurance, document integration
+### Working Approach
+- **Collaborative Development**: Both members work together on all project aspects without hierarchy
+- **Shared Responsibilities**: Joint work on requirements analysis, system design, and quality assurance
+- **Peer Review**: Continuous collaboration with mutual review of all deliverables
+- **Equal Contribution**: Both members contribute equally to all documentation areas
 
 ## 📄 License
 

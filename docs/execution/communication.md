@@ -3,7 +3,7 @@
 ## Team Communication
 - **Primary Platform**: Shared workspace (Google Drive, Microsoft Teams, or similar)
 - **Check-in Schedule**: Brief status updates every 2 hours
-- **Decision Making**: Consensus on major decisions, project lead breaks ties
+- **Decision Making**: Consensus on all decisions through collaborative discussion
 - **Documentation Sharing**: Real-time collaborative editing where possible
 - **Technical Discussions**: Focus on React + C# architecture decisions
 

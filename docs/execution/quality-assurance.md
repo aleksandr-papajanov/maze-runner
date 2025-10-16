@@ -10,9 +10,9 @@
 
 ### Peer Review Strategy
 - Each major document section reviewed by team member who didn't write it
-- Technical accuracy verified by system designer
-- Requirements completeness verified by project lead
-- Overall quality and integration verified by quality analyst
+- Technical accuracy verified through peer review
+- Requirements completeness verified collaboratively
+- Overall quality and integration verified by both team members
 
 ### Quality Checkpoints
 1. **Requirements Review** (Hour 3.5): Completeness and stakeholder alignment

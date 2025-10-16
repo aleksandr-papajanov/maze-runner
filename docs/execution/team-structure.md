@@ -1,26 +1,30 @@
 # 4.1 Team Structure and Roles
 
 ## Team Composition
-**Team Size**: 3 members  
-**Time Allocation**: 8 hours per person (24 total person-hours)  
-**Project Duration**: Single intensive work session with clear milestone checkpoints
+**Team Size**: 2 members  
+**Time Allocation**: 8 hours per person (16 total person-hours)  
+**Project Duration**: Single intensive work session with collaborative milestone checkpoints
+**Working Style**: Collaborative approach with shared responsibilities across all project areas
 
-## Role Assignments
+## Collaborative Work Approach
 
-### Person A: Project Lead & Requirements Analyst
-- **Primary Responsibilities**: Stakeholder communication, requirements documentation, project coordination
-- **Key Tasks**: Expert interview facilitation, requirements specification writing, team coordination
-- **Deliverables**: Complete requirements document, interview documentation, project oversight
-- **Technology Focus**: Understanding React + C# integration requirements
+### Shared Responsibilities
+Both team members work together on all aspects of the project without hierarchy:
 
-### Person B: System Designer & Technical Architect  
-- **Primary Responsibilities**: System design, UML diagrams, technical specifications
-- **Key Tasks**: React/C# architecture design, class diagrams, sequence/activity diagrams, technical documentation
-- **Deliverables**: Complete system design document with all required UML diagrams
-- **Technology Focus**: React frontend and C# backend architecture
+**Requirements and Analysis**
+- **Shared Tasks**: Stakeholder communication, expert interview facilitation, requirements documentation
+- **Collaborative Approach**: Both members participate in interview, jointly analyze requirements
+- **Deliverables**: Requirements specification developed through pair analysis
+- **Technology Focus**: Joint understanding of React + C# integration requirements
 
-### Person C: Quality Analyst & Documentation Specialist
-- **Primary Responsibilities**: Quality assurance, document integration, testing strategy
-- **Key Tasks**: Document review, consistency checking, testing plans, final integration
+**System Design and Architecture**
+- **Shared Tasks**: System architecture design, UML diagrams, technical specifications
+- **Collaborative Approach**: Design decisions made jointly, diagrams reviewed by both members
+- **Deliverables**: System design document with peer-reviewed UML diagrams
+- **Technology Focus**: Collaborative React frontend and C# backend architecture
+
+**Quality Assurance and Documentation**
+- **Shared Tasks**: Document review, consistency checking, integration, final presentation
+- **Collaborative Approach**: Continuous peer review, shared responsibility for quality
 - **Deliverables**: Quality-assured integrated documentation portfolio
-- **Technology Focus**: Testing strategies for React + C# applications
+- **Technology Focus**: Joint testing strategies for React + C# applications
