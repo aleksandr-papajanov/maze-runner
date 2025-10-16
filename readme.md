@@ -1,15 +1,5 @@
 # MazeRunner Project Documentation
 
-> Web-based multiplayer maze game for university open house demonstrations
-
-## 📋 Table of Contents
-
-- [Project Overview](#project-overview)
-- [Technology Stack](#technology-stack)
-- [Documentation Structure](#documentation-structure)
-- [Quick Start](#quick-start)
-- [Team Information](#team-information)
-
 ## 🎯 Project Overview
 
 MazeRunner is a real-time multiplayer maze game designed for university open house events at Luleå University of Technology (LTU). The game serves as an interactive demonstration tool that engages high school students while showcasing modern web development capabilities.
