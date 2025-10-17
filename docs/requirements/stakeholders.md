@@ -1,12 +1,12 @@
-# 2.1 Stakeholders and Users
+# 2.1 Intressenter och Användare
 
-## Primary Users
-- **Players**: High school students (16-25 years), basic web experience, 3-5 minute attention span
-- **Event Organizer**: University staff (Josef Hallberg), demonstrates system reliability and showcases student work
-- **Spectators**: Open house attendees, varied technical backgrounds, enjoy watching competitive gameplay
+## Primära Användare
+- **Spelare**: Gymnasiestudenter (16-25 år), grundläggande webbexpertis, 3-5 minuters uppmärksamhetsspann
+- **Eventorganisatör**: Universitetspersonal (Josef Hallberg), demonstrerar systemtillförlitlighet och visar upp studentarbete
+- **Åskådare**: Öppet hus-deltagare, varierande teknisk bakgrund, tycker om att titta på konkurrenskraftigt spelande
 
-## User Characteristics
-- **Digital natives**: Familiar with smartphone games and web browsing
-- **Short engagement window**: Prefer quick, intuitive experiences over complex tutorials  
-- **Social interaction**: Enjoy competitive gameplay with audience participation
-- **Device diversity**: Mix of smartphone brands, ages, and operating systems
+## Användaregenskaper
+- **Digitala infödingar**: Bekanta med smartphone-spel och webbsurfning
+- **Kort engagemangsfönster**: Föredrar snabba, intuitiva upplevelser över komplexa handledningar  
+- **Social interaktion**: Tycker om konkurrenskraftigt spelande med publikdeltagande
+- **Enhetsdiversitet**: Blandning av smartphone-märken, åldrar och operativsystem

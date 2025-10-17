@@ -1,43 +1,43 @@
-# 3.3 Dynamic Design (Runtime Behavior)
+# 3.3 Dynamisk Design (Runtime-beteende)
 
-## Key Behavioral Patterns
+## Nyckel Beteendemönster
 
-### Game Session Lifecycle
+### Spelsession Livscykel
 ```
-Waiting → Active → Paused → Finished → Cleanup
-```
-
-### Player Connection States  
-```
-Connecting → Ready → Playing → Disconnected
+Väntar → Aktiv → Pausad → Avslutad → Upprensning
 ```
 
-### Item Usage Flow
+### Spelaranslutningsstatus  
 ```
-Available → Collected → Activated → Effect Applied → Cooldown → Available
+Ansluter → Redo → Spelar → Urkopplad
 ```
 
-*[PLACEHOLDER: Activity Diagram showing complete game session flow from player join to game completion]*
+### Föremålsanvändningsflöde
+```
+Tillgänglig → Samlad → Aktiverad → Effekt Tillämpad → Cooldown → Tillgänglig
+```
 
-*[PLACEHOLDER: Sequence Diagram showing real-time player movement synchronization between clients and server]*
+*[PLACEHOLDER: Aktivitetsdiagram som visar komplett spelsessionsflöde från spelaranslutning till spelslutförande]*
 
-*[PLACEHOLDER: State Diagram showing game session states and transitions]*
+*[PLACEHOLDER: Sekvensdiagram som visar realtid spelarrörelsessynkronisering mellan klienter och server]*
 
-## Critical Interactions
+*[PLACEHOLDER: Tillståndsdiagram som visar spelsessionsstatus och övergångar]*
 
-### Real-Time Movement Synchronization
-1. Player input detected in React component
-2. Movement request sent to C# server via SignalR
-3. Server validates move against maze boundaries and game rules
-4. Server updates player position in game state
-5. Server broadcasts position update to all clients in session via SignalR
-6. React components render updated positions smoothly
+## Kritiska Interaktioner
 
-### Ability Usage Sequence  
-1. Player activates ability via React UI button
-2. Client sends ability request with target/direction to C# server
-3. Server validates ability availability and cooldown status
-4. Server processes ability effect (e.g., stun opponent, drop key)
-5. Server updates affected players' states
-6. Server broadcasts ability animation and effects via SignalR
-7. React components display visual feedback and update UI accordingly
+### Realtid Rörelsesynkronisering
+1. Spelarinmatning upptäckt i React-komponent
+2. Rörelsebegäran skickad till C# server via SignalR
+3. Server validerar rörelse mot labyrintgränser och spelregler
+4. Server uppdaterar spelarposition i speltillstånd
+5. Server sänder positionsuppdatering till alla klienter i session via SignalR
+6. React-komponenter renderar uppdaterade positioner smidigt
+
+### Förmågeanvändningssekvens  
+1. Spelare aktiverar förmåga via React UI-knapp
+2. Klient skickar förmågebegäran med mål/riktning till C# server
+3. Server validerar förmågotillgänglighet och cooldown-status
+4. Server bearbetar förmågeeffekt (t.ex. bedova motståndare, tappa nyckel)
+5. Server uppdaterar berörda spelares tillstånd
+6. Server sänder förmågeanimation och effekter via SignalR
+7. React-komponenter visar visuell feedback och uppdaterar UI i enlighet

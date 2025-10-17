@@ -1,30 +1,30 @@
-# 4.1 Team Structure and Roles
+# 4.1 Teamstruktur och Roller
 
-## Team Composition
-**Team Size**: 2 members  
-**Time Allocation**: 8 hours per person (16 total person-hours)  
-**Project Duration**: Single intensive work session with collaborative milestone checkpoints
-**Working Style**: Collaborative approach with shared responsibilities across all project areas
+## Teamsammansättning
+**Teamstorlek**: 2 medlemmar  
+**Tidstilldelning**: 8 timmar per person (16 totala persontimmar)  
+**Projektvaraktighet**: Enkel intensiv arbetssession med kollaborativa milstolpskontroller
+**Arbetsstil**: Kollaborativ approach med delade ansvar över alla projektområden
 
-## Collaborative Work Approach
+## Kollaborativ Arbetsapproach
 
-### Shared Responsibilities
-Both team members work together on all aspects of the project without hierarchy:
+### Delade Ansvar
+Båda teammedlemmarna arbetar tillsammans på alla aspekter av projektet utan hierarki:
 
-**Requirements and Analysis**
-- **Shared Tasks**: Stakeholder communication, expert interview facilitation, requirements documentation
-- **Collaborative Approach**: Both members participate in interview, jointly analyze requirements
-- **Deliverables**: Requirements specification developed through pair analysis
-- **Technology Focus**: Joint understanding of React + C# integration requirements
+**Krav och Analys**
+- **Delade Uppgifter**: Intressentkommunikation, expertintervju facilitering, kravdokumentation
+- **Kollaborativ Approach**: Båda medlemmar deltar i intervju, analyserar krav gemensamt
+- **Leverabler**: Kravspecifikation utvecklad genom par-analys
+- **Teknisk Fokus**: Gemensam förståelse av React + C# integrationskrav
 
-**System Design and Architecture**
-- **Shared Tasks**: System architecture design, UML diagrams, technical specifications
-- **Collaborative Approach**: Design decisions made jointly, diagrams reviewed by both members
-- **Deliverables**: System design document with peer-reviewed UML diagrams
-- **Technology Focus**: Collaborative React frontend and C# backend architecture
+**Systemdesign och Arkitektur**
+- **Delade Uppgifter**: Systemarkitekturdesign, UML-diagram, tekniska specifikationer
+- **Kollaborativ Approach**: Designbeslut fattas gemensamt, diagram recenserade av båda medlemmar
+- **Leverabler**: Systemdesigndokument med peer-recenserade UML-diagram
+- **Teknisk Fokus**: Kollaborativ React-frontend och C#-backend arkitektur
 
-**Quality Assurance and Documentation**
-- **Shared Tasks**: Document review, consistency checking, integration, final presentation
-- **Collaborative Approach**: Continuous peer review, shared responsibility for quality
-- **Deliverables**: Quality-assured integrated documentation portfolio
-- **Technology Focus**: Joint testing strategies for React + C# applications
+**Kvalitetssäkring och Dokumentation**
+- **Delade Uppgifter**: Dokumentrecension, konsistenskontroll, integration, slutpresentation
+- **Kollaborativ Approach**: Kontinuerlig peer review, delat ansvar för kvalitet
+- **Leverabler**: Kvalitetssäkrad integrerad dokumentationsportfölj
+- **Teknisk Fokus**: Gemensamma teststrategier för React + C# applikationer

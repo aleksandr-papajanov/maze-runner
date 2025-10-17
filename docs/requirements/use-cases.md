@@ -1,55 +1,55 @@
-# 2.4 Use Cases
+# 2.4 Användningsfall
 
-## Primary Use Cases
+## Primära Användningsfall
 
-### UC001: Join and Start Game
-- **Actor**: Player
-- **Precondition**: QR code scanned or URL visited
-- **Flow**: 
-  1. Player accesses game URL on device
-  2. System displays waiting screen
-  3. Second player joins within reasonable time
-  4. Game starts automatically with 3-second countdown
-- **Postcondition**: Both players see maze and can move
+### AF001: Anslut och Starta Spel
+- **Aktör**: Spelare
+- **Förvillkor**: QR-kod skannad eller URL besökt
+- **Flöde**: 
+  1. Spelare kommer åt spel-URL på enhet
+  2. System visar vänteskärm
+  3. Andra spelare ansluter inom rimlig tid
+  4. Spel startar automatiskt med 3-sekunder nedräkning
+- **Eftervillkor**: Båda spelare ser labyrint och kan röra sig
 
-### UC002: Navigate and Compete  
-- **Actor**: Players (both)
-- **Precondition**: Game session active
-- **Flow**:
-  1. Players move through maze using device controls
-  2. System synchronizes positions in real-time  
-  3. Players search for key while potentially using abilities on opponent
-  4. Player who finds key races to exit
-- **Postcondition**: Winner reaches exit or game times out
+### AF002: Navigera och Tävla  
+- **Aktör**: Spelare (båda)
+- **Förvillkor**: Spelsession aktiv
+- **Flöde**:
+  1. Spelare rör sig genom labyrint med enhetskontroller
+  2. System synkroniserar positioner i realtid  
+  3. Spelare söker efter nyckel medan de potentiellt använder förmågor på motståndare
+  4. Spelare som hittar nyckel springer mot utgång
+- **Eftervillkor**: Vinnaren når utgång eller spel timeout
 
-### UC003: Spectate Game
-- **Actor**: Event Organizer, Audience
-- **Precondition**: Game session active, spectator view enabled  
-- **Flow**:
-  1. Organizer selects active game session to display
-  2. Full maze view shows on large screen
-  3. Audience can see both players' positions and actions
-  4. Real-time updates maintain engagement
-- **Postcondition**: Game conclusion visible to all attendees
+### AF003: Åskåda Spel
+- **Aktör**: Eventorganisatör, Publik
+- **Förvillkor**: Spelsession aktiv, åskådarvy aktiverad  
+- **Flöde**:
+  1. Organisatör väljer aktiv spelsession att visa
+  2. Full labyrintvy visas på stor skärm
+  3. Publik kan se båda spelares positioner och handlingar
+  4. Realtidsuppdateringar bibehåller engagemang
+- **Eftervillkor**: Spelslut synligt för alla deltagare
 
-### UC004: Handle Disconnection
-- **Actor**: System
-- **Precondition**: Player loses network connection
-- **Flow**:
-  1. System detects player disconnect
-  2. Game terminates for both players  
-  3. Both players return to start screen
-  4. Spectator view shows appropriate message
-- **Postcondition**: System ready for new game sessions
+### AF004: Hantera Urkoppling
+- **Aktör**: System
+- **Förvillkor**: Spelare förlorar nätverksanslutning
+- **Flöde**:
+  1. System upptäcker spelarurkoppling
+  2. Spel avslutas för båda spelare  
+  3. Båda spelare återgår till startskärm
+  4. Åskådarvy visar lämpligt meddelande
+- **Eftervillkor**: System redo för nya spelsessioner
 
-## Secondary Use Cases
+## Sekundära Användningsfall
 
-### UC005: Track High Scores  
-- **Actor**: Player, System
-- **Flow**: Winner enters initials for leaderboard, system stores top 10 scores
-- **Priority**: Should Have
+### AF005: Spåra High Scores  
+- **Aktör**: Spelare, System
+- **Flöde**: Vinnare anger initialer för topplista, system lagrar topp 10 poäng
+- **Prioritet**: Bör Ha
 
-### UC006: Multiple Session Management
-- **Actor**: System, Event Organizer  
-- **Flow**: Organizer switches between different active games on spectator display
-- **Priority**: Should Have
+### AF006: Flera Sessionshantering
+- **Aktör**: System, Eventorganisatör  
+- **Flöde**: Organisatör växlar mellan olika aktiva spel på åskådarvisning
+- **Prioritet**: Bör Ha

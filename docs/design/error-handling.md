@@ -1,27 +1,27 @@
-# 3.6 Error Handling and Edge Cases
+# 3.6 Felhantering och Gränsfall
 
-## Connection Issues
-- **Player Disconnect**: Immediate game termination, return both players to lobby
-- **Server Disconnect**: React client displays connection lost message, automatic reconnection attempt
-- **Lag Compensation**: Client-side prediction with server reconciliation
-- **Timeout Handling**: 30-second inactivity timeout, automatic game forfeit
+## Anslutningsproblem
+- **Spelarurkoppling**: Omedelbar spelterminering, återvänd båda spelare till lobby
+- **Serverurkoppling**: React-klient visar anslutning förlorad meddelande, automatisk återanslutningsförsök
+- **Lag-kompensation**: Klient-sida prediktion med server-reconciliation
+- **Timeout-hantering**: 30-sekunder inaktivitetstimeout, automatisk spelförlust
 
-## Game Logic Edge Cases  
-- **Simultaneous Key Collection**: C# server timestamp determines winner
-- **Ability Conflicts**: Server processes in received order, later actions may fail
-- **Maze Boundary Issues**: Server validates all movements, rejects invalid positions
-- **Exit Without Key**: Server prevents exit activation, displays appropriate message
+## Spellogik Gränsfall  
+- **Samtidig Nyckelsamling**: C# server tidsstämpel bestämmer vinnare
+- **Förmågekonflikter**: Server bearbetar i mottagen ordning, senare åtgärder kan misslyckas
+- **Labyrintgränsproblem**: Server validerar alla rörelser, avvisar ogiltiga positioner
+- **Utgång Utan Nyckel**: Server förhindrar utgångsaktivering, visar lämpligt meddelande
 
-## System Resource Management
-- **Memory Cleanup**: Automatic session cleanup after game completion
-- **Connection Limits**: Maximum 10 concurrent players, additional connections queued
-- **CPU Load Balancing**: Game logic optimized for single-threaded execution
-- **Graceful Degradation**: Reduced update frequency under high load conditions
+## Systemresurshantering
+- **Minnesupprensning**: Automatisk sessionupprensning efter spelslutförande
+- **Anslutningsgränser**: Maximum 10 samtidiga spelare, ytterligare anslutningar köade
+- **CPU-lastbalansering**: Spellogik optimerad för enkeltrådig utförande
+- **Graciell Försämring**: Reducerad uppdateringsfrekvens under höga lastförhållanden
 
-*[PLACEHOLDER: Error Handling Flow Diagram showing decision trees for various failure scenarios]*
+*[PLACEHOLDER: Felhanteringsflödesdiagram som visar beslutstrad för olika felscenarier]*
 
-## SignalR-Specific Error Handling
-- **Connection Retry Logic**: Automatic reconnection with exponential backoff
-- **Message Acknowledgment**: Critical game events require client confirmation
-- **Heartbeat Monitoring**: Regular ping/pong to detect stale connections
-- **Graceful Fallback**: Degrade to polling if WebSocket fails
+## SignalR-Specifik Felhantering
+- **Anslutningsåterförsökslogik**: Automatisk återanslutning med exponentiell backoff
+- **Meddelandebekräftelse**: Kritiska spelhändelser kräver klientbekräftelse
+- **Heartbeat-övervakning**: Regelbunden ping/pong för att upptäcka inaktiva anslutningar
+- **Graciell Fallback**: Försämra till polling om WebSocket misslyckas

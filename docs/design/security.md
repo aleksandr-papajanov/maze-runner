@@ -1,21 +1,21 @@
-# 3.7 Security and Validation
+# 3.7 Säkerhet och Validering
 
-## Input Validation
-- **Movement Bounds**: All player positions validated against maze geometry on C# server
-- **Action Rate Limiting**: Prevent spam clicking of abilities and movements
-- **State Integrity**: Server validates all state changes before broadcasting via SignalR
-- **Client Trust Model**: Assume React clients may be compromised, validate everything server-side
+## Inmatningsvalidering
+- **Rörelsegränser**: Alla spelarpositioner validerade mot labyrintgeometri på C# server
+- **Åtgärdshastighetsavgränsning**: Förhindra spam-klickande av förmågor och rörelser
+- **Tillståndsintegritet**: Server validerar alla tillståndsändringar innan sändning via SignalR
+- **Klientförtroendemodell**: Anta att React-klienter kan vara komprometterade, validera allt server-sida
 
-## Basic Security Measures
-- **No Authentication Required**: Matches use case of anonymous gameplay
-- **Session Isolation**: Players cannot affect other game sessions
-- **Resource Protection**: Prevent clients from overwhelming C# server resources
-- **Simple Anti-Cheat**: Movement speed and ability cooldown validation
+## Grundläggande Säkerhetsåtgärder
+- **Ingen Autentisering Krävs**: Matchar användningsfall för anonymt spelande
+- **Sessionisolering**: Spelare kan inte påverka andra spelsessioner
+- **Resursskydd**: Förhindra klienter från att överväldiga C# serverresurser
+- **Enkelt Anti-Fusk**: Rörelsehastighet och förmåga cooldown-validering
 
-## ASP.NET Core Security Features
-- **CORS Configuration**: Restrict cross-origin requests appropriately
-- **Input Sanitization**: Validate all incoming data from React clients
-- **SignalR Security**: Use connection-based authorization for game sessions
-- **Resource Limits**: Configure appropriate timeout and message size limits
+## ASP.NET Core Säkerhetsfunktioner
+- **CORS-konfiguration**: Begränsa cross-origin-förfrågningar lämpligt
+- **Inmatningssanitisering**: Validera all inkommande data från React-klienter
+- **SignalR Säkerhet**: Använd anslutningsbaserad auktorisering för spelsessioner
+- **Resursgränser**: Konfigurera lämpliga timeout och meddelandestorleksgränser
 
-This system design provides a robust foundation for implementing the MazeRunner game with React + C# while maintaining simplicity and reliability as primary design goals.
+Denna systemdesign tillhandahåller en robust grund för att implementera MazeRunner-spelet med React + C# medan enkelhet och tillförlitlighet upprätthålls som primära designmål.

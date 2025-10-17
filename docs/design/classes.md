@@ -1,32 +1,32 @@
-# 3.2 Static Design (Class Structure)
+# 3.2 Statisk Design (Klassstruktur)
 
-## Core Classes
+## Kärnklasser
 
 ### GameSession (C#)
-- **Properties**: sessionId, players[], gameState, startTime, maze, keyLocation, exitLocation
-- **Methods**: addPlayer(), removePlayer(), startGame(), endGame(), processPlayerAction()
+- **Egenskaper**: sessionId, players[], gameState, startTime, maze, keyLocation, exitLocation
+- **Metoder**: addPlayer(), removePlayer(), startGame(), endGame(), processPlayerAction()
 
 ### Player (C#)
-- **Properties**: playerId, position, inventory[], isAlive, score, lastActivity
-- **Methods**: move(), useAbility(), collectItem(), dropKey()
+- **Egenskaper**: playerId, position, inventory[], isAlive, score, lastActivity
+- **Metoder**: move(), useAbility(), collectItem(), dropKey()
 
 ### Maze (C#)
-- **Properties**: width, height, walls[][], items[], spawnPoints
-- **Methods**: isValidMove(), getVisibleArea(), placeRandomItems()
+- **Egenskaper**: width, height, walls[][], items[], spawnPoints
+- **Metoder**: isValidMove(), getVisibleArea(), placeRandomItems()
 
 ### GameItem (C#)
-- **Properties**: itemType, position, effect, duration  
-- **Methods**: activate(), deactivate(), applyEffect()
+- **Egenskaper**: itemType, position, effect, duration  
+- **Metoder**: activate(), deactivate(), applyEffect()
 
 ### GameHub (C# SignalR)
-- **Properties**: activeConnections[], gameSessions[]
-- **Methods**: broadcastUpdate(), handlePlayerDisconnect(), createSession()
+- **Egenskaper**: activeConnections[], gameSessions[]
+- **Metoder**: broadcastUpdate(), handlePlayerDisconnect(), createSession()
 
-*[PLACEHOLDER: UML Class Diagram showing relationships, inheritance, and key methods for all classes]*
+*[PLACEHOLDER: UML-klassdiagram som visar relationer, arv och nyckelmetoder för alla klasser]*
 
-## Data Flow Architecture
-1. **Client Input**: Player action captured in React component
-2. **Validation**: C# server validates action against game rules  
-3. **State Update**: Server updates authoritative game state
-4. **Broadcast**: SignalR sends updates to all clients in session
-5. **Rendering**: React components update display based on received state
+## Dataflödesarkitektur
+1. **Klientinmatning**: Spelaraktioner fångade i React-komponent
+2. **Validering**: C# server validerar aktion mot spelregler  
+3. **Tillståndsuppdatering**: Server uppdaterar auktoritativt speltillstånd
+4. **Sändning**: SignalR skickar uppdateringar till alla klienter i session
+5. **Rendering**: React-komponenter uppdaterar display baserat på mottaget tillstånd

@@ -1,18 +1,18 @@
-# 3. System Design
+# 3. Systemdesign
 
-## Table of Contents
-- [3.1 System Architecture](design/architecture.md)
-- [3.2 Static Design (Class Structure)](design/classes.md)
-- [3.3 Dynamic Design (Runtime Behavior)](design/behavior.md)
-- [3.4 User Interface Design](design/ui-design.md)
-- [3.5 Data Management](design/data.md)
-- [3.6 Error Handling](design/error-handling.md)
-- [3.7 Security](design/security.md)
+## Innehållsförteckning
+- [3.1 Systemarkitektur](design/architecture.md)
+- [3.2 Statisk Design (Klassstruktur)](design/classes.md)
+- [3.3 Dynamisk Design (Runtime-beteende)](design/behavior.md)
+- [3.4 Användargränssnittsdesign](design/ui-design.md)
+- [3.5 Datahantering](design/data.md)
+- [3.6 Felhantering](design/error-handling.md)
+- [3.7 Säkerhet](design/security.md)
 
-## Overview
+## Översikt
 
-This section provides comprehensive system design specifications for MazeRunner, covering architecture, class design, user interface, and technical implementation details.
+Denna sektion tillhandahåller omfattande systemdesignspecifikationer för MazeRunner, täcker arkitektur, klassdesign, användargränssnitt och tekniska implementeringsdetaljer.
 
-**Technology Stack**: React frontend with C# backend, WebSocket communication, SQLite database
+**Teknisk Stack**: React-frontend med C#-backend, WebSocket-kommunikation, SQLite-databas
 
-For detailed design specifications, please refer to the linked sections above.
+För detaljerade designspecifikationer, vänligen hänvisa till de länkade sektionerna ovan.

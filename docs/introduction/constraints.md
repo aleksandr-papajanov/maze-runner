@@ -1,13 +1,13 @@
-# 1.5 Key Constraints
+# 1.5 Nyckelbegränsningar
 
-## Technical Limitations
-- **Platform**: Web browsers only (no native apps)
-- **Performance**: Must work on older mobile devices
-- **Network**: Designed for standard wifi, graceful degradation for poor connections
-- **Audio**: Visual feedback prioritized due to noisy environment
+## Tekniska Begränsningar
+- **Plattform**: Endast webbläsare (inga inhemska appar)
+- **Prestanda**: Måste fungera på äldre mobila enheter
+- **Nätverk**: Designad för standard wifi, graciell försämring för dåliga anslutningar
+- **Ljud**: Visuell feedback prioriterad på grund av bullrig miljö
 
-## Project Limitations  
-- **Time**: 8-hour documentation development timeframe
-- **Team**: 2 members with collaborative approach
-- **Scope**: Analysis and design only, no implementation
-- **Stakeholder Access**: Single expert interview session with Josef Hallberg
+## Projektbegränsningar  
+- **Tid**: 8-timmars dokumentationsutvecklingstidsram
+- **Team**: 2 medlemmar med kollaborativ ansats
+- **Omfattning**: Endast analys och design, ingen implementering
+- **Intressentåtkomst**: Enkel expertintervjusession med Josef Hallberg

@@ -1,18 +1,18 @@
-# 1.2 Project Objectives
+# 1.2 Projektmål
 
-## Primary Goals
-- **Engagement**: Create an entertaining 5-minute multiplayer experience that draws in high school students
-- **Reliability**: Ensure the system works consistently without complex hardware dependencies  
-- **Showcase**: Demonstrate modern web development capabilities through student-created software
-- **Accessibility**: Support diverse devices (smartphones, laptops, tablets) without app installation
-- **Sustainability**: Design for multi-year usage with minimal maintenance requirements
-- **Conversation Starter**: Replace "Are you interested in CS?" with "Want to play a game?"
+## Primära Mål
+- **Engagemang**: Skapa en underhållande 5-minuters multiplayer-upplevelse som lockar gymnasiestudenter
+- **Tillförlitlighet**: Säkerställa att systemet fungerar konsekvent utan komplexa hårdvaruberoenden  
+- **Showcase**: Demonstrera moderna webbutvecklingskapaciteter genom studentskapad mjukvara
+- **Tillgänglighet**: Stödja olika enheter (smartphones, laptops, surfplattor) utan appinstallation
+- **Hållbarhet**: Design för flerårig användning med minimala underhållskrav
+- **Samtalsstart**: Ersätta "Är du intresserad av datavetenskap?" med "Vill du spela ett spel?"
 
-## Success Criteria
-- Setup time: Under 2 minutes from laptop to running demo
-- Game duration: 90% of sessions complete within 5 minutes, flexible up to 7-8 minutes
-- Concurrent support: 5 game sessions (10 players) simultaneously
-- Device compatibility: Works on 6-7 year old smartphones and modern browsers
-- Scoring system: High score leaderboard with initials entry (pinball-style)
-- Side challenges: Letter collection for secret words and point collection for bonus scores
-- Long-term reliability: Designed for 4+ years of continuous open house usage
+## Framgångskriterier
+- Installationstid: Under 2 minuter från laptop till körande demo
+- Spelvaraktighet: 90% av sessionerna slutförs inom 5 minuter, flexibelt upp till 7-8 minuter
+- Samtidigt stöd: 5 spelsessioner (10 spelare) samtidigt
+- Enhetskompatibilitet: Fungerar på 6-7 år gamla smartphones och moderna webbläsare
+- Poängsystem: High score topplista med initialinmatning (flipperstil)
+- Sidoutmaningar: Bokstavssamling för hemliga ord och poängsamling för bonuspoäng
+- Långsiktig tillförlitlighet: Designad för 4+ års kontinuerlig öppet hus-användning

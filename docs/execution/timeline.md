@@ -1,53 +1,53 @@
-# 4.2 Project Timeline and Milestones
+# 4.2 Projekttidslinje och Milstolpar
 
-## Phase 1: Setup and Planning (0-2 hours)
-**Duration**: 2 hours total  
-**Collaborative Work**: Joint team coordination and foundation establishment
+## Fas 1: Installation och Planering (0-2 timmar)
+**Varaktighet**: 2 timmar totalt  
+**Kollaborativt Arbete**: Gemensam teamkoordination och grundetablering
 
-### Hour 0-1: Project Initiation
-- **Both Team Members**: Review assignment requirements and existing materials together
-- **Shared Task**: Contact Josef Hallberg to schedule expert interview (CRITICAL PATH)
-- **Joint Activity**: Research React + C# multiplayer game architectures
-- **Collaborative Setup**: Establish documentation standards and review framework
+### Timme 0-1: Projektinitiering
+- **Båda Teammedlemmar**: Granska uppgiftskrav och befintligt material tillsammans
+- **Delad Uppgift**: Kontakta Josef Hallberg för att schemalägga expertintervju (KRITISK VÄG)
+- **Gemensam Aktivitet**: Forskning React + C# multiplayer spelarkitekturer
+- **Kollaborativ Installation**: Etablera dokumentationsstandarder och recensionsramverk
 
-### Hour 1-2: Interview Preparation  
-- **Both Team Members**: Prepare interview questions and logistics together
-- **Joint Planning**: Prepare technical questions about React/C# preferences
-- **Shared Documentation**: Create interview documentation template
-- **Team Milestone**: Expert interview confirmed and prepared
+### Timme 1-2: Intervjuförberedelse  
+- **Båda Teammedlemmar**: Förbered intervjufrågor och logistik tillsammans
+- **Gemensam Planering**: Förbered tekniska frågor om React/C# preferenser
+- **Delad Dokumentation**: Skapa intervjudokumentationsmall
+- **Teammilstolpe**: Expertintervju bekräftad och förberedd
 
-## Phase 2: Requirements Gathering (2-3.5 hours)
-**Duration**: 1.5 hours total  
-**Critical Dependency**: Expert interview must occur in this phase
+## Fas 2: Kravinsamling (2-3.5 timmar)
+**Varaktighet**: 1.5 timmar totalt  
+**Kritiskt Beroende**: Expertintervju måste ske i denna fas
 
-### Hour 2-3: Expert Interview Session
-- **Both Team Members**: Jointly facilitate interview with Josef Hallberg
-- **Shared Focus**: Both members focus on technical requirements and React/C# constraints  
-- **Collaborative Documentation**: Both document responses and identify follow-up questions
-- **Deliverable**: Complete interview transcript and initial requirements list
+### Timme 2-3: Expertintervjusession
+- **Båda Teammedlemmar**: Gemensamt facilitera intervju med Josef Hallberg
+- **Delad Fokus**: Båda medlemmar fokuserar på tekniska krav och React/C# begränsningar  
+- **Kollaborativ Dokumentation**: Båda dokumenterar svar och identifierar uppföljningsfrågor
+- **Leverabel**: Komplett intervjutranskript och initial kravlista
 
-### Hour 3-3.5: Requirements Analysis
-- **Joint Analysis**: Convert interview insights into formal requirements together
-- **Shared Understanding**: Extract technical constraints and React/C# architecture implications
-- **Peer Review**: Review requirements for completeness and consistency
-- **Team Milestone**: Requirements specification draft completed
+### Timme 3-3.5: Kravanalys
+- **Gemensam Analys**: Omvandla intervjuinsikter till formella krav tillsammans
+- **Delad Förståelse**: Extrahera tekniska begränsningar och React/C# arkitekturimplikationer
+- **Peer Review**: Granska krav för fullständighet och konsistens
+- **Teammilstolpe**: Kravspecifikationsutkast slutfört
 
-## Phase 3: Design and Documentation (3.5-6.5 hours)  
-**Duration**: 3 hours total
-**Collaborative Work**: Joint development with continuous peer review
+## Fas 3: Design och Dokumentation (3.5-6.5 timmar)  
+**Varaktighet**: 3 timmar totalt
+**Kollaborativt Arbete**: Gemensam utveckling med kontinuerlig peer review
 
-### Hour 3.5-5: Core Design Development
-- **Shared Tasks**: Work together on introduction and requirements finalization
-- **Joint Design**: Collaborate on React/C# architecture and class diagrams  
-- **Team Activity**: Develop testing strategy and quality control framework together
+### Timme 3.5-5: Kärndesignutveckling
+- **Delade Uppgifter**: Arbeta tillsammans på introduktion och kravfinalisering
+- **Gemensam Design**: Samarbeta på React/C# arkitektur och klassdiagram  
+- **Teamaktivitet**: Utveckla teststrategi och kvalitetskontrollramverk tillsammans
 
-### Hour 5-6.5: Advanced Design Work
-- **Continuous Collaboration**: Review and integrate all deliverables together
-- **Joint Diagramming**: Create sequence diagrams, activity diagrams, and state diagrams as a pair
-- **Shared Quality Control**: Conduct document reviews and testing plans together
-- **Team Milestone**: All major document sections completed in draft form
+### Timme 5-6.5: Avancerat Designarbete
+- **Kontinuerligt Samarbete**: Granska och integrera alla leverabler tillsammans
+- **Gemensam Diagramskapande**: Skapa sekvensdiagram, aktivitetsdiagram och tillståndsdiagram som par
+- **Delad Kvalitetskontroll**: Utför dokumentrecensioner och testplaner tillsammans
+- **Teammilstolpe**: Alla stora dokumentsektioner slutförda i utkastform
 
-## Phase 4: Integration and Finalization (6.5-8 hours)
+## Fas 4: Integration och Finalisering (6.5-8 timmar)
 **Duration**: 1.5 hours total  
 **Focus**: Collaborative quality assurance and final presentation preparation
 

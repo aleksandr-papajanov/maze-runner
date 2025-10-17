@@ -1,47 +1,47 @@
-# 2.3 Non-Functional Requirements
+# 2.3 Icke-Funktionella Krav
 
-## Performance Requirements
-- **NFR001**: Game setup time <2 minutes from laptop startup to playable state
-- **NFR002**: Player movement response time <100ms under normal network conditions
-- **NFR003**: Support 5 concurrent sessions without performance degradation
-- **NFR004**: Target 90% of games complete within 5 minutes, allow 7-8 minutes for remaining 10%
-- **NFR005**: Compass help system activates after 5 minutes to assist players
+## Prestandakrav
+- **IFK001**: Speluppsättningstid <2 minuter från laptopuppstart till spelbart tillstånd
+- **IFK002**: Spelarrörelsens svarstid <100ms under normala nätverksförhållanden
+- **IFK003**: Stöd för 5 samtidiga sessioner utan prestandaförsämring
+- **IFK004**: Mål att 90% av spelen slutförs inom 5 minuter, tillåt 7-8 minuter för återstående 10%
+- **IFK005**: Kompasshjälpsystem aktiveras efter 5 minuter för att hjälpa spelare
 
-## Compatibility Requirements  
-- **NFR006**: Function on smartphones 6+ years old (Android 7+, iOS 12+)
-- **NFR007**: Compatible with major desktop browsers (Chrome, Firefox, Safari, Edge)
-- **NFR008**: Consistent viewport scaling across different screen sizes (4" to 27")
-- **NFR009**: No app installation required - web browser only
+## Kompatibilitetskrav  
+- **IFK006**: Fungera på smartphones 6+ år gamla (Android 7+, iOS 12+)
+- **IFK007**: Kompatibel med stora webbbläsare (Chrome, Firefox, Safari, Edge)
+- **IFK008**: Konsekvent viewport-skalning över olika skärmstorlekar (4" till 27")
+- **IFK009**: Ingen appinstallation krävs - endast webbbläsare
 
-## Reliability Requirements
-- **NFR010**: 99% uptime during 3-hour open house demonstration periods  
-- **NFR011**: Graceful handling of player disconnections without system crash
-- **NFR012**: Automatic game recovery after temporary network interruptions
-- **NFR013**: No data loss during normal disconnect scenarios
+## Tillförlitlighetskrav
+- **IFK010**: 99% drifttid under 3-timmars öppet hus-demonstrationsperioder  
+- **IFK011**: Graciell hantering av spelarurkopplingar utan systemkrasch
+- **IFK012**: Automatisk spelåterhämtning efter tillfälliga nätverksavbrott
+- **IFK013**: Ingen dataförlust vid normala urkopplingsscenarier
 
-## Usability Requirements
-- **NFR014**: New players can start playing within 30 seconds of joining
-- **NFR015**: Game rules understandable without text instructions (visual/intuitive design)
-- **NFR016**: Spectator view engaging for non-playing audience members
-- **NFR017**: High score entry system similar to pinball machines (initials for top 10)
-- **NFR018**: Clear visual feedback for all ability usage and status effects
-- **NFR019**: Teacher can easily switch between active game sessions
+## Användbarhetskrav
+- **IFK014**: Nya spelare kan börja spela inom 30 sekunder efter anslutning
+- **IFK015**: Spelregler förståeliga utan textinstruktioner (visuell/intuitiv design)
+- **IFK016**: Åskådarvy engagerande för icke-spelande publik
+- **IFK017**: High score-inmatningssystem liknande flipperspel (initialer för topp 10)
+- **IFK018**: Tydlig visuell feedback för all förmågeanvändning och statuseffekter
+- **IFK019**: Lärare kan enkelt växla mellan aktiva spelsessioner
 
-## Accessibility and Design Requirements
-- **NFR020**: Different avatar shapes and patterns, not just colors, for player distinction
-- **NFR021**: High contrast visual design for noisy environment visibility
-- **NFR022**: Primarily visual instructions rather than text-based guidance
-- **NFR023**: Clear distinction between player and opponent through multiple visual cues
+## Tillgänglighets- och Designkrav
+- **IFK020**: Olika avatarformer och mönster, inte bara färger, för spelardistinktion
+- **IFK021**: Högkontrast visuell design för synlighet i bullrig miljö
+- **IFK022**: Primärt visuella instruktioner snarare än textbaserad vägledning
+- **IFK023**: Tydlig distinktion mellan spelare och motståndare genom flera visuella ledtrådar
 
-## Audio Requirements
-- **NFR024**: Background music not required due to noisy demonstration environment
-- **NFR025**: Sound effects secondary priority - visual feedback is primary
-- **NFR026**: Optional sound effects for actions (shooting, abilities) but must not be essential
+## Ljudkrav
+- **IFK024**: Bakgrundsmusik ej nödvändig på grund av bullrig demonstrationsmiljö
+- **IFK025**: Ljudeffekter sekundär prioritet - visuell feedback är primär
+- **IFK026**: Valfria ljudeffekter för handlingar (skjutning, förmågor) men får inte vara väsentliga
 
-## Technical Architecture Requirements
-- **NFR027**: Client-server architecture with centralized game state management  
-- **NFR028**: WebSocket communication for real-time updates
-- **NFR029**: Single server deployment on standard laptop hardware
-- **NFR030**: Minimal external dependencies (avoid Unity, complex game engines)
-- **NFR031**: No authentication or user registration required - anonymous gameplay only
-- **NFR032**: React frontend with C# backend implementation
+## Tekniska Arkitekturkrav
+- **IFK027**: Klient-server-arkitektur med centraliserad spelstatushantering  
+- **IFK028**: WebSocket-kommunikation för realtidsuppdateringar
+- **IFK029**: Enkel serverdistribution på standard laptop-hårdvara
+- **IFK030**: Minimala externa beroenden (undvik Unity, komplexa spelmotorer)
+- **IFK031**: Ingen autentisering eller användarregistrering krävs - endast anonymt spel
+- **IFK032**: React-frontend med C#-backend-implementering

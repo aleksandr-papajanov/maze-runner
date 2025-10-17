@@ -1,36 +1,36 @@
-# 3.5 Data Management
+# 3.5 Datahantering
 
-## Game State Storage
+## Speltillståndslagring
 
-### In-Memory State (C# Server)
-- Player positions and status
-- Item locations and availability  
-- Game timing and score information
-- Temporary ability effects and cooldowns
+### In-Memory Tillstånd (C# Server)
+- Spelarpositioner och status
+- Föremålspositioner och tillgänglighet  
+- Speltiming och poänginformation
+- Tillfälliga förmågeeffekter och cooldowns
 
-### Persistent Storage (SQLite)
-- High score leaderboard (top 10 entries)
-- Game configuration settings
-- Usage statistics (optional)
+### Beständig Lagring (SQLite)
+- High score topplista (topp 10 poster)
+- Spelkonfigurationsinställningar
+- Användningsstatistik (valfritt)
 
-## Data Synchronization Strategy
+## Datasynkroniseringsstrategi
 
-### Authoritative Server Model
-- C# server maintains single source of truth for all game state
-- React clients send input events, not state changes
-- Server validates all actions before applying changes
-- Optimistic client-side prediction for smooth movement feel
-- Server correction packets for synchronization errors
+### Auktoritativ Servermodell
+- C# server upprätthåller enda källa till sanning för allt speltillstånd
+- React-klienter skickar inmatningshändelser, inte tillståndsändringar
+- Server validerar alla åtgärder innan ändringar tillämpas
+- Optimistisk klient-sida prediktion för smidig rörelsekänsla
+- Server korrigeringspaket för synkroniseringsfel
 
-### Update Frequency
-- Player positions: 20-30 updates per second via SignalR
-- Game events: Immediate broadcast
-- Status updates: 2-5 updates per second  
-- Heartbeat/connection check: Every 5 seconds
+### Uppdateringsfrekvens
+- Spelarpositioner: 20-30 uppdateringar per sekund via SignalR
+- Spelhändelser: Omedelbar sändning
+- Statusuppdateringar: 2-5 uppdateringar per sekund  
+- Heartbeat/anslutningskontroll: Var 5:e sekund
 
-## Database Schema (SQLite)
+## Databasschema (SQLite)
 
-### HighScores Table
+### HighScores Tabell
 ```sql
 CREATE TABLE HighScores (
     Id INTEGER PRIMARY KEY,
@@ -41,7 +41,7 @@ CREATE TABLE HighScores (
 );
 ```
 
-### GameSessions Table (Optional Analytics)
+### GameSessions Tabell (Valfri Analys)
 ```sql
 CREATE TABLE GameSessions (
     Id INTEGER PRIMARY KEY,

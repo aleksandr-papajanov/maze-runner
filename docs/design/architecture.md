@@ -1,21 +1,21 @@
-# 3.1 System Architecture
+# 3.1 Systemarkitektur
 
-## Overall Architecture
-The MazeRunner system follows a client-server architecture with centralized game state management. All game logic executes on a single server to ensure synchronization and prevent the desync issues experienced in previous projects.
+## Övergripande Arkitektur
+MazeRunner-systemet följer en klient-server arkitektur med centraliserad speltillståndshantering. All spellogik körs på en enda server för att säkerställa synkronisering och förhindra desync-problemen som upplevdes i tidigare projekt.
 
-**Architecture Pattern**: Client-Server with WebSocket communication
-**Deployment Model**: Single server application running on laptop with web-based clients
+**Arkitekturmönster**: Klient-Server med WebSocket-kommunikation
+**Distributionsmodell**: Enkelserver-applikation som körs på laptop med webbaserade klienter
 
-## Technology Stack
-- **Frontend**: React with TypeScript for responsive UI
-- **Backend**: C# with ASP.NET Core for game server
-- **Communication**: SignalR (WebSocket) for real-time updates, REST API for initial connection
-- **Database**: SQLite for high scores and session data
-- **Hosting**: Local server on laptop or lightweight cloud deployment
+## Teknisk Stack
+- **Frontend**: React med TypeScript för responsivt UI
+- **Backend**: C# med ASP.NET Core för spelserver
+- **Kommunikation**: SignalR (WebSocket) för realtidsuppdateringar, REST API för initial anslutning
+- **Databas**: SQLite för high scores och sessionsdata
+- **Hosting**: Lokal server på laptop eller lättviktig molndistribution
 
-*[PLACEHOLDER: System Architecture Diagram showing client-server interaction, WebSocket connections, and component relationships]*
+*[PLACEHOLDER: Systemarkitekturdiagram som visar klient-server interaktion, WebSocket-anslutningar och komponentrelationer]*
 
-## Deployment Architecture
-- **Development**: Local development environment with React dev server and C# backend
-- **Production**: Single executable running both React build and C# server on demonstration laptop
-- **Scalability**: Single server instance designed for maximum 10 concurrent players
+## Distributionsarkitektur
+- **Utveckling**: Lokal utvecklingsmiljö med React dev server och C# backend
+- **Produktion**: Enkel körbar fil som kör både React build och C# server på demonstrations-laptop
+- **Skalbarhet**: Enkelserver-instans designad för maximum 10 samtidiga spelare

@@ -1,26 +1,26 @@
-# 4.6 Resource Requirements
+# 4.6 Resurskrav
 
-## Human Resources
-- **Total Effort**: 16 person-hours across 2 team members
-- **Skill Requirements**: Systems analysis, technical writing, UML diagramming, React + C# knowledge
-- **External Dependencies**: Josef Hallberg availability for 45-60 minute interview
+## Mänskliga Resurser
+- **Total Insats**: 16 persontimmar över 2 teammedlemmar
+- **Färdighetsrekrav**: Systemanalys, teknisk skrivning, UML-diagrammering, React + C# kunskap
+- **Externa Beroenden**: Josef Hallberg tillgänglighet för 45-60 minuters intervju
 
-## Technical Resources
-- **Documentation Tools**: Word processing, diagramming software (Lucidchart, draw.io, or similar)
-- **Communication Platform**: Video conferencing for expert interview
-- **Reference Materials**: Course materials, UML standards, React + C# documentation, previous project examples
-- **Development Environment**: Visual Studio Code, .NET SDK (for technical reference)
+## Tekniska Resurser
+- **Dokumentationsverktyg**: Ordbehandling, diagrammjukvara (Lucidchart, draw.io eller liknande)
+- **Kommunikationsplattform**: Videokonferens för expertintervju
+- **Referensmaterial**: Kursmaterial, UML-standarder, React + C# dokumentation, tidigare projektexempel
+- **Utvecklingsmiljö**: Visual Studio Code, .NET SDK (för teknisk referens)
 
-## Workspace Requirements
-- **Physical Space**: Quiet environment for interview and team collaboration
-- **Equipment**: Computers, internet access, possibly recording equipment for interview
-- **Software**: Standard office suite, diagramming tools, shared document platform
-- **Technical Setup**: Access to React and C# documentation and sample projects
+## Arbetsutrymme Krav
+- **Fysiskt Utrymme**: Tyst miljö för intervju och teamsamarbete
+- **Utrustning**: Datorer, internetåtkomst, möjligen inspelningsutrustning för intervju
+- **Mjukvara**: Standard kontorsserie, diagramverktyg, delad dokumentplattform
+- **Teknisk Installation**: Åtkomst till React och C# dokumentation och exempelprojekt
 
-## Budget Considerations
-- **Software Licensing**: Free/open source tools preferred (draw.io, VS Code)
-- **Infrastructure**: No additional costs expected for documentation phase
-- **External Services**: Standard university IT resources sufficient
-- **Contingency**: Backup tools identified in case primary options fail
+## Budgetöverväganden
+- **Mjukvarulicenser**: Gratis/öppen källkod verktyg föredras (draw.io, VS Code)
+- **Infrastruktur**: Inga ytterligare kostnader förväntade för dokumentationsfas
+- **Externa Tjänster**: Standard universitets IT-resurser tillräckliga
+- **Beredskap**: Backup-verktyg identifierade om primära alternativ misslyckas
 
-This resource planning ensures the team has everything needed to complete comprehensive documentation within the 8-hour constraint while maintaining focus on the React + C# technology stack.
+Denna resursplanering säkerställer att teamet har allt som behövs för att slutföra omfattande dokumentation inom 8-timmarsbegränsningen medan fokus upprätthålls på React + C# teknisk stack.

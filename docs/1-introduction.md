@@ -1,16 +1,16 @@
-# 1. Introduction
+# 1. Introduktion
 
-## Table of Contents
-- [1.1 Background and Context](introduction/background.md)
-- [1.2 Project Objectives](introduction/objectives.md)
-- [1.3 Assignment Scope](introduction/scope.md)
-- [1.4 Context and Use Case](introduction/context.md)
-- [1.5 Key Constraints](introduction/constraints.md)
+## Innehållsförteckning
+- [1.1 Bakgrund och Kontext](introduction/background.md)
+- [1.2 Projektmål](introduction/objectives.md)
+- [1.3 Uppgiftsomfattning](introduction/scope.md)
+- [1.4 Kontext och Användningsfall](introduction/context.md)
+- [1.5 Nyckelbegränsningar](introduction/constraints.md)
 
-## Overview
+## Översikt
 
-MazeRunner is a web-based multiplayer maze game designed for university open house demonstrations at Luleå University of Technology (LTU). This section provides the foundational context, objectives, and scope for the project.
+MazeRunner är ett webbaserat multiplayer labyrintspel designat för universitets öppet hus-demonstrationer på Luleå Tekniska Universitet (LTU). Denna sektion ger den grundläggande kontexten, målen och omfattningen för projektet.
 
-**Technology Stack**: React frontend with C# backend
+**Teknisk Stack**: React-frontend med C#-backend
 
-For detailed information on each aspect of the introduction, please refer to the linked sections above.
+För detaljerad information om varje aspekt av introduktionen, vänligen hänvisa till de länkade sektionerna ovan.

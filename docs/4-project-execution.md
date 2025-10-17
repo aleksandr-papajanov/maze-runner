@@ -1,17 +1,17 @@
-# 4. Project Execution
+# 4. Projektutförande
 
-## Table of Contents
-- [4.1 Team Structure and Roles](execution/team-structure.md)
-- [4.2 Project Timeline](execution/timeline.md)
-- [4.3 Risk Management](execution/risk-management.md)
-- [4.4 Quality Assurance](execution/quality-assurance.md)
-- [4.5 Communication](execution/communication.md)
-- [4.6 Resource Requirements](execution/resources.md)
+## Innehållsförteckning
+- [4.1 Teamstruktur och Roller](execution/team-structure.md)
+- [4.2 Projekttidslinje](execution/timeline.md)
+- [4.3 Riskhantering](execution/risk-management.md)
+- [4.4 Kvalitetssäkring](execution/quality-assurance.md)
+- [4.5 Kommunikation](execution/communication.md)
+- [4.6 Resurskrav](execution/resources.md)
 
-## Overview
+## Översikt
 
-This section outlines the project execution plan for the MazeRunner documentation project, including team organization, timeline, risk management, and quality assurance processes.
+Denna sektion beskriver projektutförandeplanen för MazeRunner-dokumentationsprojektet, inklusive teamorganisation, tidslinje, riskhantering och kvalitetssäkringsprocesser.
 
-**Technology Focus**: React + C# implementation planning and documentation
+**Teknisk Fokus**: React + C# implementeringsplanering och dokumentation
 
-For detailed execution information, please refer to the linked sections above.
+För detaljerad utförandeinformation, vänligen hänvisa till de länkade sektionerna ovan.

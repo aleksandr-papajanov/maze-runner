@@ -1,14 +1,14 @@
-# 1.4 Context and Use Case
+# 1.4 Kontext och Användningsfall
 
-## Target Environment
-- **Event**: University open house days with 100+ attendees
-- **Audience**: High school students (16-25 years) from northern Sweden
-- **Setting**: Noisy demonstration area with multiple technology exhibits
-- **Equipment**: One laptop, projector/large screen, attendees' personal devices
+## Målmiljö
+- **Evenemang**: Universitets öppet hus-dagar med 100+ deltagare
+- **Publik**: Gymnasiestudenter (16-25 år) från norra Sverige
+- **Miljö**: Bullrig demonstrationsområde med flera teknikutställningar
+- **Utrustning**: En laptop, projektor/stor skärm, deltagarnas personliga enheter
 
-## User Journey
-1. Student approaches university booth displaying the game on large screen
-2. Student scans QR code or visits URL on their phone
-3. Automatic matchmaking pairs them with another player
-4. Both players compete in 5-minute maze race while audience watches and cheers
-5. Winner celebration, optional high score entry, conversation about computer science education
+## Användarresa
+1. Student närmar sig universitetsbås som visar spelet på stor skärm
+2. Student skannar QR-kod eller besöker URL på sin telefon
+3. Automatisk matchmaking parar dem med en annan spelare
+4. Båda spelare tävlar i 5-minuters labyrintlopp medan publiken tittar och hejar
+5. Vinnarfirande, valfri high score-inmatning, konversation om datavetenskapsutbildning

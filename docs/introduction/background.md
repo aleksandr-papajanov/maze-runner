@@ -1,20 +1,20 @@
-# 1.1 Background and Context
+# 1.1 Bakgrund och Kontext
 
-MazeRunner is a web-based multiplayer maze game designed for university open house demonstrations at Luleå University of Technology (LTU). The project addresses the need for a reliable, engaging demonstration tool that showcases student programming work while serving as an "ice-breaker" to get high school students interested in computer science.
+MazeRunner är ett webbaserat multiplayer labyrintspel designat för universitets öppet hus-demonstrationer på Luleå Tekniska Universitet (LTU). Projektet adresserar behovet av ett tillförlitligt, engagerande demonstrationsverktyg som visar upp studentprogrammeringsarbete samtidigt som det tjänar som "isbrytare" för att få gymnasiestudenter intresserade av datavetenskap.
 
-## Motivation for Development
+## Motivation för Utveckling
 
-The current hardware-based demonstration system (haptic technology) has proven unreliable due to complex setup requirements, driver compatibility issues, and frequent technical failures. Key problems with the previous system include:
+Det nuvarande hårdvarubaserade demonstrationssystemet (haptisk teknologi) har visat sig opålitligt på grund av komplexa installationskrav, driverkompabilitetsproblem och frekventa tekniska fel. Huvudproblem med det tidigare systemet inkluderar:
 
-- **Complex hardware setup**: Required specialized hardware and driver installations
-- **Reliability issues**: Frequently broke with operating system updates  
-- **Setup time**: Took significant time to configure and troubleshoot
-- **Maintenance burden**: Required constant technical support and updates
+- **Komplex hårdvaruinstallation**: Krävde specialiserad hårdvara och driverinstallationer
+- **Tillförlitlighetsproblem**: Gick ofta sönder med operativsystemuppdateringar  
+- **Installationstid**: Tog betydande tid att konfigurera och felsöka
+- **Underhållsbörda**: Krävde konstant teknisk support och uppdateringar
 
-## Solution Philosophy
+## Lösningsfilosofi
 
-MazeRunner embodies an "always works" philosophy, prioritizing reliability and simplicity over technical complexity. A simple web-based solution is needed that can be set up in under 2 minutes and works consistently across different devices and environments.
+MazeRunner förkroppsligar en "fungerar alltid"-filosofi, prioriterar tillförlitlighet och enkelhet över teknisk komplexitet. En enkel webbaserad lösning behövs som kan installeras under 2 minuter och fungerar konsekvent över olika enheter och miljöer.
 
-## Long-term Vision
+## Långsiktig Vision
 
-Josef Hallberg has been developing interactive demonstration games for LTU open house events for 4 consecutive years. Previous projects encountered synchronization problems and Unity export complexity. MazeRunner is designed for multi-year usage with minimal maintenance, transforming the typical "Are you interested in computer science?" approach into "Want to play a game?"
+Josef Hallberg har utvecklat interaktiva demonstrationsspel för LTU öppet hus-evenemang i 4 på varandra följande år. Tidigare projekt stötte på synkroniseringsproblem och Unity-exportkomplexitet. MazeRunner är designat för flerårig användning med minimal underhåll, transformerar den typiska "Är du intresserad av datavetenskap?"-ansatsen till "Vill du spela ett spel?"

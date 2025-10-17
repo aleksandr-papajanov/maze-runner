@@ -1,34 +1,34 @@
-# 4.4 Quality Assurance Framework
+# 4.4 Kvalitetssäkringsramverk
 
-## Documentation Standards
-- **Consistency**: Uniform formatting, terminology, and style across all documents
-- **Completeness**: All required sections from Appendix 1 addressed  
-- **Traceability**: Clear connections from requirements through design to React + C# implementation planning
-- **Professional Quality**: University-standard documentation suitable for academic submission
+## Dokumentationsstandarder
+- **Konsistens**: Enhetlig formatering, terminologi och stil över alla dokument
+- **Fullständighet**: Alla krävda sektioner från Bilaga 1 adresserade  
+- **Spårbarhet**: Tydliga anslutningar från krav genom design till React + C# implementeringsplanering
+- **Professionell Kvalitet**: Universitetsstandarddokumentation lämplig för akademisk inlämning
 
-## Review Process
+## Recensionsprocess
 
-### Peer Review Strategy
-- Each major document section reviewed by team member who didn't write it
-- Technical accuracy verified through peer review
-- Requirements completeness verified collaboratively
-- Overall quality and integration verified by both team members
+### Peer Review Strategi
+- Varje större dokumentsektion recenserad av teammedlem som inte skrev den
+- Teknisk noggrannhet verifierad genom peer review
+- Kravfullständighet verifierad kollaborativt
+- Övergripande kvalitet och integration verifierad av båda teammedlemmar
 
-### Quality Checkpoints
-1. **Requirements Review** (Hour 3.5): Completeness and stakeholder alignment
-2. **Design Review** (Hour 6): Technical feasibility and requirements traceability  
-3. **Integration Review** (Hour 7.5): Document consistency and professional presentation
-4. **Final Review** (Hour 8): Submission readiness and completeness verification
+### Kvalitetskontrollpunkter
+1. **Kravrecension** (Timme 3.5): Fullständighet och intressentjustering
+2. **Designrecension** (Timme 6): Teknisk genomförbarhet och kravspårbarhet  
+3. **Integrationsrecension** (Timme 7.5): Dokumentkonsistens och professionell presentation
+4. **Slutrecension** (Timme 8): Inlämningsberedskap och fullständighetverifiering
 
-## Success Criteria
-- **All Appendix 1 requirements addressed**: Introduction, Requirements, Design, Execution
-- **Minimum 5 UML diagrams completed**: Class, Sequence, Activity, State, Module/Architecture
-- **Expert interview insights integrated**: All stakeholder requirements documented
-- **Technology focus maintained**: React + C# considerations throughout documentation
-- **Professional presentation standard**: Suitable for academic and professional review
+## Framgångskriterier
+- **Alla Bilaga 1 krav adresserade**: Introduktion, Krav, Design, Utförande
+- **Minimum 5 UML-diagram slutförda**: Klass, Sekvens, Aktivitet, Tillstånd, Modul/Arkitektur
+- **Expertintervjuinsikter integrerade**: Alla intressentkrav dokumenterade
+- **Teknisk fokus upprätthållen**: React + C# överväganden genom dokumentation
+- **Professionell presentationsstandard**: Lämplig för akademisk och professionell recension
 
-## Quality Metrics
-- **Document completeness**: 100% of required sections present
-- **Technical accuracy**: All React/C# references validated
-- **Consistency score**: Terminology and formatting uniform across documents
-- **Review coverage**: Every section reviewed by at least one other team member
+## Kvalitetsmått
+- **Dokumentfullständighet**: 100% av krävda sektioner närvarande
+- **Teknisk noggrannhet**: Alla React/C# referenser validerade
+- **Konsistenspoäng**: Terminologi och formatering enhetlig över dokument
+- **Recensionstäckning**: Varje sektion recenserad av åtminstone en annan teammedlem

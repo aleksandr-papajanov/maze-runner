@@ -1,151 +1,151 @@
-1. Game Mechanics and Items
+1. Spelmekanik och Föremål
 
-- How should the game be intuitive to get started with (is there a need for tutorial, introduction sequence)?
-**Answer**: The game should be extremely intuitive - most people know how to solve a maze. The concept should be simple: find the key, find the exit. From scanning a QR code to playing should take maximum 1 minute. No need for tutorials or complex explanations.
+- Hur ska spelet vara intuitivt att komma igång med (finns det behov av handledning, introduktionssekvens)?
+**Svar**: Spelet ska vara extremt intuitivt - de flesta vet hur man löser en labyrint. Konceptet ska vara enkelt: hitta nyckeln, hitta utgången. Från att skanna en QR-kod till att spela ska ta maximum 1 minut. Inget behov av handledningar eller komplexa förklaringar.
 
-- What specific items/bonuses exist in the game and how do they affect player progress (e.g. acceleration, protection)?
-**Answer**: Speed boost, better vision (expanded view radius if fog of war is implemented), point-collecting items like apples/coins for high score, possibly letter collection for secret word challenges.
+- Vilka specifika föremål/bonusar finns i spelet och hur påverkar de spelarens framsteg (t.ex. acceleration, skydd)?
+**Svar**: Hastighetsökning, bättre syn (utökad synradie om dimma av krig implementeras), poängsamlingsobjekt som äpplen/mynt för high score, möjligen bokstavssamling för hemliga ordutmaningar.
 
-- What specific items/actions can be used to affect the opponent (e.g. slowing down, blocking, traps)?
-**Answer**: Sleeping potion to freeze opponent for 2 seconds and make them drop the key, confusion ray that reverses controls (left becomes right), traps that can be placed strategically at the exit, stunning projectiles.
+- Vilka specifika föremål/handlingar kan användas för att påverka motståndaren (t.ex. sakta ner, blockera, fällor)?
+**Svar**: Sömnpotion för att frysa motståndare i 2 sekunder och få dem att tappa nyckeln, förvirringsstrål som vänder om kontroller (vänster blir höger), fällor som kan placeras strategiskt vid utgången, bedövande projektiler.
 
-- What limitations/penalties are imposed on a player affected by an item?
-**Answer**: Freeze effects last about 2 seconds, confusion ray reverses joystick controls, key is dropped when hit by certain items.
+- Vilka begränsningar/straff läggs på en spelare som påverkas av ett föremål?
+**Svar**: Fryseffekter varar cirka 2 sekunder, förvirringsstrål vänder om joystick-kontroller, nyckel tappas när träffad av vissa föremål.
 
-- How are these items/actions activated? Automatically when picked up, or manually through player choice (with a dedicated button)?
-**Answer**: Mixed approach - power-ups like speed boost activate automatically when walked over, strategic items like weapons/traps are activated manually with buttons (3 ability buttons on right side of mobile screen).
+- Hur aktiveras dessa föremål/handlingar? Automatiskt när upphämtade, eller manuellt genom spelarval (med dedikerad knapp)?
+**Svar**: Blandad approach - power-ups som hastighetsökning aktiveras automatiskt när man går över dem, strategiska föremål som vapen/fällor aktiveras manuellt med knappar (3 förmåga-knappar på höger sida av mobilskärm).
 
-- Does a player need to see that the opponent has used an item against them, and how (visual, sound)?
-**Answer**: Primarily visual feedback is important due to noisy environment (100+ people). Need to see projectiles being fired, splash effects when hit, visual indicators of status effects. Sound effects are secondary.
+- Behöver en spelare se att motståndaren har använt ett föremål mot dem, och hur (visuellt, ljud)?
+**Svar**: Primärt visuell feedback är viktigt på grund av bullrig miljö (100+ personer). Behöver se projektiler avfyras, splash-effekter när träffad, visuella indikatorer för statuseffekter. Ljudeffekter är sekundära.
 
-- What type of movement mechanics are used in the maze (keyboard/arrow keys, swipes, clicks)?
-**Answer**: Mobile: on-screen joystick with left thumb, abilities with right thumb. Desktop: WASD keys with 8-directional movement, abilities with keyboard keys like JKL if mouse is not available.
+- Vilken typ av rörelsemekanik används i labyrinten (tangentbord/piltangenter, svep, klick)?
+**Svar**: Mobil: on-screen joystick med vänster tumme, förmågor med höger tumme. Desktop: WASD-tangenter med 8-riktnings rörelse, förmågor med tangentbordstangenter som JKL om mus inte är tillgänglig.
 
-- How many items can be in the maze simultaneously?
-**Answer**: Limited inventory - maybe 3 different ability types, use one and it refills after a few seconds, or collect new ones from the maze.
+- Hur många föremål kan vara i labyrinten samtidigt?
+**Svar**: Begränsat inventarium - kanske 3 olika förmågetyper, använd en och den fylls på efter några sekunder, eller samla nya från labyrinten.
 
-2. Win Conditions, Duration and Difficulty
+2. Vinstvillkor, Varaktighet och Svårighet
 
-- What is the exact win condition? First to exit, or are there additional criteria (points, collected items)?
-**Answer**: Primary win condition is first person to reach the exit with the key. Side missions like collecting letters for a secret word can give bonus prizes, but main win is reaching exit first.
+- Vad är det exakta vinstvillkoret? Första att lämna, eller finns det ytterligare kriterier (poäng, samlade föremål)?
+**Svar**: Primärt vinstvillkor är första person att nå utgången med nyckeln. Sidouppdrag som att samla bokstäver för ett hemligt ord kan ge bonuspriser, men huvudvinst är att nå utgången först.
 
-- What happens when maximum game time (5 minutes) runs out? Draw, win for whoever got furthest, or loss for both?
-**Answer**: Time is not a hard deadline. Game is designed so 90% of players finish within 5 minutes. For the remaining 10%, it's fine if they play 7-8 minutes. After 5 minutes, players might get help like compass direction to the key.
+- Vad händer när maximal speltid (5 minuter) tar slut? Oavgjort, vinst för den som kommit längst, eller förlust för båda?
+**Svar**: Tid är inte en hård deadline. Spelet är designat så att 90% av spelarna slutför inom 5 minuter. För de återstående 10% är det okej om de spelar 7-8 minuter. Efter 5 minuter kan spelare få hjälp som kompassriktning till nyckeln.
 
-- Should the maze size be fixed or dynamically generated? What are the expected minimum and maximum sizes?
-**Answer**: One fixed map is sufficient for MVP. Walls can be the same, but randomize key placement, power-ups, and exit location. Since most players play only once, it's still a new experience each time.
+- Ska labyrintstorleken vara fast eller dynamiskt genererad? Vilka är förväntade minimum och maximum storlekar?
+**Svar**: En fast karta är tillräcklig för MVP. Väggar kan vara samma, men randomisera nyckelplacering, power-ups och utgångsposition. Eftersom de flesta spelare spelar bara en gång är det fortfarande en ny upplevelse varje gång.
 
-- How many difficulty levels should the game have?
-**Answer**: No difficulty levels needed - keep it simple. Same game for everyone.
+- Hur många svårighetsnivåer ska spelet ha?
+**Svar**: Inga svårighetsnivåer behövs - håll det enkelt. Samma spel för alla.
 
-- Are random events allowed during gameplay (e.g. paths changing, new items spawning)?
-**Answer**: Not mentioned as a requirement. Focus on core mechanics first.
+- Är slumphändelser tillåtna under spelandet (t.ex. vägar som ändras, nya föremål som spawnar)?
+**Svar**: Inte nämnt som krav. Fokusera på kärnmekanik först.
 
-3. User Interface and Display (UI/UX)
+3. Användargränssnitt och Display (UI/UX)
 
-- Should players be able to see each other's positions on the map/screen? If yes, how is their position shown (icon, marker, minimap)?
-**Answer**: Players see only a limited viewport centered on themselves (mobile shows small portion, fog of war possible). Spectator screen shows full map with both players visible. Players can "cheat" by looking at the big screen, but this creates fun social interaction.
+- Ska spelare kunna se varandras positioner på kartan/skärmen? Om ja, hur visas deras position (ikon, markör, minikarta)?
+**Svar**: Spelare ser bara en begränsad viewport centrerad på sig själva (mobil visar liten del, dimma av krig möjlig). Åskådarskärm visar full karta med båda spelare synliga. Spelare kan "fuska" genom att titta på den stora skärmen, men detta skapar rolig social interaktion.
 
-- What elements must the player see on their screen (map, timer, status field for items)?
-**Answer**: Player avatar with clear direction indicator (arrow or sprite), joystick controls, 3 ability buttons, inventory/status, limited map view centered on player. Same viewport size regardless of screen size for fairness.
+- Vilka element måste spelaren se på sin skärm (karta, tidur, statusfält för föremål)?
+**Svar**: Spelaravatar med tydlig riktningsindikator (pil eller sprite), joystick-kontroller, 3 förmåga-knappar, inventarium/status, begränsad kartvy centrerad på spelare. Samma viewport-storlek oavsett skärmstorlek för rättvisa.
 
-- Does statistics need to be shown in real-time (e.g. speed, percentage progress, used bonuses)?
-**Answer**: Timer display, point count for high score, possibly compass direction to opponent or key after certain time.
+- Behöver statistik visas i realtid (t.ex. hastighet, procentuell framsteg, använda bonusar)?
+**Svar**: Tidurvisning, poängräkning för high score, möjligen kompassriktning till motståndare eller nyckel efter viss tid.
 
-- How should a game session be presented on the big screen (one player at a time, split-screen, overview map)?
-**Answer**: Full overview map showing both players simultaneously, not split-screen (would be too hard to see). Teacher can switch between different ongoing sessions if multiple games are running.
+- Hur ska en spelsession presenteras på den stora skärmen (en spelare åt gången, delad skärm, översiktskarta)?
+**Svar**: Full översiktskarta som visar båda spelare samtidigt, inte delad skärm (skulle vara för svårt att se). Lärare kan växla mellan olika pågående sessioner om flera spel körs.
 
-- Are there requirements for the game's design/style (e.g. retro, minimalist, futuristic)?
-**Answer**: Avatar must match the environment thematically (e.g., if wizards, then dungeon setting). Fantasy theme suggested with isometric map. Otherwise quite open, but keep consistency between character and background.
+- Finns det krav på spelets design/stil (t.ex. retro, minimalistisk, futuristisk)?
+**Svar**: Avatar måste matcha miljön tematiskt (t.ex. om trollkarlar, då fängelsemiljö). Fantasytema föreslaget med isometrisk karta. Annars ganska öppet, men behåll konsistens mellan karaktär och bakgrund.
 
-- Is sound required (background music, sound effects for activation/interaction)?
-**Answer**: Background music not needed. Sound effects are secondary due to noisy environment (100+ people). Visual feedback is most important, but some sound effects for shooting/actions can be included.
+- Krävs ljud (bakgrundsmusik, ljudeffekter för aktivering/interaktion)?
+**Svar**: Bakgrundsmusik behövs inte. Ljudeffekter är sekundära på grund av bullrig miljö (100+ personer). Visuell feedback är viktigast, men några ljudeffekter för skjutning/handlingar kan inkluderas.
 
-4. Multiplayer and Technical Requirements
+4. Multiplayer och Tekniska Krav
 
-- What is the expected maximum number of pairs playing simultaneously during the event ("open house")?
-**Answer**: Maximum 5 concurrent sessions (10 players total). Only about 10 people can physically fit around the booth anyway. Even if 30 sessions were running, it wouldn't be a heavy data load.
+- Vad är det förväntade maximala antalet par som spelar samtidigt under evenemanget ("öppet hus")?
+**Svar**: Maximum 5 samtidiga sessioner (10 spelare totalt). Bara cirka 10 personer kan fysiskt få plats runt båset ändå. Även om 30 sessioner körde skulle det inte vara en tung dataload.
 
-- Is each pair completely independent, or is interaction/influence between different playing pairs possible?
-**Answer**: Each pair is completely independent. No interaction between different game sessions.
+- Är varje par helt oberoende, eller är interaktion/påverkan mellan olika spelpar möjlig?
+**Svar**: Varje par är helt oberoende. Ingen interaktion mellan olika spelsessioner.
 
-- Should mobile devices support full gameplay (with controls) or only be used for viewing/spectator view?
-**Answer**: Full gameplay on mobile with on-screen joystick and touch controls. Must work on both Android and iOS, including phones 6-7 years old.
+- Ska mobila enheter stödja fullständigt spelande (med kontroller) eller bara användas för visning/åskådarvy?
+**Svar**: Fullständigt spelande på mobil med on-screen joystick och touch-kontroller. Måste fungera på både Android och iOS, inklusive telefoner 6-7 år gamla.
 
-- Which server architecture is preferred: Client-Server or Peer-to-Peer (P2P)?
-**Answer**: Client-Server with single server. All game state managed on server and synchronized to clients. This prevents sync issues that occurred in previous projects where calculations were done on phones.
+- Vilken serverarkitektur föredras: Client-Server eller Peer-to-Peer (P2P)?
+**Svar**: Client-Server med enkel server. Allt speltillstånd hanterat på server och synkroniserat till klienter. Detta förhindrar sync-problem som inträffade i tidigare projekt där beräkningar gjordes på telefoner.
 
-- Do game results need to be saved (for statistics, leaderboards and analysis)? If yes, what type of database is preferred?
-**Answer**: High score system where players can enter initials for top 10, similar to pinball machines. Show final score and time.
+- Behöver spelresultat sparas (för statistik, topplistor och analys)? Om ja, vilken typ av databas föredras?
+**Svar**: High score-system där spelare kan ange initialer för topp 10, liknande flipperspel. Visa slutpoäng och tid.
 
-- Is any form of authentication/registration of players required?
-**Answer**: No authentication needed. Players are matched automatically - first ready player waits for second player to connect, then game starts automatically.
+- Krävs någon form av autentisering/registrering av spelare?
+**Svar**: Ingen autentisering behövs. Spelare matchas automatiskt - första redo spelare väntar på andra spelare att ansluta, sedan startar spel automatiskt.
 
-- How should player positions and states be synchronized to minimize the effect of network delay (lag)?
-**Answer**: Very little data needs to be sent - just position and occasional ability usage with direction/speed. Server handles all game state to ensure synchronization.
+- Hur ska spelarpositioner och tillstånd synkroniseras för att minimera effekten av nätverksfördröjning (lag)?
+**Svar**: Mycket lite data behöver skickas - bara position och enstaka förmågeanvändning med riktning/hastighet. Server hanterar allt speltillstånd för att säkerställa synkronisering.
 
-- What is the minimum set of features that must be working for a successful demonstration on open house day?
-**Answer**: MVP is one map, key collection, exit finding, basic multiplayer, spectator view. Items and abilities are nice-to-have but not essential.
+- Vad är den minsta uppsättningen funktioner som måste fungera för en framgångsrik demonstration på öppet hus-dagen?
+**Svar**: MVP är en karta, nyckelsamling, utgångshittande, grundläggande multiplayer, åskådarvy. Föremål och förmågor är bra-att-ha men inte väsentliga.
 
-- Are there accessibility requirements for players with functional variations (e.g. color blindness, motor limitations)?
-**Answer**: No special accessibility features required for this context. However, good design practices: different avatar shapes (not just colors) for players, high contrast, primarily visual instructions rather than text, clear distinction between player and opponent.
+- Finns det tillgänglighetskrav för spelare med funktionsvariationer (t.ex. färgblindhet, motoriska begränsningar)?
+**Svar**: Inga speciella tillgänglighetsfunktioner krävs för detta sammanhang. Men bra designpraxis: olika avatarformer (inte bara färger) för spelare, hög kontrast, primärt visuella instruktioner snarare än text, tydlig distinktion mellan spelare och motståndare.
 
-## Additional Questions Based on Expert Interview
+## Ytterligare Frågor Baserade på Expertintervju
 
-5. Technical Implementation and Platform
+5. Teknisk Implementering och Plattform
 
-- What technology stack is preferred for implementation?
-**Answer**: Web-based solution preferred for easy setup. Frontend: React, Vue, or Angular. Backend: C# Blazor, Python Flask/Django, or similar. WebSockets for communication. Avoid Unity as it's complex to set up and maintain.
+- Vilken teknisk stack föredras för implementering?
+**Svar**: Webbaserad lösning föredras för enkel installation. Frontend: React, Vue eller Angular. Backend: C# Blazor, Python Flask/Django eller liknande. WebSockets för kommunikation. Undvik Unity eftersom det är komplext att installera och underhålla.
 
-- How should the game handle player disconnections?
-**Answer**: If player loses connection, game ends for both players with "Connection lost, game ended" message. Both return to start screen. No winner declared.
+- Hur ska spelet hantera spelarurkopplingar?
+**Svar**: Om spelare förlorar anslutning slutar spel för båda spelare med "Anslutning förlorad, spel avslutat"-meddelande. Båda återgår till startskärm. Ingen vinnare förklaras.
 
-- What happens if someone griefs by intentionally disconnecting when losing?
-**Answer**: Not a problem - players are friends from high school just having fun. It's not a serious competitive environment.
+- Vad händer om någon griefare genom att medvetet koppla ur när de förlorar?
+**Svar**: Inte ett problem - spelare är vänner från gymnasium som bara har kul. Det är inte en seriös konkurrenskraftig miljö.
 
-6. Game Setup and Logistics
+6. Spelinstallation och Logistik
 
-- How is matchmaking handled?
-**Answer**: Automatic matchmaking - first player ready waits for second player to connect, then game starts automatically. No choosing opponents to reduce complexity.
+- Hur hanteras matchmaking?
+**Svar**: Automatisk matchmaking - första redo spelare väntar på andra spelare att ansluta, sedan startar spel automatiskt. Inget val av motståndare för att minska komplexitet.
 
-- Can teacher/demonstrator spectate specific games?
-**Answer**: Yes, teacher gets list of ongoing sessions and can select which one to display on projector. Can switch between different active games.
+- Kan lärare/demonstratör åskåda specifika spel?
+**Svar**: Ja, lärare får lista över pågående sessioner och kan välja vilken som ska visas på projektor. Kan växla mellan olika aktiva spel.
 
-- What is the target setup time from laptop to running demo?
-**Answer**: Maximum 2 minutes. Game should run as web service on laptop or as Docker container on web server.
+- Vad är målinstallationstiden från laptop till körande demo?
+**Svar**: Maximum 2 minuter. Spel ska köras som webbtjänst på laptop eller som Docker-container på webbserver.
 
-7. Game Content and Themes
+7. Spelinnehåll och Teman
 
-- Are there specific visual themes or characters preferred?
-**Answer**: Fantasy theme suggested (wizards/warriors on isometric dungeon map). Avatar must match background thematically. Relatively open as long as it's consistent.
+- Finns det specifika visuella teman eller karaktärer som föredras?
+**Svar**: Fantasytema föreslaget (trollkarlar/krigare på isometrisk fängelsekarta). Avatar måste matcha bakgrund tematiskt. Relativt öppet så länge det är konsekvent.
 
-- Should there be multiple maps?
-**Answer**: One map is sufficient for MVP. Can randomize key, items, and exit positions while keeping walls the same.
+- Ska det finnas flera kartor?
+**Svar**: En karta är tillräcklig för MVP. Kan randomisera nyckel-, föremåls- och utgångspositioner medan väggar hålls samma.
 
-- Can players see the key location initially?
-**Answer**: No, key location is hidden. Exit is visible but players must find where it is on the map. After 5 minutes, might give compass direction to key as help.
+- Kan spelare se nyckelplatsen initialt?
+**Svar**: Nej, nyckelplats är gömd. Utgång är synlig men spelare måste hitta var den är på kartan. Efter 5 minuter kan kompassriktning till nyckel ges som hjälp.
 
-8. Scoring and Competition
+8. Poängsättning och Tävling
 
-- How detailed should the scoring system be?
-**Answer**: Time-based scoring for quick completion, plus optional point collection (apples/coins) for higher scores. Possibly letter collection for secret word bonus prizes.
+- Hur detaljerat ska poängsystemet vara?
+**Svar**: Tidsbaserad poängsättning för snabb slutförande, plus valfri poängsamling (äpplen/mynt) för högre poäng. Möjligen bokstavssamling för hemliga ord bonuspriser.
 
-- Should unfairness be avoided (e.g., spawning next to key)?
-**Answer**: Perfect fairness not critical since players only play once. Could make map symmetric for fairness, but not essential.
+- Ska orättvisa undvikas (t.ex. spawna bredvid nyckel)?
+**Svar**: Perfekt rättvisa inte kritisk eftersom spelare bara spelar en gång. Kunde göra karta symmetrisk för rättvisa, men inte väsentligt.
 
-- Is there replay value needed?
-**Answer**: No replay value required. Designed for one-time play experience that's engaging enough to be interesting but doesn't need depth for repeated play.
+- Behövs reprisvärde?
+**Svar**: Inget reprisvärde krävs. Designad för engångsspelupplevelse som är engagerande nog att vara intressant men behöver inte djup för upprepat spelande.
 
-9. Context and Purpose
+9. Kontext och Syfte
 
-- Why was MazeRunner chosen over the previous haptic technology demo?
-**Answer**: Previous system was cool but required complex hardware setup, driver installations, and was unreliable (broke with OS updates). Wanted something that "always works" - just open laptop and run in 2 minutes.
+- Varför valdes MazeRunner över den tidigare haptiska teknologidemon?
+**Svar**: Tidigare system var coolt men krävde komplex hårdvaruinstallation, driverinstallationer och var opålitligt (gick sönder med OS-uppdateringar). Ville ha något som "alltid fungerar" - bara öppna laptop och kör på 2 minuter.
 
-- What's the main goal for the open house demonstration?
-**Answer**: Engage two players, create spectator entertainment, serve as icebreaker for conversations about computer science education. Replace "Are you interested in computer science?" with "Want to play a game?"
+- Vad är huvudmålet för öppet hus-demonstrationen?
+**Svar**: Engagera två spelare, skapa åskådarunderhållning, tjäna som isbrytare för konversationer om datavetenskapsutbildning. Ersätta "Är du intresserad av datavetenskap?" med "Vill du spela ett spel?"
 
-- How long should gameplay sessions be?
-**Answer**: 5 minutes target, but flexible. 90% should finish within 5 minutes, remaining 10% can play 7-8 minutes. Goal is quick engagement, not extended gameplay.
+- Hur långa ska spelandet-sessioner vara?
+**Svar**: 5 minuters mål, men flexibelt. 90% ska slutföra inom 5 minuter, återstående 10% kan spela 7-8 minuter. Målet är snabbt engagemang, inte utökat spelande.
 
-- Will this project be used for multiple years?
-**Answer**: Yes, Josef has been creating new game projects every year for 4 years. Previous games had issues (sync problems, Unity export complexity). Looking for reliable, maintainable solution.
+- Kommer detta projekt användas i flera år?
+**Svar**: Ja, Josef har skapat nya spelprojekt varje år i 4 år. Tidigare spel hade problem (sync-problem, Unity export-komplexitet). Söker tillförlitlig, underhållbar lösning.

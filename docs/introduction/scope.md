@@ -1,15 +1,15 @@
-# 1.3 Assignment Scope
+# 1.3 Uppgiftsomfattning
 
-This documentation project covers the complete analysis and design phase for MazeRunner, including:
+Detta dokumentationsprojekt täcker den kompletta analys- och designfasen för MazeRunner, inklusive:
 
-## Included in Project
-- Requirements analysis based on stakeholder interview
-- System design with UML diagrams
-- Technical architecture specification  
-- Project execution planning
+## Inkluderat i Projekt
+- Kravanalys baserad på intressentintervju
+- Systemdesign med UML-diagram
+- Teknisk arkitekturspecifikation  
+- Projektutförandeplanering
 
-## Excluded from Project
-- Actual game implementation/coding
-- Detailed UI/UX design mockups
-- Performance testing and optimization
-- Deployment and maintenance procedures
+## Exkluderat från Projekt
+- Faktisk spelimplementering/kodning
+- Detaljerade UI/UX-designmockuper
+- Prestandatestning och optimering
+- Distributions- och underhållsprocedurer

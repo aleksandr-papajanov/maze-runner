@@ -1,26 +1,26 @@
-# 4.5 Communication and Coordination
+# 4.5 Kommunikation och Koordination
 
-## Team Communication
-- **Primary Platform**: Shared workspace (Google Drive, Microsoft Teams, or similar)
-- **Check-in Schedule**: Brief status updates every 2 hours
-- **Decision Making**: Consensus on all decisions through collaborative discussion
-- **Documentation Sharing**: Real-time collaborative editing where possible
-- **Technical Discussions**: Focus on React + C# architecture decisions
+## Teamkommunikation
+- **Primär Plattform**: Delad arbetsyta (Google Drive, Microsoft Teams eller liknande)
+- **Check-in Schema**: Korta statusuppdateringar var 2:a timme
+- **Beslutfattande**: Konsensus på alla beslut genom kollaborativ diskussion
+- **Dokumentdelning**: Realtid kollaborativ redigering där möjligt
+- **Tekniska Diskussioner**: Fokus på React + C# arkitekturbeslut
 
-## Stakeholder Management  
-- **Expert Interview**: Single session with Josef Hallberg, comprehensive question set
-- **Follow-up Strategy**: Email clarification for any ambiguous points
-- **Documentation Validation**: Share key requirements sections for stakeholder verification if time permits
-- **Technology Alignment**: Confirm React + C# stack preferences during interview
+## Intressenthantering  
+- **Expertintervju**: Enkel session med Josef Hallberg, omfattande frågeuppsättning
+- **Uppföljningsstrategi**: E-postförtydligande för eventuella tvetydiga punkter
+- **Dokumentationsvalidering**: Dela nyckelkravsektioner för intressentverifiering om tid tillåter
+- **Teknisk Justering**: Bekräfta React + C# stackpreferenser under intervju
 
-## Deliverable Management
-- **Version Control**: Clear versioning for all document iterations
-- **Backup Strategy**: Multiple copies in different locations
-- **Final Assembly**: Single team member responsible for final document compilation
-- **Submission Preparation**: Standardized formatting and presentation for academic submission
+## Leverabelhantering
+- **Versionskontroll**: Tydlig versionering för alla dokumentiterationer
+- **Backup-strategi**: Flera kopior på olika platser
+- **Slutsammanställning**: Enkel teammedlem ansvarig för slutdokumentsammanställning
+- **Inlämningsförberedelse**: Standardiserad formatering och presentation för akademisk inlämning
 
-## Communication Protocols
-- **Daily Standup**: Brief 15-minute alignment meetings
-- **Issue Escalation**: Immediate notification for blocking issues
-- **Decision Log**: Document all major technical and process decisions
-- **Status Reporting**: Regular updates on progress against timeline
+## Kommunikationsprotokoll
+- **Daglig Standup**: Korta 15-minuters justeringsmöten
+- **Problem Eskalering**: Omedelbar notifiering för blockerande problem
+- **Beslutlogg**: Dokumentera alla större tekniska och processbeslut
+- **Statusrapportering**: Regelbundna uppdateringar om framsteg mot tidslinje

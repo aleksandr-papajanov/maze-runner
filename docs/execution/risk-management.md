@@ -1,39 +1,39 @@
-# 4.3 Risk Management
+# 4.3 Riskhantering
 
-## High-Priority Risks
+## Högprioritetsrisker
 
-### Risk 1: Expert Interview Unavailability  
-- **Impact**: Critical - blocks all detailed requirements gathering
-- **Probability**: Medium
-- **Mitigation**: Contact Josef immediately, prepare backup questions from previous project information
-- **Contingency**: Use existing game information and make documented assumptions
+### Risk 1: Expertintervju Otillgänglighet  
+- **Påverkan**: Kritisk - blockerar all detaljerad kravinsamling
+- **Sannolikhet**: Medium
+- **Mildrande**: Kontakta Josef omedelbart, förberedd backup-frågor från tidigare projektinformation
+- **Beredskapslösning**: Använd befintlig spelinformation och gör dokumenterade antaganden
 
-### Risk 2: React + C# Integration Complexity
-- **Impact**: High - could lead to incomplete system design
-- **Probability**: Medium  
-- **Mitigation**: Focus on proven SignalR patterns, document assumptions for complex areas
-- **Contingency**: Simplify to basic WebSocket implementation
+### Risk 2: React + C# Integrationskomplexitet
+- **Påverkan**: Hög - kunde leda till inkomplett systemdesign
+- **Sannolikhet**: Medium  
+- **Mildrande**: Fokusera på beprövade SignalR-mönster, dokumentera antaganden för komplexa områden
+- **Beredskapslösning**: Förenkla till grundläggande WebSocket-implementering
 
-### Risk 3: Time Management Issues
-- **Impact**: High - risk of incomplete deliverables
-- **Probability**: Medium
-- **Mitigation**: Strict timeboxing, regular progress check-ins every 2 hours
-- **Contingency**: Prioritize must-have sections, clearly mark optional enhancements
+### Risk 3: Tidshanteringsproblem
+- **Påverkan**: Hög - risk för inkompletta leverabler
+- **Sannolikhet**: Medium
+- **Mildrande**: Strikt timeboxing, regelbundna framstegskontroller var 2:a timme
+- **Beredskapslösning**: Prioritera måste-ha sektioner, tydligt markera valfria förbättringar
 
-## Medium-Priority Risks
+## Mediumprioritet Risker
 
-### Risk 4: Team Coordination Challenges  
-- **Impact**: Medium - could affect quality and consistency
-- **Mitigation**: Clear role definitions, shared documentation platform, regular communication
-- **Contingency**: Both team members share integration coordination responsibility
+### Risk 4: Teamkoordinationsutmaningar  
+- **Påverkan**: Medium - kunde påverka kvalitet och konsistens
+- **Mildrande**: Tydliga rolldefinitioner, delad dokumentationsplattform, regelbunden kommunikation
+- **Beredskapslösning**: Båda teammedlemmar delar integrationkoordinationsansvar
 
-### Risk 5: Documentation Tool Issues
-- **Impact**: Low-Medium - could slow progress
-- **Mitigation**: Use familiar, reliable tools (Markdown, shared drives)
-- **Contingency**: Simple text-based documentation with post-processing
+### Risk 5: Dokumentationsverktyg Problem
+- **Påverkan**: Låg-Medium - kunde bromsa framsteg
+- **Mildrande**: Använd bekanta, tillförlitliga verktyg (Markdown, delade enheter)
+- **Beredskapslösning**: Enkel textbaserad dokumentation med efterbearbetning
 
-## Risk Monitoring
-- **Progress Reviews**: Every 2 hours with go/no-go decisions
-- **Quality Gates**: Document review after each major phase
-- **Communication Protocol**: Immediate escalation of blocking issues
-- **Backup Plans**: Clearly defined scope reduction strategies
+## Riskövervakning
+- **Framstegsrecensioner**: Var 2:a timme med gå/inte gå beslut
+- **Kvalitetsportar**: Dokumentrecension efter varje större fas
+- **Kommunikationsprotokoll**: Omedelbar eskalering av blockerande problem
+- **Backup-planer**: Tydligt definierade omfattningsreduktionsstrategier

@@ -1,178 +1,178 @@
-# MazeRunner Game - Complete Vision
+# MazeRunner Spel - Komplett Vision
 
-## Game Overview
+## Spelöversikt
 
-MazeRunner is a simple, web-based multiplayer maze game designed as an interactive demonstration tool for university open house events. The game creates an engaging "ice-breaker" experience that gets high school students excited about computer science while showcasing student work.
+MazeRunner är ett enkelt, webbaserat multiplayer labyrintspel designat som ett interaktivt demonstrationsverktyg för universitets öppet hus-evenemang. Spelet skapar en engagerande "isbrytare"-upplevelse som får gymnasiestudenter entusiastiska över datavetenskap samtidigt som det visar upp studentarbete.
 
-## Core Gameplay Experience
+## Kärnspelupplevelse
 
-### The Basic Game Loop
-1. **Quick Setup**: Students scan a QR code or visit a URL on their phones/laptops
-2. **Instant Matching**: First player waits, second player joins → game starts automatically  
-3. **5-Minute Adventure**: Players race through a maze to find a key and escape
-4. **Spectator Excitement**: Audience watches on a large screen, cheering and giving hints
-5. **Simple Conclusion**: Winner celebration, optional high score entry, back to start
+### Den Grundläggande Spelcykeln
+1. **Snabb Installation**: Studenter skannar en QR-kod eller besöker en URL på sina telefoner/laptops
+2. **Omedelbar Matchning**: Första spelare väntar, andra spelare ansluter → spel startar automatiskt  
+3. **5-Minuters Äventyr**: Spelare springer genom en labyrint för att hitta en nyckel och fly
+4. **Åskådarspänning**: Publiken tittar på en stor skärm, hejar och ger tips
+5. **Enkel Slutsats**: Vinnarfirande, valfri high score-inmatning, tillbaka till start
 
-### What Players See and Do
+### Vad Spelare Ser och Gör
 
-**On Your Device (Phone/Laptop)**:
-- Top-down view of your character in the maze
-- You only see a small portion around your character (like a spotlight in darkness)
-- Character faces the direction you're moving (important for aiming abilities)
-- Simple controls: Arrow keys/WASD on computer, on-screen joystick on phone
-- 3 ability buttons on the right side of screen
+**På Din Enhet (Telefon/Laptop)**:
+- Uppifrån-vy av din karaktär i labyrinten
+- Du ser bara en liten del runt din karaktär (som en strålkastare i mörkret)
+- Karaktären vänder sig mot riktningen du rör dig (viktigt för att sikta förmågor)
+- Enkla kontroller: Piltangenter/WASD på dator, on-screen joystick på telefon
+- 3 förmåga-knappar på höger sida av skärmen
 
-**On the Big Screen (Spectator View)**:
-- Full maze overview showing both players
-- Everyone can see the entire layout, key location, exit location
-- Perfect for audience to cheer: "The key is behind you!" or "Watch out, they're coming!"
+**På Den Stora Skärmen (Åskådarvy)**:
+- Full labyrintöversikt som visar båda spelare
+- Alla kan se hela layouten, nyckelposition, utgångsposition
+- Perfekt för publiken att heja: "Nyckeln är bakom dig!" eller "Akta dig, de kommer!"
 
-## Character and World
+## Karaktär och Värld
 
-### Visual Style
-- **Top-down perspective** (like classic arcade games)
-- **Fantasy theme preferred**: Wizards or warriors moving through a dungeon-style maze
-- **Simple but clear graphics**: Easy to distinguish your character from opponent
-- **Consistent theme**: If characters are wizards, the maze looks like a dungeon (not modern building)
+### Visuell Stil
+- **Uppifrån-perspektiv** (som klassiska arkadspel)
+- **Fantasytema föredras**: Trollkarlar eller krigare som rör sig genom en fängelsestil-labyrint
+- **Enkel men tydlig grafik**: Lätt att särskilja din karaktär från motståndare
+- **Konsekvent tema**: Om karaktärer är trollkarlar, ser labyrinten ut som en fängelse (inte modern byggnad)
 
-### Your Character
-- Either a detailed animated sprite with legs/movement OR a simple geometric shape with direction arrow
-- Different visual appearance from opponent (different color AND different shape - important for accessibility)
-- Clear indication of which direction you're facing (affects where you shoot abilities)
+### Din Karaktär
+- Antingen en detaljerad animerad sprite med ben/rörelse ELLER en enkel geometrisk form med riktningspil
+- Olika visuellt utseende från motståndare (olika färg OCH olika form - viktigt för tillgänglighet)
+- Tydlig indikation av vilken riktning du vänder mot (påverkar var du skjuter förmågor)
 
-## Core Gameplay Mechanics
+## Kärnspelmekanik
 
-### The Objective
-**Win condition**: Find the key, then reach the exit first
-- **Key**: Hidden somewhere in the maze, location randomized each game
-- **Exit**: Visible to everyone, but you need the key to use it
-- **Strategy element**: You can camp at the exit and ambush the key-holder!
+### Målet
+**Vinstvillkor**: Hitta nyckeln, nå sedan utgången först
+- **Nyckel**: Gömd någonstans i labyrinten, position randomiserad varje spel
+- **Utgång**: Synlig för alla, men du behöver nyckeln för att använda den
+- **Strategielement**: Du kan campa vid utgången och bakhålla nyckelinnehavaren!
 
-### Movement and Vision
-- **Fog of War**: You only see a circular area around your character
-- **Maybe**: 5-second full-map preview at the start, then fog kicks in
-- **Fair Play**: All devices show roughly the same amount of the maze (same "viewport")
+### Rörelse och Syn
+- **Dimma av Krig**: Du ser bara ett cirkulärt område runt din karaktär
+- **Kanske**: 5-sekunder full-kart förhandsvisning i början, sedan dimma slår in
+- **Rättvist Spel**: Alla enheter visar ungefär samma mängd av labyrinten (samma "viewport")
 
-### Combat System - The Fun Part!
-Players can use abilities to stop each other:
+### Stridsystem - Den Roliga Delen!
+Spelare kan använda förmågor för att stoppa varandra:
 
-**Ability Types**:
-1. **Stun Shot**: Freeze opponent for 2 seconds, they drop the key
-2. **Confusion Ray**: Reverse opponent's controls (left becomes right, etc.)
-3. **Speed Boost**: Move faster for a short time (auto-activates when picked up)
+**Förmågetyper**:
+1. **Stun Shot**: Frys motståndare i 2 sekunder, de tappar nyckeln
+2. **Förvirringsstrål**: Vänd om motståndarens kontroller (vänster blir höger, etc.)
+3. **Hastighetsökning**: Rör dig snabbare under kort tid (auto-aktiveras när upphämtad)
 
-**Ability Usage**:
-- 3 ability slots, each with different cooldown/usage rules
-- Some activate automatically when you walk over them (speed boost)
-- Others you save and use strategically (stun shot, confusion ray)
-- Visual feedback: See projectiles fly, see impact effects, know if you hit/missed
+**Förmågeanvändning**:
+- 3 förmåga-platser, var och en med olika cooldown/användningsregler
+- Vissa aktiveras automatiskt när du går över dem (hastighetsökning)
+- Andra sparar du och använder strategiskt (stun shot, förvirringsstrål)
+- Visuell feedback: Se projektiler flyga, se träffeffekter, vet om du träffade/missade
 
-**Strategic Elements**:
-- Hide near the exit and ambush the key-holder
-- Set traps at chokepoints
-- Hunt down the person with the key using compass direction (given after some time)
+**Strategiska Element**:
+- Göm dig nära utgången och bakhåll nyckelinnehavaren
+- Sätt fällor vid flaskhalsar
+- Jaga personen med nyckeln med kompassriktning (given efter viss tid)
 
-## Items and Power-ups
+## Föremål och Power-ups
 
-### Collectible Items
-- **Bonus Points**: Apple/coin-like objects scattered around maze for high score
-- **Power-ups**: Speed boost, better vision, extra abilities
-- **Secret Letters**: Optional side-quest to spell a daily word for prizes
+### Samlarobjekt
+- **Bonuspoäng**: Äpple/mynt-liknande objekt spridda runt labyrinten för high score
+- **Power-ups**: Hastighetsökning, bättre syn, extra förmågor
+- **Hemliga Bokstäver**: Valfri sidouppdrag för att stava ett dagligt ord för priser
 
-### Risk vs Reward
-- Collecting bonus items makes you vulnerable (takes time, exposes position)
-- Key-holder is visible to others through compass hints after time passes
-- Smart players balance speed, combat, and collection
+### Risk vs Belöning
+- Att samla bonusobjekt gör dig sårbar (tar tid, exponerar position)
+- Nyckelinnehavare är synlig för andra genom kompasstips efter tid passerar
+- Smarta spelare balanserar hastighet, strid och insamling
 
-## Technical Experience
+## Teknisk Upplevelse
 
-### Device Compatibility
-**Works on Everything**:
-- Modern smartphones (Android/iOS, even 6-7 years old)
-- Laptops and desktops (Windows/Mac/Linux)
-- Tablets and other touch devices
+### Enhetskompatibilitet
+**Fungerar på Allt**:
+- Moderna smartphones (Android/iOS, även 6-7 år gamla)
+- Laptops och desktops (Windows/Mac/Linux)
+- Surfplattor och andra touch-enheter
 
-**Controls Adapt to Device**:
-- **Phone**: On-screen joystick (left thumb) + ability buttons (right side)
-- **Computer**: WASD movement + keyboard shortcuts for abilities
-- **Flexible**: Can use mouse, trackpad, or keyboard-only depending on setup
+**Kontroller Anpassar sig till Enhet**:
+- **Telefon**: On-screen joystick (vänster tumme) + förmåga-knappar (höger sida)
+- **Dator**: WASD-rörelse + tangentbordsgenvägar för förmågor
+- **Flexibel**: Kan använda mus, trackpad eller endast tangentbord beroende på installation
 
-### Performance Requirements
-- **Fast startup**: From QR code scan to playing in under 1 minute
-- **Smooth gameplay**: <100ms response time for movements
-- **Reliable**: Works even with spotty wifi, handles disconnections gracefully
-- **Scalable**: Supports 5 concurrent games (10 players) without issues
+### Prestandakrav
+- **Snabb uppstart**: Från QR-kod skanning till spelande under 1 minut
+- **Smidigt spelande**: <100ms svarstid för rörelser
+- **Tillförlitlig**: Fungerar även med fläckig wifi, hanterar urkopplingar graciellt
+- **Skalbar**: Stödjer 5 samtidiga spel (10 spelare) utan problem
 
-## Social and Spectator Experience
+## Social och Åskådarupplevelse
 
-### The "E-sports" Element
-- **Big screen drama**: Audience sees everything, players don't
-- **Natural commentary**: "He's right behind you!" "The key is over there!"
-- **Tension building**: Close races to the exit, last-second ability usage
-- **Quick turnaround**: Games end fast enough to keep audience engaged
+### "E-sport"-elementet
+- **Stor skärm drama**: Publiken ser allt, spelare gör det inte
+- **Naturlig kommentar**: "Han är precis bakom dig!" "Nyckeln är där borta!"
+- **Spänningsbyggande**: Täta lopp till utgången, sista sekunden förmågeanvändning
+- **Snabb omvändning**: Spel slutar snabbt nog för att hålla publiken engagerad
 
-### Educational Value
-- **Student showcase**: "This game was made by students in their 3rd year"
-- **Tech demonstration**: Shows web development, real-time networking, game design
-- **Conversation starter**: Gets students talking about programming and game development
-- **Accessibility**: No need to explain complex rules - everyone understands "find key, reach exit"
+### Utbildningsvärde
+- **Studentshowcase**: "Detta spel skapades av studenter i sitt 3:e år"
+- **Teknikdemonstration**: Visar webbutveckling, realtidsnätverkande, speldesign
+- **Samtalsstartare**: Får studenter att prata om programmering och spelutveckling
+- **Tillgänglighet**: Inget behov att förklara komplexa regler - alla förstår "hitta nyckel, nå utgång"
 
-## Game Flow and Timing
+## Spelflöde och Timing
 
-### Typical Game Session (3-5 minutes)
-1. **0-30 seconds**: Players join, brief instruction screen, countdown
-2. **30 seconds - 3 minutes**: Core gameplay - exploring, finding key, combat
-3. **3-5 minutes**: Endgame - key holder racing to exit, final confrontations
-4. **Optional**: Overtime assistance (compass to key) if game runs long
+### Typisk Spelsession (3-5 minuter)
+1. **0-30 sekunder**: Spelare ansluter, kort instruktionsskärm, nedräkning
+2. **30 sekunder - 3 minuter**: Kärnspelande - utforskning, hitta nyckel, strid
+3. **3-5 minuter**: Slutspel - nyckelinnehavare springer mot utgång, slutliga konfrontationer
+4. **Valfritt**: Övertidsassistans (kompass till nyckel) om spel körs länge
 
-### End Conditions
-- **Victory**: First player to exit with key wins
-- **Connection loss**: Game ends, both players return to start screen
-- **Time limit**: Soft limit with assistance, not hard cutoff
-- **Results**: Clear winner/loser screen, points display, optional high score entry
+### Slutvillkor
+- **Seger**: Första spelare att lämna med nyckel vinner
+- **Anslutningsförlust**: Spel slutar, båda spelare återgår till startskärm
+- **Tidsgräns**: Mjuk gräns med assistans, inte hård avklippning
+- **Resultat**: Tydlig vinnare/förlorare skärm, poängvisning, valfri high score-inmatning
 
-## Why This Design Works
+## Varför Denna Design Fungerar
 
-### For the University (Josef's Goals)
-- **Reliable**: No hardware setup, no driver issues, just open browser
-- **Portable**: Runs on one laptop, works anywhere with wifi
-- **Maintainable**: Web technology, easy updates, familiar to students
-- **Scalable**: Multiple games running simultaneously without problems
+### För Universitetet (Josefs Mål)
+- **Tillförlitlig**: Ingen hårdvaruinstallation, inga driverproblem, bara öppna webbläsare
+- **Portabel**: Körs på en laptop, fungerar var som helst med wifi
+- **Underhållbar**: Webbteknologi, enkla uppdateringar, bekant för studenter
+- **Skalbar**: Flera spel som körs samtidigt utan problem
 
-### For High School Students
-- **Instantly familiar**: Maze games are universally understood
-- **Social experience**: Fun to play with friends, fun to watch others
-- **Quick gratification**: Fast games, immediate feedback, clear winners
-- **Low barrier**: No app download, no account creation, just scan and play
+### För Gymnasiestudenter
+- **Omedelbart bekant**: Labyrintspel är universellt förstådda
+- **Social upplevelse**: Roligt att spela med vänner, roligt att titta på andra
+- **Snabb tillfredsställelse**: Snabba spel, omedelbar feedback, tydliga vinnare
+- **Låg barriär**: Ingen app-nedladdning, ingen kontoskapelse, bara skanna och spela
 
-### For the Audience
-- **Visual excitement**: Can see the whole game unfold on big screen
-- **Participation**: Natural urge to help and cheer for players
-- **Understanding**: Easy to follow what's happening, clear objectives
-- **Replayability**: Each game is different due to randomized elements
+### För Publiken
+- **Visuell spänning**: Kan se hela spelet utvecklas på stor skärm
+- **Deltagande**: Naturlig impuls att hjälpa och heja på spelare
+- **Förståelse**: Lätt att följa vad som händer, tydliga mål
+- **Reprisbarhet**: Varje spel är olika på grund av randomiserade element
 
-## Development Priorities
+## Utvecklingsprioriteringar
 
-### Must Have (Minimum Viable Product)
-1. Basic maze navigation with fog of war
-2. Key spawning and collection
-3. Exit activation with key
-4. Simple stun ability
-5. Spectator view on separate screen
-6. Win/lose conditions
+### Måste Ha (Minimum Viable Product)
+1. Grundläggande labyrintnavigering med dimma av krig
+2. Nyckelspawning och insamling
+3. Utgångsaktivering med nyckel
+4. Enkel stun-förmåga
+5. Åskådarvy på separat skärm
+6. Vinst/förlust-villkor
 
-### Should Have (Enhanced Experience)
-1. Multiple ability types
-2. Visual effects for abilities
-3. Bonus point collection
-4. High score system
-5. Mobile-optimized controls
+### Bör Ha (Förbättrad Upplevelse)
+1. Flera förmågetyper
+2. Visuella effekter för förmågor
+3. Bonuspoänginsamling
+4. High score-system
+5. Mobiloptimerade kontroller
 
-### Could Have (Nice Additions)
-1. Multiple maze layouts
-2. Daily word collection quest
-3. Animated character sprites
-4. Sound effects (where appropriate)
-5. Advanced power-ups
+### Kunde Ha (Fina Tillägg)
+1. Flera labyrintlayouter
+2. Daglig ordsamlingsuppdrag
+3. Animerade karaktärsprites
+4. Ljudeffekter (där lämpligt)
+5. Avancerade power-ups
 
-This vision gives us a clear target: create a simple, reliable, engaging multiplayer experience that works perfectly for its intended purpose - getting high school students excited about computer science through hands-on play!
+Denna vision ger oss ett tydligt mål: skapa en enkel, tillförlitlig, engagerande multiplayer-upplevelse som fungerar perfekt för sitt avsedda syfte - att få gymnasiestudenter entusiastiska över datavetenskap genom hands-on spel!

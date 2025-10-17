@@ -1,53 +1,53 @@
-# 2.2 Functional Requirements
+# 2.2 Funktionella Krav
 
-## Core Game Mechanics (Must Have)
-- **FR001**: Two players compete simultaneously in the same maze instance
-- **FR002**: Players must find a randomly-placed key before accessing the exit
-- **FR003**: First player to reach exit with key wins the game
-- **FR004**: Real-time position synchronization between players (<100ms latency)
-- **FR005**: QR code access - players scan code to join game within 1 minute maximum
+## Grundläggande Spelmekanik (Måste Ha)
+- **FK001**: Två spelare tävlar samtidigt i samma labyrintinstans
+- **FK002**: Spelare måste hitta en slumpmässigt placerad nyckel innan de kan nå utgången
+- **FK003**: Första spelaren som når utgången med nyckeln vinner spelet
+- **FK004**: Realtidssynkronisering av spelarpositioner (<100ms latens)
+- **FK005**: QR-kodåtkomst - spelare skannar kod för att gå med i spel inom max 1 minut
 
-## Ability System (Should Have - Nice to Have, Not Essential for MVP)
-- **FR006**: Sleep potion - freezes opponent for 2 seconds and forces key drop
-- **FR007**: Confusion ray - reverses opponent's joystick controls (left becomes right)
-- **FR008**: Strategic traps - can be placed at exit or key locations
-- **FR009**: Stunning projectiles - visible projectiles that can be fired at opponents
-- **FR010**: Mixed activation system - power-ups auto-activate on pickup, strategic items use manual buttons
-- **FR011**: Three ability buttons on mobile (right side), keyboard keys (JKL) on desktop
-- **FR012**: Limited inventory - maximum 3 different ability types, refill after use or collect from maze
+## Förmågesystem (Bör Ha - Trevligt att Ha, Inte Nödvändigt för MVP)
+- **FK006**: Sömnelixir - fryser motståndaren i 2 sekunder och tvingar dem att tappa nyckeln
+- **FK007**: Förvirrningsstråle - vänder på motståndarens joystickkontroller (vänster blir höger)
+- **FK008**: Strategiska fällor - kan placeras vid utgång eller nyckelplatser
+- **FK009**: Bedövande projektiler - synliga projektiler som kan avfyras mot motståndare
+- **FK010**: Blandat aktiveringssystem - power-ups aktiveras automatiskt vid upplockning, strategiska föremål använder manuella knappar
+- **FK011**: Tre förmågeknappar på mobil (höger sida), tangentbordstangenter (JKL) på dator
+- **FK012**: Begränsat inventory - max 3 olika förmågetyper, påfylls efter användning eller samlas i labyrinten
 
-## Game Content (Must Have)
-- **FR013**: Single maze layout with fixed wall structure for consistency
-- **FR014**: Map randomization - randomize key placement, exit location, and power-up positions each game
-- **FR015**: Limited viewport per player (fog of war effect)
-- **FR016**: Visual feedback for all player actions and ability usage
-- **FR017**: Automatic game termination after win condition or player disconnect
+## Spelinnehåll (Måste Ha)
+- **FK013**: En enda labyrintlayout med fast väggstruktur för konsekvens
+- **FK014**: Slumpmässig kartgenerering - slumpa nyckelplacering, utgångsposition och power-up positioner varje spel
+- **FK015**: Begränsad viewport per spelare (dimma av krig-effekt)
+- **FK016**: Visuell feedback för alla spelaraktioner och förmågeanvändning
+- **FK017**: Automatisk spelavslutning efter vinst eller spelarurkoppling
 
-## Scoring and Side Challenges (Should Have)
-- **FR018**: Point collection items (apples/coins) scattered throughout maze for high score
-- **FR019**: Letter collection side challenge - collect letters to spell secret word for bonus prizes
-- **FR020**: Time-based scoring - faster completion yields higher scores
-- **FR021**: High score leaderboard with top 10 entries and initials (pinball-style)
-- **FR022**: Bonus point system for completing side challenges while still winning main game
+## Poängsättning och Sidoutmaningar (Bör Ha)
+- **FK018**: Poängsamlingsobjekt (äpplen/mynt) utspridda i labyrinten för high score
+- **FK019**: Bokstavssamlingsutmaning - samla bokstäver för att stava hemligt ord för bonuspriser
+- **FK020**: Tidsbaserad poängsättning - snabbare genomförande ger högre poäng
+- **FK021**: High score-topplista med topp 10-poster och initialer (flipperspelsstil)
+- **FK022**: Bonuspoängsystem för att slutföra sidoutmaningar samtidigt som man vinner huvudspelet
 
-## Multiplayer Support (Must Have)  
-- **FR023**: Support 5 concurrent game sessions (10 total players)
-- **FR024**: Automatic matchmaking - first available player pairs with next joining player
-- **FR025**: Spectator view displays full maze and both player positions on separate screen
-- **FR026**: Teacher can switch between different active game sessions on spectator display
+## Flerspelarstöd (Måste Ha)  
+- **FK023**: Stöd för 5 samtidiga spelsessioner (10 spelare totalt)
+- **FK024**: Automatisk matchmaking - första tillgängliga spelare paras ihop med nästa anslutande spelare
+- **FK025**: Åskådarvy visar hela labyrinten och båda spelarnas positioner på separat skärm
+- **FK026**: Lärare kan växla mellan olika aktiva spelsessioner på åskådardisplay
 
-## User Interface (Must Have)
-- **FR027**: Controls adapt to device type (touch joystick vs keyboard)
-- **FR028**: Clear visual distinction between player avatars with direction indicators
-- **FR029**: Game status display (timer, abilities, score, inventory)
-- **FR030**: 8-directional movement support (not just 4-directional)
-- **FR031**: Mobile controls - left thumb joystick, right thumb ability buttons
-- **FR032**: Desktop controls - WASD movement, JKL ability activation
-- **FR033**: Compass help system - after 5 minutes, show direction to key or opponent
-- **FR034**: Viewport fairness - same viewport size regardless of device screen size for equal gameplay
+## Användargränssnitt (Måste Ha)
+- **FK027**: Kontroller anpassas till enhetstyp (touchjoystick vs tangentbord)
+- **FK028**: Tydlig visuell distinktion mellan spelaravatarer med riktningsindikatorer
+- **FK029**: Spelstatusvisning (timer, förmågor, poäng, inventory)
+- **FK030**: 8-riktningsrörelse (inte bara 4-riktningar)
+- **FK031**: Mobilkontroller - vänster tumme joystick, höger tumme förmågeknappar
+- **FK032**: Skrivbordskontroller - WASD-rörelse, JKL-förmågeaktivering
+- **FK033**: Kompasshjälpsystem - efter 5 minuter, visa riktning till nyckel eller motståndare
+- **FK034**: Viewport-rättvisa - samma viewport-storlek oavsett enhetsskärmstorlek för rättvist spel
 
-## Optional Features (Should Have)
-- **FR035**: Speed boost power-up (auto-activates on pickup)
-- **FR036**: Enhanced vision power-up (expanded view radius)
-- **FR037**: Post-game results screen with winner announcement, final score, and time
-- **FR038**: Flexible time limits - 90% finish within 5 minutes, allow 7-8 minutes for remaining 10%
+## Valfria Funktioner (Bör Ha)
+- **FK035**: Hastighetsökning power-up (aktiveras automatiskt vid upplockning)
+- **FK036**: Förbättrad syn power-up (utökad vyradie)
+- **FK037**: Resultatskärm efter spel med vinnardeklaration, slutpoäng och tid
+- **FK038**: Flexibla tidsgränser - 90% slutför inom 5 minuter, tillåt 7-8 minuter för återstående 10%

@@ -1,85 +1,85 @@
-# MazeRunner Project Documentation
+# MazeRunner Projektdokumentation
 
-## 🎯 Project Overview
+## 🎯 Projektöversikt
 
-MazeRunner is a real-time multiplayer maze game designed for university open house events at Luleå University of Technology (LTU). The game serves as an interactive demonstration tool that engages high school students while showcasing modern web development capabilities.
+MazeRunner är ett realtid multiplayer labyrintspel designat för universitets öppet hus-evenemang på Luleå Tekniska Universitet (LTU). Spelet tjänar som ett interaktivt demonstrationsverktyg som engagerar gymnasiestudenter samtidigt som det visar upp moderna webbutvecklingskapaciteter.
 
-### Key Features
-- **Real-time multiplayer**: Two players compete simultaneously
-- **Cross-platform**: Works on smartphones, tablets, and desktop browsers
-- **Spectator mode**: Large screen display for audience engagement
-- **Quick setup**: Under 2 minutes from startup to playable state
-- **No installation**: Browser-based, no app downloads required
+### Nyckelfunktioner
+- **Realtid multiplayer**: Två spelare tävlar samtidigt
+- **Plattformsoberoende**: Fungerar på smartphones, surfplattor och desktop-webbläsare
+- **Åskådarläge**: Stor skärmdisplay för publikengagemang
+- **Snabb installation**: Under 2 minuter från uppstart till spelbart tillstånd
+- **Ingen installation**: Webbläsarbaserad, inga app-nedladdningar krävs
 
-## 🛠 Technology Stack
+## 🛠 Teknisk Stack
 
-- **Frontend**: React with TypeScript
-- **Backend**: C# with ASP.NET Core
-- **Real-time Communication**: SignalR (WebSocket)
-- **Database**: SQLite for high scores
-- **Deployment**: Single server on laptop
+- **Frontend**: React med TypeScript
+- **Backend**: C# med ASP.NET Core
+- **Realtidskommunikation**: SignalR (WebSocket)
+- **Databas**: SQLite för high scores
+- **Distribution**: Enkel server på laptop
 
-## 📚 Documentation Structure
+## 📚 Dokumentationsstruktur
 
-### 📋 Core Documentation
-- **[1. Introduction](docs/1-introduction.md)** - Project background and objectives
-- **[2. Requirements Specification](docs/2-requirements-specification.md)** - System requirements and use cases  
-- **[3. System Design](docs/3-system-design.md)** - Technical architecture and design
-- **[4. Project Execution](docs/4-project-execution.md)** - Project management and timeline
+### 📋 Kärndokumentation
+- **[1. Introduktion](docs/1-introduction.md)** - Projektbakgrund och mål
+- **[2. Kravspecifikation](docs/2-requirements-specification.md)** - Systemkrav och användningsfall  
+- **[3. Systemdesign](docs/3-system-design.md)** - Teknisk arkitektur och design
+- **[4. Projektutförande](docs/4-project-execution.md)** - Projekthantering och tidslinje
 
-### 📖 Supporting Documents
-- **[Game Vision](game-vision.md)** - Complete game design overview
-- **[Expert Interview](questions.md)** - Stakeholder Q&A with answers
+### 📖 Stödjande Dokument
+- **[Spelvision](game-vision.md)** - Komplett speldesignöversikt
+- **[Expertintervju](questions.md)** - Intressent frågor och svar
 
-### 🗂 Detailed Modules
-Each main document links to focused sub-modules:
-- **Introduction**: Background, objectives, scope, context, constraints
-- **Requirements**: Stakeholders, functional/non-functional requirements, use cases
-- **Design**: Architecture, classes, behavior, UI, data, security
-- **Execution**: Team structure, timeline, risks, quality assurance
+### 🗂 Detaljerade Moduler
+Varje huvuddokument länkar till fokuserade undermoduler:
+- **Introduktion**: Bakgrund, mål, omfattning, kontext, begränsningar
+- **Krav**: Intressenter, funktionella/icke-funktionella krav, användningsfall
+- **Design**: Arkitektur, klasser, beteende, UI, data, säkerhet
+- **Utförande**: Teamstruktur, tidslinje, risker, kvalitetssäkring
 
-## 🚀 Quick Start
+## 🚀 Snabbstart
 
-### For Reviewers
-1. Start with [Game Vision](game-vision.md) for complete understanding
-2. Review [Introduction](docs/1-introduction.md) for project context
-3. Examine [Requirements](docs/2-requirements-specification.md) for detailed specifications
-4. Study [System Design](docs/3-system-design.md) for technical architecture
+### För Granskare
+1. Börja med [Spelvision](game-vision.md) för fullständig förståelse
+2. Granska [Introduktion](docs/1-introduction.md) för projektkontext
+3. Undersök [Krav](docs/2-requirements-specification.md) för detaljerade specifikationer
+4. Studera [Systemdesign](docs/3-system-design.md) för teknisk arkitektur
 
-### For Developers
-1. Review [System Architecture](docs/design/architecture.md) for technical overview
-2. Study [Class Structure](docs/design/classes.md) for implementation details
-3. Check [UI Design](docs/design/ui-design.md) for interface specifications
-4. Examine [Data Management](docs/design/data.md) for database schema
+### För Utvecklare
+1. Granska [Systemarkitektur](docs/design/architecture.md) för teknisk översikt
+2. Studera [Klassstruktur](docs/design/classes.md) för implementeringsdetaljer
+3. Kontrollera [UI-design](docs/design/ui-design.md) för gränssnittsspecifikationer
+4. Undersök [Datahantering](docs/design/data.md) för databasschema
 
-### For Project Managers
-1. Review [Project Timeline](docs/execution/timeline.md) for scheduling
-2. Study [Risk Management](docs/execution/risk-management.md) for potential issues
-3. Check [Resource Requirements](docs/execution/resources.md) for planning
-4. Examine [Quality Assurance](docs/execution/quality-assurance.md) for standards
+### För Projektledare
+1. Granska [Projekttidslinje](docs/execution/timeline.md) för schemaläggning
+2. Studera [Riskhantering](docs/execution/risk-management.md) för potentiella problem
+3. Kontrollera [Resurskrav](docs/execution/resources.md) för planering
+4. Undersök [Kvalitetssäkring](docs/execution/quality-assurance.md) för standarder
 
-## 👥 Team Information
+## 👥 Teaminformation
 
-- **Team Size**: 2 members
-- **Project Duration**: 8 hours documentation phase
-- **Methodology**: Collaborative approach with shared responsibilities
-- **Stakeholder**: Josef Hallberg (LTU Computer Science Department)
+- **Teamstorlek**: 2 medlemmar
+- **Projektvaraktighet**: 8 timmars dokumentationsfas
+- **Metodik**: Kollaborativ ansats med delade ansvarsområden
+- **Intressent**: Josef Hallberg (LTU Datavetenskap Avdelning)
 
-### Working Approach
-- **Collaborative Development**: Both members work together on all project aspects without hierarchy
-- **Shared Responsibilities**: Joint work on requirements analysis, system design, and quality assurance
-- **Peer Review**: Continuous collaboration with mutual review of all deliverables
-- **Equal Contribution**: Both members contribute equally to all documentation areas
+### Arbetsansats
+- **Kollaborativ Utveckling**: Båda medlemmar arbetar tillsammans på alla projektaspekter utan hierarki
+- **Delade Ansvarsområden**: Gemensamt arbete med kravanalys, systemdesign och kvalitetssäkring
+- **Kamratgranskning**: Kontinuerlig samarbete med ömsesidig granskning av alla leverabler
+- **Jämn Bidrag**: Båda medlemmar bidrar lika till alla dokumentationsområden
 
-## 📄 License
+## 📄 Licens
 
-This project is developed as part of a university course at Luleå University of Technology (LTU).
+Detta projekt utvecklas som en del av en universitetskurs på Luleå Tekniska Universitet (LTU).
 
 ---
 
-**Last Updated**: October 2025  
-**Course**: Software Engineering  
-**Institution**: Luleå University of Technology
+**Senast Uppdaterad**: Oktober 2025  
+**Kurs**: Mjukvaruteknik  
+**Institution**: Luleå Tekniska Universitet
 
-## Laboratory Objective
-To demonstrate understanding of software design principles by creating a well-structured, documented, and tested system.
+## Laboratoriemål
+Att demonstrera förståelse av mjukvarudesignprinciper genom att skapa ett välstrukturerat, dokumenterat och testat system.
