@@ -1,6 +1,57 @@
-# 2.5 Systembegränsningar och Antaganden
+# 2.5 Interfacespecifikation och Storyboards
 
-## Tekniska Begränsningar
+## Gränssnittsöversikt
+
+MazeRunner har tre primära användargränssnitt:
+1. **Spelargränssnitt** (Mobil/Desktop)
+2. **Åskådargränssnitt** (Stor Skärm)
+3. **Administrationsgränssnitt** (Organisatör)
+
+För detaljerad UI-design, se [Användargränssnittsdesign](../design/ui-design.md).
+
+## Spelargränssnitt (Mobilt)
+
+### Layout och Komponenter
+- **Spelområde**: 70% av skärmen - visar begränsad labyrintvy
+- **Kontrollerzon (Vänster)**: Virtual joystick för 8-riktningsrörelse
+- **Förmågezon (Höger)**: 3 förmåga-knappar vertikalt arrangerade
+- **Statusfält (Topp)**: Timer, poäng, mini-inventory
+
+### Kontrollspecifikation
+- **Joystick**: Position nedre vänstra hörnet, 120x120px, 8-riktningsrörelse
+- **Förmågeknappar**: Position nedre högra hörnet, 60x60px vardera, vertikal stack
+- **Desktop**: WASD-rörelse, JKL-förmågeaktivering
+
+## Storyboard: Spelarupplevelelse
+
+```
+[Panel 1: Anslutning]
+Spelare skannar QR-kod på smartphone
+↓
+[Panel 2: Väntar]
+Väntskärm visas, väntar på motståndare
+↓
+[Panel 3: Start]
+3-2-1 nedräkning, spel börjar
+↓
+[Panel 4: Spel]
+Navigera labyrint, samla föremål, använd förmågor
+↓
+[Panel 5: Vinst]
+Vinnarskärm, poäng, eventuellt ange initialer
+```
+
+## Åskådargränssnitt
+
+### Layout
+- **Huvudvy**: Full labyrint med båda spelares positioner
+- **Spelare 1 Info**: Vänster sidopanel (namn, poäng, status)
+- **Spelare 2 Info**: Höger sidopanel (namn, poäng, status)
+- **Sessionväljare**: Nedre delen - lista över aktiva spel
+
+## Systembegränsningar och Antaganden
+
+### Tekniska Begränsningar
 - **Enkel serverbegränsning**: All spellogik körs på en laptop, ingen distribuerad arkitektur
 - **Endast webbteknologi**: React-frontend med C#-backend, inga inhemska mobilappar eller spelmotorer
 - **Nätverksberoende**: Kräver stabil wifi-anslutning för realtidsspelande

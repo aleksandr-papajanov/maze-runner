@@ -1,4 +1,8 @@
-# 2.6 Acceptanskriterier
+# 2.4 Användarkrav
+
+## Användarkrav och Acceptanskriterier
+
+Detta dokument beskriver användarkrav ur slutanvändarnas perspektiv samt acceptanskriterier för projektets framgång.
 
 ## Definition av Klart
 För att projektet ska anses vara komplett måste följande kriterier uppfyllas:

@@ -1,4 +1,21 @@
-# 2.3 Icke-Funktionella Krav
+# 2.3 System och Icke-Funktionella Krav
+
+## Systemkrav
+
+### Tekniska Arkitekturkrav
+- **SK001**: Klient-server-arkitektur med centraliserad speltillståndshantering
+- **SK002**: WebSocket-kommunikation för realtidsuppdateringar
+- **SK003**: React-frontend med C#-backend-implementering
+- **SK004**: Enkel serverdistribution på standard laptop-hårdvara
+- **SK005**: Minimala externa beroenden (undvik Unity, komplexa spelmotorer)
+
+### Systembegränsningar
+- **Enkel serverbegränsning**: All spellogik körs på en laptop
+- **Endast webbteknologi**: React-frontend med C#-backend, inga inhemska mobilappar
+- **Nätverksberoende**: Kräver stabil wifi-anslutning för realtidsspelande
+- **Webbläsarkompatibilitet**: Måste fungera på äldre enheter (6+ år gamla)
+
+## Icke-Funktionella Krav
 
 ## Prestandakrav
 - **IFK001**: Speluppsättningstid <2 minuter från laptopuppstart till spelbart tillstånd

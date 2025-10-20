@@ -1,4 +1,6 @@
-# 3.1 Systemarkitektur
+# 3.1.2 Moduldiagram
+
+Statisk design - Compile-time systemarkitektur och moduler.
 
 ## Övergripande Arkitektur
 MazeRunner-systemet följer en klient-server arkitektur med centraliserad speltillståndshantering. All spellogik körs på en enda server för att säkerställa synkronisering och förhindra desync-problemen som upplevdes i tidigare projekt.

@@ -1,12 +1,11 @@
 # 2. Kravspecifikation
 
 ## Innehållsförteckning
-- [2.1 Intressenter och Användare](requirements/stakeholders.md)
-- [2.2 Funktionella Krav](requirements/functional.md)
-- [2.3 Icke-Funktionella Krav](requirements/non-functional.md)
-- [2.4 Användningsfall](requirements/use-cases.md)
-- [2.5 Systembegränsningar](requirements/constraints.md)
-- [2.6 Acceptanskriterier](requirements/acceptance.md)
+- [2.1 Användarkarakteristik - Aktörer](requirements/stakeholders.md)
+- [2.2 Användarfall och Funktionella Krav](requirements/use-cases.md)
+- [2.3 System och Icke-Funktionella Krav](requirements/non-functional.md)
+- [2.4 Användarkrav](requirements/acceptance.md)
+- [2.5 Interfacespecifikation och Storyboards](requirements/constraints.md)
 
 ## Översikt
 

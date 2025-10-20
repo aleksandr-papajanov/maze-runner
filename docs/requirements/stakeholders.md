@@ -1,9 +1,22 @@
-# 2.1 Intressenter och Användare
+# 2.1 Användarkarakteristik - Aktörer
 
-## Primära Användare
-- **Spelare**: Gymnasiestudenter (16-25 år), grundläggande webbexpertis, 3-5 minuters uppmärksamhetsspann
-- **Eventorganisatör**: Universitetspersonal (Josef Hallberg), demonstrerar systemtillförlitlighet och visar upp studentarbete
-- **Åskådare**: Öppet hus-deltagare, varierande teknisk bakgrund, tycker om att titta på konkurrenskraftigt spelande
+## Primära Aktörer och Användare
+
+### Spelare (Gymnasiestudenter)
+- **Ålder**: 16-25 år
+- **Teknisk kompetens**: Grundläggande webbexpertis
+- **Uppmärksamhetsspann**: 3-5 minuters engagemangfönster
+- **Beteende**: Digitala infödingar, bekanta med smartphone-spel och webbsurfning
+
+### Eventorganisatör (Universitetspersonal)
+- **Roll**: Josef Hallberg
+- **Ansvar**: Demonstrerar systemtillförlitlighet och visar upp studentarbete
+- **Behov**: Pålitligt system som är enkelt att sätta upp
+
+### Åskådare (Öppet Hus-Deltagare)
+- **Sammansättning**: Varierande teknisk bakgrund
+- **Beteende**: Tycker om att titta på konkurrenskraftigt spelande
+- **Interaktion**: Kan ge råd och uppmuntran till spelare
 
 ## Användaregenskaper
 - **Digitala infödingar**: Bekanta med smartphone-spel och webbsurfning

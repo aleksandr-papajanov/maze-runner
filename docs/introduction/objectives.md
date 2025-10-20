@@ -1,4 +1,21 @@
-# 1.2 Projektmål
+# 1.2 Uppgift
+
+Övergripande beskrivning av projektuppgift, kopplat till bakgrunden och motivation av uppgiften.
+
+## Projektuppgift
+
+MazeRunner-projektet adresserar behovet av ett tillförlitligt, engagerande demonstrationsverktyg som visar upp studentprogrammeringsarbete samtidigt som det tjänar som "isbrytare" för att få gymnasiestudenter intresserade av datavetenskap vid LTU:s öppet hus-evenemang.
+
+## Motivation
+
+Det nuvarande hårdvarubaserade demonstrationssystemet (haptisk teknologi) har visat sig opålitligt på grund av komplexa installationskrav, driverkompabilitetsproblem och frekventa tekniska fel. Huvudproblem med det tidigare systemet inkluderar:
+
+- **Komplex hårdvaruinstallation**: Krävde specialiserad hårdvara och driverinstallationer
+- **Tillförlitlighetsproblem**: Gick ofta sönder med operativsystemuppdateringar
+- **Installationstid**: Tog betydande tid att konfigurera och felsöka
+- **Underhållsbörda**: Krävde konstant teknisk support och uppdateringar
+
+MazeRunner förkroppsligar en "fungerar alltid"-filosofi, prioriterar tillförlitlighet och enkelhet över teknisk komplexitet.
 
 ## Primära Mål
 - **Engagemang**: Skapa en underhållande 5-minuters multiplayer-upplevelse som lockar gymnasiestudenter

@@ -1,4 +1,6 @@
-# 3.2 Statisk Design (Klassstruktur)
+# 3.1.1 Klassdiagram
+
+Statisk design - Compile-time klassstruktur.
 
 ## Kärnklasser
 

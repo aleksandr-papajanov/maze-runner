@@ -1,8 +1,17 @@
-# 1.1 Bakgrund och Kontext
+# 1.1 Bakgrund
 
-MazeRunner är ett webbaserat multiplayer labyrintspel designat för universitets öppet hus-demonstrationer på Luleå Tekniska Universitet (LTU). Projektet adresserar behovet av ett tillförlitligt, engagerande demonstrationsverktyg som visar upp studentprogrammeringsarbete samtidigt som det tjänar som "isbrytare" för att få gymnasiestudenter intresserade av datavetenskap.
+Kort övergripande beskrivning av teknikområdet och tekniker som används i projektet.
 
-## Motivation för Utveckling
+## Teknikområde
+
+MazeRunner är ett webbaserat multiplayer labyrintspel designat för universitets öppet hus-demonstrationer på Luleå Tekniska Universitet (LTU). Projektet använder moderna webbteknologier för att skapa en interaktiv spelupplevelse:
+
+- **Frontend-teknologi**: React med TypeScript för responsivt användargränssnitt
+- **Backend-teknologi**: C# med ASP.NET Core för spelserver och logik
+- **Realtidskommunikation**: SignalR/WebSocket för multiplayer-synkronisering
+- **Datalagring**: SQLite för high scores och sessionsdata
+
+## Teknisk Kontext
 
 Det nuvarande hårdvarubaserade demonstrationssystemet (haptisk teknologi) har visat sig opålitligt på grund av komplexa installationskrav, driverkompabilitetsproblem och frekventa tekniska fel. Huvudproblem med det tidigare systemet inkluderar:
 

@@ -1,43 +1,27 @@
-# 3.3 Dynamisk Design (Runtime-beteende)
+# 3.2 Dynamisk Design (Runtime-beteende)
 
-## Nyckel Beteendemönster
+Dynamisk design - Run-time beteende, interaktioner och tillståndsövergångar.
 
-### Spelsession Livscykel
-```
-Väntar → Aktiv → Pausad → Avslutad → Upprensning
-```
+## 3.2.1 Aktivitetsdiagram
 
-### Spelaranslutningsstatus  
-```
-Ansluter → Redo → Spelar → Urkopplad
-```
+### Förmågeanvändning och Stridsflöde
 
-### Föremålsanvändningsflöde
-```
-Tillgänglig → Samlad → Aktiverad → Effekt Tillämpad → Cooldown → Tillgänglig
-```
+Aktivitetsdiagram som fokuserar på förmågessystemet: insamling, aktivering (auto vs manuell), cooldown-hantering och strategisk användning.
 
-*[PLACEHOLDER: Aktivitetsdiagram som visar komplett spelsessionsflöde från spelaranslutning till spelslutförande]*
+![Aktivitetsdiagram](https://www.plantuml.com/plantuml/png/lLPBRjim4DqRy1qcwSPUTDcDZBG9qa_wCuee2T0b7L4o8ueIo95Re-Xjd2la0hfOXwAilvsikh0jayFvlFTcg7E3J6EUoEcaV9fEfXFFpxW45gFOuC8kPBGXKAGAJfVR-vZBrwPuYfLGqIdycKu0DCyuG_i4uDrYc6eJCv1ijTL2MHzsmtsB46RE2PYjaY9wDmTSSmMp1pPt9kJZkdZIO4G4IOgWIlF5VdF_QprzJz5WyQW2fZceOgSJviwvCsE-6mS0b6ZS_AEu7rEDfjWXZWLs5fIPhHuocTvJaNcMGMZNSD7r2onYGdNENgXDiLD1QPyKZn63h7YqaUeQkh6kX0eqWu0d46go04Q9AJeoI8nRhvrYza-q8y8-TDwF9lcUhrT4oHeZpRdohYwkOVdpykk7RoSzzBaq76QAFypRRDo80Dx26qY4of7hSVIzhscICMESmBXcGQiEp-UWHOnMMu12odvwhN9QZuq6uTTQI4fjIV2INjSaXreAmknJ_jjJjIzpD5Rq2Gyg-qhPzjC0wvsTdJdn2gNuccs8CbeQ2Dn7pP17eaRWlT0yHbTHZX5n6JLYzpDjoxMAg_RgShrR5Mn4FAwH3lIws8KX2u1j6daT8A1gFsGPyN3IHl-6ybin4aOB-hhN6mu6v5kd9Cj-zgIcZ4dkn7JtUUdVjACPJBCZAdLHV9P8HhHeo5BgdQZgjHPufS4gLRbn5elUrfed96bh4XE4ErBS043lMfZOWyumCHGo48h2cb8aHr5_2T37uJkYWMfcDlW2JQYOQnoFEWIzL3N_JPgiG3pfZ9as3pqc3dTRVyBPpkZWDykHgKf2ynVro2MZkG0RcY633lb4nRTxf-7uZkf1DqTLhp4R8pkpLrpprkGTfRFVskqRvG35-v7kOwx0NwVjMw1BeDFA8SuEQANSEZoiQt18g694ECSRS43zY33hp5geX7AhoLXIXspiibuyBvzkLtyXvGpuQkZUWnfNDuLbhRuM6bf7lOmJIpoIQUh6nxC3Sa1gLQtLqKPeswd68Dt8yl-pVNHGFDkypNj2UGKw_gUJSrgdTy1_)
 
-*[PLACEHOLDER: Sekvensdiagram som visar realtid spelarrörelsessynkronisering mellan klienter och server]*
+## 3.2.2 Sekvensdiagram
 
-*[PLACEHOLDER: Tillståndsdiagram som visar spelsessionsstatus och övergångar]*
+### Spelflöde
 
-## Kritiska Interaktioner
+Sekvensdiagram som visar flödet i multiplayer-spelet MazeRunner: sessionsskapande, spelartillträde, kontroll av beredskap, spelstart, spelhandlingar och spelavslut. Visar kommunikation mellan Spelare, Frontend, REST API, WebSocket, GameController, Databas och Admin.
 
-### Realtid Rörelsesynkronisering
-1. Spelarinmatning upptäckt i React-komponent
-2. Rörelsebegäran skickad till C# server via SignalR
-3. Server validerar rörelse mot labyrintgränser och spelregler
-4. Server uppdaterar spelarposition i speltillstånd
-5. Server sänder positionsuppdatering till alla klienter i session via SignalR
-6. React-komponenter renderar uppdaterade positioner smidigt
+![Sekvensdiagram](https://www.plantuml.com/plantuml/png/dLPBRnCn4Bv7odyOzG09QbhnF4IYQaX3AE8HTOjoG1oSNIThkcj7jjDI8VuxCxRtlGL43ctMyyrulcyUctDZcRQ7F1iE7iDh_C0AdqKizanQuqw6Wtrr14UhZDrp_VN9joDW1lnJ2_9MAscvJ1oYU6XXrdmJgVY6MnX5OYTPTZLsy7NK0bujeckOhIwTbHvQzYNBESpn3gsoZ6i7MyvRe0jcsOOPxgmNRrhMMP8BwKpkst1GYP6Y4poTmWUrsTp3ey0NtYiXXTm5VSBXvAmaEmMdA-Ks6Wy7nJ51YC8KLf-HrQdXnWWbpUbtZ3THUX9hpYmV3bXcuPC2jUSI0WZu3s6i6Gu0FquK3BQSJy7xH1v5jn5WEIVpnHjCXDssZTvxSbRFLtDxq18aloiklCIIyGpfVwvdiLK7gkLVmhXSIQ1wBF9hQh6EC7qb9O_jg4IEknYIfm5OHmLxpNTu5TU-1WsGru10XtrIIUIHfe8UmzuTDLnkMIR8wQCe7SQTndWs1RIB_90NZJ5FUNo3VJBRg8EzLX5r0VW63ytYIsk1ItNOfR1dGfjwpOZlHYkMnCpO49RQZGVLYNfJSy_ETMYp_AwRfo2L5TlxIsaEsotsF9TsHPSMM4h88R6sEkR6jwwtqSVRWYnLMzULBg1z3EfALCWk2vEgkp3DmW0ZBx3ANtXoSdBaVLr3-emIXRaYjnJxh0gC1noqsAKMrBPGOCs4wqOa2BdIF1GywEuQqmLUX9hKhV_6wN_uX85eTDJpQTb9Icw5pfcb1L4jOfXbMP4WpGvXS0XOWXrYGifz-oX0NSf5vTjZvlt2nVL-yxNFcRvfGIXIeD4T7Soq0UnJSexhn2RgJlgPxafO0YY2AwwwHMxhw9YkAgrWHOx7evUuSP1gOhh3-c8AhXf-9hsWpJL9vbAWYW-BhRX5FiKsx-DHkf9iNIOQ_t9T16WbzZ8ajj8AnwzUwr18IW2ReBze1hzxtCp1HXuzRbTlxwC7KEzh8f2ml6ckDkW3W8OK9UQBSncD_xos_d1dJBkKx6znnveKcwY-S_gcvrLGSe7oLDlM7Mr3Z3xU69zbV-Fbmc3WX_Tm8WmDfe-6RsNkVacqQ-RV_yj5_VN_KoI_JbDSMYR6xTJpZjzn-mxDaJDtYxVbDawxWBuNDCrK56u94fxZV_m5-1i0)
 
-### Förmågeanvändningssekvens  
-1. Spelare aktiverar förmåga via React UI-knapp
-2. Klient skickar förmågebegäran med mål/riktning till C# server
-3. Server validerar förmågotillgänglighet och cooldown-status
-4. Server bearbetar förmågeeffekt (t.ex. bedova motståndare, tappa nyckel)
-5. Server uppdaterar berörda spelares tillstånd
-6. Server sänder förmågeanimation och effekter via SignalR
-7. React-komponenter visar visuell feedback och uppdaterar UI i enlighet
+## 3.2.3 Tillståndsdiagram
+
+### Förmågetillstånd med Cooldown
+
+Tillståndsdiagram som visar en förmågas tillståndscykel från tillgänglig till cooldown och tillbaka.
+
+![Tillståndsdiagram](https://www.plantuml.com/plantuml/png/ZLR9Rjim4Bq7o3_CqIbWP2boqQ58uZPj3bq0j-cXw86MHZOHYYH4oe5wwZ_q3_ibdQ6eNG5w4pcFZsyMFll6UL7wgb2d9wSdFrxzXFNw3NmoVcEKmjHZ1Wcy5mL2m676i4aOjIzhE8SlIgIq8JKKuXS2p82P8TIZT7Ad40p3x4kexq9wgVVW3UmGh4oVA5RDuQnsU9Wqr5YIMBGEp94-WHKloRtDCgQN-aWxXhPWY6FYsygRszJBesXEydejcWr9-drj4LPRYnJT6UFysGB7KKWbEE44jhuafhrCGUoaahvkn4slwGHQgsh0F2Ssa4M1cII42gUcPqBHjWVptEA5baMZSeOEidY5xnfiaraKCmu4thYIEbSLwXGTsARCi8p_AWiAbfLsiBfsa1jgoAH8esCiY4SlQMz2dRaePr2-jYuXJPgoRmyW78WE0MDuDqT1G5GijQty8lAkyfwgTOpZANG6eTKJtgvu8indDt6sHEUeChk6fgzbYslLFmebC-e3L4xiiQj52mjQxcM9mncP8pP2fPLYceFqvuLqRe8BEdc0kjPya7u1ip56PUPP4-0Ziz3OvPxogHp694OauVBHO5AonbgZARz0FuVJYw-4WfmcO2VIfocALNoE35jVQHq6ch-uqpFI8NnZT4v26TzyyhpVeIYM3dqjXOqMbOH5az_ywhPJzoKY-TWmkpauP7W53bCJX_PbmhUbiV24DQna3WVXpfRWawR4159JM8NyUaUY1mLeBtaWFolv0AsD6YaQe8FiwoNP7UY_X8oAEleX0E716YTR3neXnszpME41h6tQqETQbQt3Jwadejc933turnUkrxlajM7SfZh6bZcWxUroiDbJYL3_6F313644xTswWzdIxDb2eh4juAD14QecHQQniGuq_Qtf0dt3LfSNVt__kQ9IP6Z9Oja2Y33wp5cJa3RaAQNS7-XbvntBwGdqZ9oHItXhtJ_J12ulNBCtVeeKk8u1hca2LuoZwu6luYjlQ17-WFm3)

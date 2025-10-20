@@ -1,4 +1,14 @@
-# 4.2 Projekttidslinje och Milstolpar
+# 4.2 Resurs och Aktivitetsplan
+
+Resurs- och aktivitetsplanering för MazeRunner-dokumentationsprojektet.
+
+## Resursöversikt
+
+**Total Projekttid**: 16 persontimmar (2 medlemmar x 8 timmar)
+**Projektvaraktighet**: Intensiv arbetssession med milstolpskontroller
+**Primär Resurs**: Expertintervju med Josef Hallberg (projektägare)
+
+## Aktivitetsplan och Tidslinje
 
 ## Fas 1: Installation och Planering (0-2 timmar)
 **Varaktighet**: 2 timmar totalt  
