@@ -1,85 +1,50 @@
 # 2.5 Interfacespecifikation och Storyboards
 
-## Gränssnittsöversikt
+## Översikt
+Enkla storyboards för otydliga användarfall och ett grundläggande UI‑förslag.
 
-MazeRunner har tre primära användargränssnitt:
-1. **Spelargränssnitt** (Mobil/Desktop)
-2. **Åskådargränssnitt** (Stor Skärm)
-3. **Administrationsgränssnitt** (Organisatör)
+Relaterade användarfall (från Actors/Use Cases):
+- UC1: Anslut via QR‑kod (Storyboards 2)
+- UC4: Använd förmågor (Storyboard 1, aktivitetsdiagram)
+- UC9: Växla sessioner (Storyboard 3)
 
-För detaljerad UI-design, se [Användargränssnittsdesign](../design/ui-design.md).
+Relaterade funktionella krav (FK): FK005, FK006–FK012, FK025–FK026, FK027, FK031–FK033.
 
-## Spelargränssnitt (Mobilt)
+---
 
-### Layout och Komponenter
-- **Spelområde**: 70% av skärmen - visar begränsad labyrintvy
-- **Kontrollerzon (Vänster)**: Virtual joystick för 8-riktningsrörelse
-- **Förmågezon (Höger)**: 3 förmåga-knappar vertikalt arrangerade
-- **Statusfält (Topp)**: Timer, poäng, mini-inventory
+## Förslag på användargränssnitt (UI)
 
-### Kontrollspecifikation
-- **Joystick**: Position nedre vänstra hörnet, 120x120px, 8-riktningsrörelse
-- **Förmågeknappar**: Position nedre högra hörnet, 60x60px vardera, vertikal stack
-- **Desktop**: WASD-rörelse, JKL-förmågeaktivering
+### Spelarvy
+- Mobil: on‑screen joystick (vänster), tre förmågeknappar (höger), statusfält (tid, poäng, nyckel, kompass), begränsad sikt (fog of war)
+- Desktop: WASD för rörelse, JKL för förmågor, samma statusfält och siktlogik som mobil
 
-## Storyboard: Spelarupplevelelse
+**[PLACEHOLDER: Bild 2.5.1 – Spelarvy (mobil + desktop) enkla wireframes]**
 
-```
-[Panel 1: Anslutning]
-Spelare skannar QR-kod på smartphone
-↓
-[Panel 2: Väntar]
-Väntskärm visas, väntar på motståndare
-↓
-[Panel 3: Start]
-3-2-1 nedräkning, spel börjar
-↓
-[Panel 4: Spel]
-Navigera labyrint, samla föremål, använd förmågor
-↓
-[Panel 5: Vinst]
-Vinnarskärm, poäng, eventuellt ange initialer
-```
+### Åskådarvy
+- Full kartöversikt utan fog of war, båda spelare synliga
+- Spelarstatus på vänster/höger sida, stor timer upptill, sessionväljare nertill
 
-## Åskådargränssnitt
+**[PLACEHOLDER: Bild 2.5.2 – Åskådarvy enkel wireframe]**
 
-### Layout
-- **Huvudvy**: Full labyrint med båda spelares positioner
-- **Spelare 1 Info**: Vänster sidopanel (namn, poäng, status)
-- **Spelare 2 Info**: Höger sidopanel (namn, poäng, status)
-- **Sessionväljare**: Nedre delen - lista över aktiva spel
+## Storyboards (för otydliga användarfall)
 
-## Systembegränsningar och Antaganden
+### Storyboard 1: Använd förmåga (Sömneliksir) – UC4, FK006–FK012
+**Scenario:** P1 ser P2 och använder Sömneliksir för att frysa motståndaren.
 
-### Tekniska Begränsningar
-- **Enkel serverbegränsning**: All spellogik körs på en laptop, ingen distribuerad arkitektur
-- **Endast webbteknologi**: React-frontend med C#-backend, inga inhemska mobilappar eller spelmotorer
-- **Nätverksberoende**: Kräver stabil wifi-anslutning för realtidsspelande
-- **Webbläsarkompatibilitet**: Måste fungera utan moderna JavaScript-funktioner på äldre enheter (6+ år gamla)
-- **Undvik Unity**: Uttryckligen undvika Unity på grund av komplexitet och underhållsproblem från tidigare projekt
-- **WebSocket-krav**: Realtidskommunikation kräver WebSocket-stöd
+1) P1 ser P2 i sin siktcirkel → 2) P1 trycker förmågeknappen → 3) Projektil syns mot P2 → 4) Träff: P2 "fryser" i 2s → 5) P1s knapp visar "10s" cooldown → 6) P2 rör sig igen → 7) Cooldown klar
 
-## Affärsbegränsningar  
-- **Demonstrationskontext**: Optimerad för kortsiktigt engagemang, inte långsiktig retention
-- **Noll installation**: Kan inte kräva app-nedladdningar eller kontoskapelse
-- **Ingen autentisering krävs**: Endast anonymt spelande - inga användarkonton, inloggningar eller registrering
-- **Bullermiljö**: Visuell feedback prioriterad över ljud (100+ personer miljö)
-- **Installationsenkelhelt**: Måste vara hanterbar av icke-teknisk universitetspersonal
-- **QR-kod åtkomst**: Spelare måste kunna ansluta via QR-kod skanning inom 1 minut maximum
-- **Fysiskt utrymme**: Endast ~10 personer kan få plats runt demonstrationsbås
-- **Installationstid**: Maximum 2 minuter från laptoppstart till spelbar demo
+**[PLACEHOLDER: Bild 2.5.4 – 7‑rutor storyboard för förmågeanvändning]**
 
-## Rättvisa och Social Kontext
-- **Perfekt rättvisa inte kritisk**: Spelare spelar vanligtvis bara en gång, så mindre obalanser acceptabla
-- **Socialt fusk acceptabelt**: Spelare kan "fuska" genom att titta på åskådarskärm - skapar rolig interaktion
-- **Inga griefing-bekymmer**: Spelare är gymnasievänner i vänlig miljö, inte konkurrenskraftiga främlingar
-- **Symmetrisk karta valfri**: Kunde implementera för rättvisa men inte väsentligt krav
-- **Engångsspel**: Inget repris-värde behövs - designad för enkel spelupplevelse
+### Storyboard 2: QR‑kod → vänteläge → spelstart – UC1, FK005
+**Scenario:** Elev skannar QR-kod och kommer in i spel.
 
-## Huvudantaganden
-- **Målgruppsbekantskap**: Användare förstår grundläggande labyrintspelkoncept
-- **Enhetstillgänglighet**: Spelare har smartphones eller kan använda tillhandahållna enheter  
-- **Network infrastructure**: University provides adequate wifi for concurrent connections
-- **Social context**: Competitive gameplay with audience creates natural engagement
-- **Friendly environment**: Players are not competitive strangers, reduces need for anti-cheat measures
-- **Visual focus**: Noisy environment (100+ people) means visual feedback must be primary communication method
+1) QR på projektor → 2) Telefon öppnar URL → 3) Vänteskärm "Väntar på motståndare..." → 4) "Motståndare hittad!" → 5) Nedräkning 3‑2‑1 → 6) Spelvy visas
+
+**[PLACEHOLDER: Bild 2.5.5 – 6‑rutor storyboard för anslutningsflöde]**
+
+### Storyboard 3: Lärare växlar session i åskådarvy – UC9, FK025–FK026
+**Scenario:** Läraren byter mellan aktiva matcher.
+
+1) Visar Spel 1 → 2) Sessionlista öppnas → 3) Välj Spel 2 → 4) Fade → 5) Visar Spel 2 → 6) (Valfritt) Auto‑växla på
+
+**[PLACEHOLDER: Bild 2.5.6 – 6‑rutor storyboard för sessionväxling]**

@@ -5,7 +5,7 @@
 - [2.2 Funktionella Krav](requirements/functional.md)
 - [2.3 Icke-Funktionella Krav](requirements/non-functional.md)
 - [2.4 Användarkrav](requirements/acceptance.md)
-- [2.5 Interfacespecifikation och Storyboards](requirements/constraints.md)
+- [2.5 Interfacespecifikation och Storyboards](requirements/interface.md)
 
 ## Översikt
 
