@@ -63,7 +63,7 @@
 | UC6: Ange high score | Spelare | Låg | Nej | Standard forminteraktion |
 | UC7: Starta spelserver | Organizer | Låg | Nej | Teknisk setup, dokumenteras separat |
 | UC8: Aktivera åskådarvy | Organizer | Låg | Nej | Enkel aktivering, självförklarande |
-| UC9: Växla sessioner | Organizer | Medel | **Ja** | Specifikt arbetsflöde, auto-switching logic, UI-detaljer |
+| UC9: Växla sessioner | Organizer | Låg | Nej | Alla sessioner visas på en skärm, enkel navigation |
 | UC10: Hantera tekniska problem | Organizer | Hög | Nej | Ad-hoc troubleshooting, inte standardiserat |
 | UC11: Titta på åskådarvy | Spectator | Låg | Nej | Passiv observation, självförklarande |
 | UC12: Matcha spelare | System | Medel | Nej | Automatisk process, täcks av UC1 |
@@ -128,23 +128,6 @@
 - **UC4.4: Hastighetsökning** → +50% speed, 5s duration
 
 **Alternativt flöde**: Cooldown → feedback utan effekt
-
----
-
-## UC9: Växla sessioner
-
-**Aktör**: Eventorganisatör  
-**Syfte**: Visa olika aktiva spel på åskådardisplay  
-**Förvillkor**: Minst en session aktiv, åskådarvy aktiverad
-
-**Huvudflöde**:
-1. Organisatör väljer session
-2. System växlar åskådardisplay med fade-effect
-3. Åskådarvy visar vald session tills ny session väljs
-
-**Alternativt flöde**:
-- Endast en session → växling inaktiverad
-- Session avslutas → automatisk switch
 
 ---
 
