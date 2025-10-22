@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/logo.png" alt="Logo" width="100%" />
+  <img src="../assets/logo.png" alt="Logo" width="100%" />
 </p>
 
 # 3. Systemdesign
