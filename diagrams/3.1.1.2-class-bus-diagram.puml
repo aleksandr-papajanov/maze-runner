@@ -1,0 +1,117 @@
+@startuml MazeRunner-Gameplay
+'
+' Översikt: Event-driven kommunikation och spelaktioner
+' Detta diagram visar action bus-arkitekturen som hanterar all kommunikation mellan
+' spelkomponenter. Alla händelser (rörelser, förmågeanvändning, objektinsamling, etc.)
+' representeras som IAction-implementationer som publiceras och prenumereras via
+' pub/sub-mönstret. Detta möjliggör löst kopplad, utbyggbar spellogik.
+'
+skinparam packageStyle rectangle
+skinparam shadowing true
+skinparam linetype ortho
+skinparam defaultFontName Arial
+
+package "Actions" {
+    interface IAction {
+        Guid Id
+        Guid SessionId
+        Guid SenderId
+        DateTime Timestamp
+    }
+
+    class PlayerMoveAction {
+        Point Location
+        Point Direction
+    }
+
+    class AbilityUseAction {
+        IAbility Ability
+        Point Target
+    }
+
+    class ItemCollectAction {
+        ICollectible Item
+        Point Location
+    }
+
+    class KeyCollectAction {
+    }
+
+    class BonusCollectAction {
+        int Points
+    }
+
+    class PowerUpCollectAction {
+        PowerUpType Type
+    }
+
+    class ItemSpawnAction {
+        Point Location
+        ICollectible Item
+    }
+
+    class SessionStateUpdateAction {
+        SessionState NewState
+        string Reason
+    }
+
+    class PlayerStunnedAction {
+        Guid TargetPlayerId
+        int DurationMs
+    }
+
+    class PlayerConfusedAction {
+        Guid TargetPlayerId
+        int DurationMs
+    }
+
+    class PlayerSpeedBoostAction {
+        int DurationMs
+        float Multiplier
+    }
+
+    class CompassHintAction {
+        Point TargetLocation
+        string HintType
+    }
+}
+
+package "Action Bus" {
+    interface IActionSubscriber {
+        void OnEvent(IAction gameEvent)
+    }
+
+    interface IActionPublisher {
+        void Publish(IAction gameEvent)
+    }
+
+    class ActionFilter {
+        Guid? SessionId
+        Guid? PlayerId
+        Type ActionType
+    }
+
+    interface IActionBus {
+        void Subscribe(IActionSubscriber subscriber, ActionFilter filter)
+        void Unsubscribe(IActionSubscriber subscriber)
+    }
+}
+
+IAction <|-- PlayerMoveAction
+IAction <|-- AbilityUseAction
+IAction <|-- ItemCollectAction
+IAction <|-- ItemSpawnAction
+IAction <|-- SessionStateUpdateAction
+IAction <|-- PlayerStunnedAction
+IAction <|-- PlayerConfusedAction
+IAction <|-- PlayerSpeedBoostAction
+IAction <|-- CompassHintAction
+
+ItemCollectAction <|-- KeyCollectAction
+ItemCollectAction <|-- BonusCollectAction
+ItemCollectAction <|-- PowerUpCollectAction
+
+IActionBus "1" --> "*" IActionSubscriber
+IActionBus "1" --> "*" IActionPublisher
+
+@enduml

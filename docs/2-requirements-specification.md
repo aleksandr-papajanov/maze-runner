@@ -1,7 +1,7 @@
 # 2. Kravspecifikation
 
 ## Innehållsförteckning
-- [2.1 Användarkarakteristik - Aktörer](requirements/stakeholders.md)
+- [2.1 Användarkarakteristik - Aktörer](requirements/actors.md)
 - [2.2 Funktionella Krav](requirements/functional.md)
 - [2.3 Icke-Funktionella Krav](requirements/non-functional.md)
 - [2.4 Användarkrav](requirements/acceptance.md)

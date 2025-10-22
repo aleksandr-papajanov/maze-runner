@@ -1,0 +1,122 @@
+@startuml MazeRunner-Network
+'
+' Översikt: Nätverksarkitektur och sessionshantering
+' Detta diagram visar hur spelare och åskådare ansluter till systemet.
+' PlayerConnection implementerar både IActionSubscriber och IActionPublisher för
+' tvåvägskommunikation via sessionens action bus. SpectatorConnection får periodiska
+' snapshots av alla aktiva sessioner för att visa fullständig överblick på storskärm.
+' Varje session har sin egen isolerade action bus för oberoende 2-spelar-matcher.
+'
+skinparam packageStyle rectangle
+skinparam shadowing true
+skinparam linetype ortho
+skinparam defaultFontName Arial
+
+enum ConnectionState {
+    + CONNECTED
+    + DISCONNECTED
+    + RECONNECTING
+}
+
+package "Connection Management" {
+    interface IConnection {
+        Guid Id
+        ConnectionState State
+        DateTime ConnectedAt
+        DateTime? DisconnectedAt
+        void Disconnect(string reason)
+    }
+
+    class PlayerConnection {
+        Guid SessionId
+        IPlayer Player
+        DateTime LastHeartbeat
+        int Latency
+        void OnEvent(IAction action)
+        void Publish(IAction action)
+    }
+
+    class SpectatorConnection {
+        bool ReceiveFullMap
+        void ReceiveSnapshot(ISessionSnapshot snapshot)
+    }
+}
+
+package "Session Management" {
+    interface ISessionSnapshot {
+        Guid SessionId
+        SessionState State
+        IMaze Maze
+        IEnumerable<IPlayer> Players
+        IEnumerable<ICollectible> ActiveItems
+        DateTime CreatedAt
+        DateTime? StartedAt
+        DateTime? CompletedAt
+        Guid? WinnerId
+    }
+
+    interface IGameSession {
+        Guid Id
+        SessionState State
+        Guid? WinnerId
+        IMaze Maze
+        IEnumerable<PlayerConnection> Players
+        IActionBus ActionBus
+        DateTime CreatedAt
+        DateTime? StartedAt
+        DateTime? CompletedAt
+
+        void AttachPlayer(PlayerConnection connection)
+        void DetachPlayer(Guid playerId, string reason)
+
+        void ProcessAction(IAction action)
+        void Tick()
+        void CheckWinCondition()
+        void EndSession(Guid winnerId)
+
+        ISessionSnapshot GetFullSnapshot()
+        ISessionSnapshot GetPlayerSnapshot(Guid playerId)
+    }
+
+    interface ISessionManager {
+        IEnumerable<IGameSession> ActiveSessions
+        IGameSession CreateSession()
+        IGameSession? FindAvailableSession()
+        IGameSession? GetById(Guid sessionId)
+        void RemoveSession(Guid sessionId)
+    }
+}
+
+package "Game Orchestration" {
+    interface IGameController {
+        ISessionManager SessionManager
+        IEnumerable<SpectatorConnection> Spectators
+        
+        PlayerConnection CreateConnection(IPlayer player)
+        SpectatorConnection CreateConnection()
+
+        IGameSession Join(PlayerConnection player)
+        IGameSession Join(SpectatorConnection spectator)
+    }
+}
+
+IConnection <|-- PlayerConnection
+IConnection <|-- SpectatorConnection
+
+IActionSubscriber <|.. PlayerConnection
+IActionPublisher <|.. PlayerConnection
+IActionSubscriber <|.. SpectatorConnection
+
+IGameController "1" --> "1" ISessionManager
+IGameController "1" o-- "*" SpectatorConnection
+
+ISessionManager "1" --> "*" IGameSession
+
+IGameSession "1" o-- "2" PlayerConnection : players >
+IGameSession "1" --> "1" IActionBus
+IGameSession "1" --> "1" IMaze
+
+PlayerConnection "1" --> "1" IPlayer
+IConnection --> ConnectionState
+
+@enduml
