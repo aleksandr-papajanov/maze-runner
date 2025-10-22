@@ -6,88 +6,101 @@
 
 ## Översikt
 
-Detta dokument definierar alla icke-funktionella krav för MazeRunner-systemet, som täcker prestanda, kompatibilitet, tillförlitlighet, användbarhet, tillgänglighet och tekniska arkitekturbegränsningar.
+Detta dokument definierar alla icke-funktionella krav för MazeRunner-systemet, organiserade i en enhetlig tabell med prioritet och risk. Kraven täcker prestanda, kompatibilitet, tillförlitlighet, användbarhet, tillgänglighet och tekniska arkitekturbegränsningar.
 
 ---
 
-## Prestandakrav
+## Icke-Funktionella Krav
 
-| ID | Krav | Mål | Risk |
-| --- | ----------- | ------ | ---- |
-| **IFK001** | Spelinstallationstid från laptop-uppstart till spelbart tillstånd | <2 minuter | Låg |
-| **IFK002** | Spelarrörelsens svarstid under normala nätverksförhållanden | <100ms | Hög |
-| **IFK003** | Stöd för 4 samtidiga sessioner utan prestandaförsämring | 8 samtidiga spelare | Medel |
-| **IFK004** | 90% av spelen slutförs inom 5 minuter, tillåt 7-8 minuter för återstående 10% | 5-8 min intervall | Låg |
-| **IFK005** | Kompasshjälpsystem aktiveras efter 5 minuter för att hjälpa spelare | Auto-trigger | Låg |
+### Prestanda
+
+| ID | Namn | Beskrivning |
+|---|---|---|
+| IFK001 | Snabb installation | Spelinstallationstid från laptop-uppstart till spelbart tillstånd <2 minuter |
+| IFK002 | Låg latens | Spelarrörelsens svarstid <100ms under normala nätverksförhållanden |
+| IFK003 | Kapacitet | Stöd för 4 samtidiga sessioner (8 spelare) utan prestandaförsämring |
+| IFK004 | Speltid | 90% av spelen slutförs inom 5 minuter, tillåt 7-8 minuter för 10% |
+| IFK005 | Kompassaktivering | Kompasshjälpsystem aktiveras automatiskt efter 5 minuter |
+
+### Kompatibilitet
+
+| ID | Namn | Beskrivning |
+|---|---|---|
+| IFK006 | Enhetskompatibilitet | Fungera på smartphones 6+ år gamla (Android 7+, iOS 12+) |
+| IFK007 | Webbläsarkompatibilitet | Kompatibel med Chrome, Firefox, Safari, Edge |
+| IFK008 | Responsiv viewport | Konsekvent viewport-skalning (4" till 27" skärmar) |
+| IFK009 | Friktionsfri åtkomst | Ingen appinstallation krävs - endast webbläsaråtkomst |
+
+### Tillförlitlighet
+
+| ID | Namn | Beskrivning |
+|---|---|---|
+| IFK010 | Drifttid | 99% drifttid under 3-timmars Öppet Hus-perioder (<2 min driftstopp) |
+| IFK011 | Graciös felhantering | Graciös hantering av spelarurkopplingar utan systemkrasch |
+| IFK012 | Återanslutning | Automatisk spelåterhämtning efter tillfälliga nätverksavbrott |
+| IFK013 | Dataintegritet | Ingen dataförlust i normala urkopplingsscenarier |
+
+### Användbarhet
+
+| ID | Namn | Beskrivning |
+|---|---|---|
+| IFK014 | Snabb onboarding | Nya spelare kan börja spela inom 30 sekunder efter anslutning |
+| IFK015 | Intuitiv design | Spelregler förståeliga utan textinstruktioner |
+| IFK016 | Engagerande åskådarvy | Åskådarvy engagerande för icke-spelande publik |
+| IFK017 | High score-inmatning | High score-inmatningssystem med initialer (flipperspelsstil) |
+| IFK018 | Tydlig feedback | Tydlig visuell feedback för all förmågeanvändning och statuseffekter |
+| IFK019 | Sessionshantering | Lärare kan enkelt växla mellan aktiva spelsessioner |
+
+### Tillgänglighet
+
+| ID | Namn | Beskrivning |
+|---|---|---|
+| IFK020 | Multimodal design | Olika avatarformer och mönster (inte bara färger) för spelardistinktion |
+| IFK021 | Högkontrast design | Högkontrast visuell design för synlighet i bullrig miljö |
+| IFK022 | Ikonbaserat UI | Primärt visuella instruktioner snarare än textbaserad vägledning |
+| IFK023 | Visuell distinktion | Tydlig distinktion genom form, färg och mönster |
+
+### Ljud
+
+| ID | Namn | Beskrivning |
+|---|---|---|
+| IFK024 | Bakgrundsmusik | Bakgrundsmusik ej nödvändig (bullrig demonstrationsmiljö) |
+| IFK025 | Ljudeffekter | Ljudeffekter sekundär prioritet - visuell feedback är primär |
+| IFK026 | Valfritt ljud | Valfria ljudeffekter för handlingar (får ej vara väsentliga) |
+
+### Teknisk Arkitektur
+
+| ID | Namn | Beskrivning |
+|---|---|---|
+| IFK027 | Serverarkitektur | Klient-server-arkitektur med centraliserad speltillståndshantering |
+| IFK028 | WebSocket-kommunikation | WebSocket-kommunikation (SignalR) för realtidsuppdateringar |
+| IFK029 | Enkel serverdistribution | Enkel serverdistribution på standard laptop-hårdvara |
+| IFK030 | Minimala beroenden | Minimala externa beroenden (React + C#, undvik Unity/komplexa motorer) |
+| IFK031 | Anonym åtkomst | Ingen autentisering eller användarregistrering - endast anonymt spel |
+| IFK032 | Teknologistack | React-frontend med C# ASP.NET Core-backend-implementering |
 
 ---
 
-## Kompatibilitetskrav
+## Kravspårbarhet
 
-| ID | Krav | Specifikation | Risk |
-| --- | ----------- | ------------- | ---- |
-| **IFK006** | Fungera på smartphones 6+ år gamla | Android 7+, iOS 12+ | Hög |
-| **IFK007** | Kompatibel med stora webbläsare | Chrome, Firefox, Safari, Edge | Medel |
-| **IFK008** | Konsekvent viewport-skalning över olika skärmstorlekar | 4" till 27" skärmar | Medel |
-| **IFK009** | Ingen appinstallation krävs - endast webbläsare | Webbaserad åtkomst | Låg |
+### Användarfallsmappning
 
----
-
-## Tillförlitlighetskrav
-
-| ID | Krav | Mål | Risk |
-| --- | ----------- | ------ | ---- |
-| **IFK010** | 99% drifttid under 3-timmars Öppet Hus-demonstrationsperioder | <2 min driftstopp | Medel |
-| **IFK011** | Graciös hantering av spelarurkopplingar utan systemkrasch | Auto-återhämtning | Hög |
-| **IFK012** | Automatisk spelåterhämtning efter tillfälliga nätverksavbrott | Återanslutningslogik | Hög |
-| **IFK013** | Ingen dataförlust i normala urkopplingsscenarier | Tillståndsbevarande | Medel |
-
----
-
-## Användbarhetskrav
-
-| ID | Krav | Mål | Risk |
-| --- | ----------- | ------ | ---- |
-| **IFK014** | Nya spelare kan börja spela inom 30 sekunder efter anslutning | Introduktionstid | Låg |
-| **IFK015** | Spelregler förståeliga utan textinstruktioner | Visuell/intuitiv design | Medel |
-| **IFK016** | Åskådarvy engagerande för icke-spelande publik | Publikengagemang | Låg |
-| **IFK017** | High score-inmatningssystem liknande flipperspel | Initialer för topp 10 | Låg |
-| **IFK018** | Tydlig visuell feedback för all förmågeanvändning och statuseffekter | Visuell tydlighet | Medel |
-| **IFK019** | Lärare kan enkelt växla mellan aktiva spelsessioner | Sessionshantering | Låg |
-
----
-
-## Tillgänglighets- och Designkrav
-
-| ID | Krav | Specifikation | Risk |
-| --- | ----------- | ------------- | ---- |
-| **IFK020** | Olika avatarformer och mönster, inte bara färger, för spelardistinktion | Multimodal design | Låg |
-| **IFK021** | Högkontrast visuell design för synlighet i bullrig miljö | Kontrastförhållanden | Låg |
-| **IFK022** | Primärt visuella instruktioner snarare än textbaserad vägledning | Ikonbaserat UI | Låg |
-| **IFK023** | Tydlig distinktion mellan spelare och motståndare genom flera visuella ledtrådar | Form + färg + mönster | Låg |
-
----
-
-## Ljudkrav
-
-| ID | Krav | Prioritet | Anteckningar |
-| --- | ----------- | -------- | ----- |
-| **IFK024** | Bakgrundsmusik ej nödvändig på grund av bullrig demonstrationsmiljö | Valfri | Låg prioritet |
-| **IFK025** | Ljudeffekter sekundär prioritet - visuell feedback är primär | Valfri | Inte väsentlig |
-| **IFK026** | Valfria ljudeffekter för handlingar (skjutning, förmågor) men får inte vara väsentliga | Förbättring | Trevligt att ha |
-
----
-
-## Tekniska Arkitekturkrav
-
-| ID | Krav | Specifikation | Risk |
-| --- | ----------- | ------------- | ---- |
-| **IFK027** | Klient-server-arkitektur med centraliserad speltillståndshantering | Auktoritativ server | Låg |
-| **IFK028** | WebSocket-kommunikation för realtidsuppdateringar | SignalR/WebSocket | Medel |
-| **IFK029** | Enkel serverdistribution på standard laptop-hårdvara | Enkel serverinstans | Låg |
-| **IFK030** | Minimala externa beroenden (undvik Unity, komplexa spelmotorer) | React + C#-stack | Låg |
-| **IFK031** | Ingen autentisering eller användarregistrering krävs - endast anonymt spel | Förenklad åtkomst | Låg |
-| **IFK032** | React-frontend med C# ASP.NET Core-backend-implementering | Teknisk stack | Låg |
+| Användarfall | Relaterade Icke-Funktionella Krav |
+| ------------ | --------------------------------- |
+| UC1: Anslut via QR-kod | IFK006, IFK007, IFK009, IFK014, IFK022, IFK031 |
+| UC2: Navigera labyrint | IFK002, IFK004, IFK006, IFK007, IFK008, IFK015, IFK020, IFK021, IFK022, IFK023, IFK028 |
+| UC3: Samla nyckel | IFK005 |
+| UC4: Använd förmågor | IFK015, IFK018 |
+| UC5: Nå utgång | IFK004 |
+| UC6: Visa poäng | IFK017 |
+| UC7: Starta session | IFK001, IFK003, IFK010 |
+| UC8: Övervaka spel | IFK016, IFK021 |
+| UC9: Växla sessioner | IFK019 |
+| UC10: Hantera evenemang | IFK001, IFK003, IFK010, IFK029 |
+| UC11: Titta på spel | IFK016 |
+| UC13: Synkronisera tillstånd | IFK002, IFK012, IFK027, IFK028 |
+| UC14: Hantera urkoppling | IFK011, IFK012, IFK013 |
+| UC16: Spåra poäng | IFK017 |
 
 ---
 
@@ -113,49 +126,42 @@ Detta dokument definierar alla icke-funktionella krav för MazeRunner-systemet, 
 
 ---
 
-## Riskbedömningssammanfattning
-
-### Högrisk-krav
-- **IFK002**: <100ms latens (beror på nätverkskvalitet, äldre enheter)
-- **IFK006**: 6+ år gammalt enhetsstöd (begränsad testmöjlighet)
-- **IFK011**: Graciös urkopplingshantering (komplexa kantfall)
-- **IFK012**: Automatisk återhämtning (kräver robust tillståndshantering)
-
-### Medelrisk-krav
-- **IFK003**: 4 samtidiga sessioner (serverlasttestning behövs)
-- **IFK007**: Multi-webbläsarkompatibilitet (korswebbläsartestning krävs)
-- **IFK008**: Viewport-skalning (responsiv designkomplexitet)
-- **IFK010**: 99% drifttid (kräver övervakning och snabb återhämtning)
-- **IFK013**: Ingen dataförlust (tillståndssynkroniseringskomplexitet)
-- **IFK015**: Intuitiv design (kräver användartestning)
-- **IFK018**: Visuell feedback-tydlighet (designiteration behövs)
-- **IFK028**: WebSocket-tillförlitlighet (nätverksstabilitetsberoende)
-
-### Lågrisk-krav
-- Alla andra krav (IFK001, IFK004, IFK005, IFK009, IFK014, IFK016, IFK017, IFK019-IFK027, IFK029-IFK032)
-
 ---
+
+**Totalt**: 32 Icke-Funktionella Krav
 
 ## Validering och Testning
 
 ### Prestandatestning
-- Lasttestning med 10 samtidiga spelare
-- Latensmätning under olika nätverksförhållanden
+- Lasttestning med 8 samtidiga spelare (4 sessioner)
+- Latensmätning under olika nätverksförhållanden (<100ms mål)
 - Stresstestning på målenheter (6+ år gamla smartphones)
+- Minnesprofiliering och CPU-användning
 
 ### Kompatibilitetstestning
 - Webbläsarkompatibilitetsmatris (Chrome, Firefox, Safari, Edge)
 - Enhetstestning (Android 7+, iOS 12+)
 - Skärmstorlekstestning (4" till 27")
+- Cross-platform kontrollertestning (touch vs tangentbord)
 
 ### Tillförlitlighetstestning
-- Urkopplingsscenario-testning
-- Nätverksavbrottsåterhämtning
-- Långvariga stabilitetstester (3+ timmar)
+- Urkopplingsscenario-testning (graciös degradering)
+- Nätverksavbrottsåterhämtning (automatisk reconnect)
+- Långvariga stabilitetstester (3+ timmar kontinuerlig drift)
+- Sessionväxlingsstabilitet
 
 ### Användbarhetstestning
-- Introduktionstidsmätning (<30 sekunder)
+- Introduktionstidsmätning (<30 sekunder från QR-kod till spel)
 - Intuitiv designvalidering (inga instruktioner behövs)
 - Åskådarvy-engagemangsbedömning
+- Tillgänglighetstestning (färgblindhetssimulering)
 
-För detaljerade implementeringsprioriteter och beroenden, se [2.4 Användarkrav](acceptance.md).
+### Säkerhet och Validering
+- Input-validering för spelarens kontroller
+- Server-side spelavslutningsvalidering
+- Förhindra manipulation av high scores
+- Session timeout-hantering
+
+---
+
+För prioritering, riskbedömning och implementeringsplan, se [2.4 Användarkrav](acceptance.md).
