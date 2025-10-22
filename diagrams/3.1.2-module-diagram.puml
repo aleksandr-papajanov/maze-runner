@@ -1,0 +1,118 @@
+@startuml MazeRunner-Architecture
+'
+' Overview: System architecture and module components
+' This diagram shows MazeRunner's layered architecture:
+' - Client Layer: React-based player and spectator clients
+' - Communication Layer: SignalR (WebSocket) for realtime, REST for initial connection
+' - Server Core Layer: Game Controller, Game Logic, Action Bus, Domain Model
+' - Persistence Layer: SQLite for high scores and session history
+' Shows clear interfaces and data dependencies between modules.
+'
+skinparam componentStyle rectangle
+skinparam shadowing true
+skinparam linetype ortho
+skinparam defaultFontName Arial
+
+package "Client Layer (Browser)" {
+    component "Player Client" as PlayerClient <<React + TypeScript>> {
+        component [Game Renderer] as Renderer
+        component [Input Controller] as Input
+        component [UI Components] as UI
+        component [WebSocket Client] as WSClient
+    }
+    
+    component "Spectator Client" as SpectatorClient <<React + TypeScript>> {
+        component [Full Map Renderer] as SpectatorRenderer
+        component [WebSocket Client] as SpectatorWS
+    }
+}
+
+package "Communication Layer" {
+    component [SignalR Hub] as SignalR {
+        portin PlayerHub
+        portin SpectatorHub
+    }
+    
+    component [REST API] as REST {
+        portin "/sessions"
+        portin "/highscores"
+    }
+}
+
+package "Server Core Layer" <<C# ASP.NET Core>> {
+    component "Game Controller" as GameController {
+        component [Session Manager] as SessionMgr
+        component [Connection Manager] as ConnMgr
+        component [Spectator Manager] as SpecMgr
+    }
+    
+    component "Game Logic" as GameLogic {
+        component [Game Session] as Session
+        component [Maze Generator] as MazeGen
+        component [Collision Detection] as Collision
+        component [Win Condition] as WinCheck
+    }
+    
+    component "Action Bus" as ActionBus {
+        component [Event Publisher] as Publisher
+        component [Event Subscribers] as Subscribers
+        component [Action Filter] as Filter
+    }
+    
+    component "Domain Model" as Domain {
+        component [Player] as Player
+        component [Maze & Cells] as Maze
+        component [Collectibles] as Items
+        component [Abilities] as Abilities
+    }
+}
+
+package "Persistence Layer" {
+    database [SQLite Database] as DB {
+        component [High Scores] as Scores
+        component [Session History] as History
+    }
+}
+
+' Client to Communication
+PlayerClient -down-> PlayerHub : "WebSocket\n(game actions)"
+PlayerClient -down-> REST : "HTTP\n(join/create)"
+SpectatorClient -down-> SpectatorHub : "WebSocket\n(snapshots)"
+
+' Communication to Server Core
+PlayerHub -down-> GameController : "Process\nActions"
+SpectatorHub -down-> GameController : "Request\nSnapshots"
+REST -down-> GameController : "Session\nManagement"
+
+' Server Core Internal
+GameController -right-> GameLogic : "Manage\nSessions"
+GameController -down-> ActionBus : "Subscribe/\nPublish"
+GameLogic -down-> ActionBus : "Publish\nEvents"
+ActionBus -up-> GameController : "Notify\nSubscribers"
+GameLogic --> Domain : "Use"
+Session --> ActionBus : "Own\nSession Bus"
+
+' Server to Persistence
+GameLogic -down-> DB : "Save State\n& Scores"
+GameController -down-> DB : "Query\nScores"
+
+note right of PlayerClient
+  Responsive UI for:
+  - Mobile (joystick)
+  - Desktop (keyboard)
+  Fog of war rendering
+end note
+
+note right of ActionBus
+  Pub/Sub pattern
+  Isolated per session
+  Loose coupling
+end note
+
+note bottom of DB
+  SQLite - embedded
+  No external DB needed
+  Portable for demos
+end note
+
+@enduml
