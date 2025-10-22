@@ -74,14 +74,57 @@
 
 # 2.2 Användarfalldiagram
 
-## Övergripande Systeminteraktion
+## 2.2.1 Övergripande Systeminteraktion
+
+Detta diagram visar alla aktörer och deras användarfall i MazeRunner-systemet:
+
+**Fyra primära aktörer:**
+1. **Spelare** (Gymnasiestudenter) - Huvudanvändare som spelar spelet
+   - UC1-UC6: Från anslutning till high score-inmatning
+
+2. **Eventorganisatör** (Josef) - Kör demon på öppet hus
+   - UC7-UC10: Serverhantering, åskådarvy, troubleshooting
+
+3. **Åskådare** (Publik) - Observerar på storskärm
+   - UC11: Passiv observation av alla aktiva sessioner
+
+4. **System** (Automatisk) - Bakgrundsprocesser
+   - UC12-UC16: Matchmaking, synkronisering, vinst-detection
+
+**Include-relationer** visar beroenden:
+- UC1 (Anslut) → UC12 (Matcha spelare): Automatisk matchmaking vid anslutning
+- UC2-UC4 (Spelhandlingar) → UC13 (Synkronisera): All interaktion kräver realtidssynk
+- UC5 (Nå utgång) → UC16 (Detektera vinst): System kontrollerar vinstvillkor
 
 ![Usecase diagram](/diagrams/2.2.1-usecase-diagram.png)
+[View PlantUML source](/diagrams/2.2.1-usecase-diagram.puml)
 
-## Spelarinteraktion - Detaljerat
+## 2.2.2 Spelarinteraktion - Detaljerat
 
+Detta diagram fokuserar på spelarens användarfall med implementationsdetaljer:
+
+**UC2: Navigera labyrint**
+- **UC2.1**: Mobil kontroller (on-screen joystick, vänster tumme)
+- **UC2.2**: Desktop kontroller (WASD/piltangenter)
+- **UC2.3**: Fog of war (cirkulär viewport, begränsad sikt)
+
+**UC4: Använd förmågor** (Fyra typer)
+- **UC4.1 - Stun Shot**: Fryser motståndare 2 sekunder, tvingar tappa nyckel, 10s cooldown
+- **UC4.2 - Förvirringsstrål**: Inverterar kontroller (vänster→höger), 15s cooldown
+- **UC4.3 - Placera fälla**: Aktiveras när motståndare går över, 20s cooldown
+- **UC4.4 - Hastighetsökning**: Auto-aktiveras vid insamling, tidsbaserad effekt
+
+**UC5: Nå utgång**
+- **Include UC3**: Måste ha samlat nyckel först
+- **Extend UC6**: Valfri high score-inmatning efter vinst
+
+**UML-relationer:**
+- **Generalization** (`<|--`): UC2.1 och UC2.2 är specialiseringar av UC2
+- **Include** (`..>`): Obligatoriskt beroende (måste ha nyckel för att vinna)
+- **Extend** (`..>`): Valfri funktion (high score är frivillig)
 
 ![Usecase diagram](/diagrams/2.2.2-usecase-diagram.png)
+[View PlantUML source](/diagrams/2.2.2-usecase-diagram.puml)
 
 ---
 

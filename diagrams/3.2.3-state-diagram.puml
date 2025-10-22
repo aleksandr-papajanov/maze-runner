@@ -1,0 +1,78 @@
+@startuml
+'
+' Översikt: Förmågas livscykel och tillstånd
+' Detta tillståndsdiagram visar hur förmågor och power-ups fungerar:
+' 1. NotCollected → Collected: Spelare plockar upp förmåga
+' 2. AutoActivated: Vissa power-ups (t.ex. speed boost) aktiveras automatiskt
+' 3. Available → Activating: Strategiska förmågor aktiveras manuellt
+' 4. ApplyEffect: Olika effekter beroende på förmågetyp (stun, confusion, trap)
+' 5. Cooldown: Efter användning måste förmågan ladda (10-20s beroende på typ)
+' Visar både auto-aktivering och manuell aktivering med cooldown-hantering.
+'
+
+[*] --> NotCollected : Game started
+
+NotCollected : entry / Placed in maze  
+NotCollected : do / Visible on map  
+NotCollected : do / Waiting to be picked up  
+NotCollected --> Collected : Player steps over  
+
+Collected : entry / Add to inventory  
+Collected --> AutoActivated : Auto-activation type (Speed boost)  
+Collected --> Available : Strategic ability  
+
+AutoActivated : entry / Apply effect immediately  
+AutoActivated : do / Show effect animation  
+AutoActivated --> ActiveEffect : Auto  
+
+ActiveEffect : do / Effect influences player  
+ActiveEffect : do / Timer runs (5s for speed boost)  
+ActiveEffect --> [*] : Effect ends  
+
+Available : entry / Show in UI as available  
+Available : do / Wait for player input  
+Available : do / Button visible and active  
+Available --> Activating : Player presses button  
+
+Activating : entry / Validate usage  
+Activating : do / Fire ability  
+Activating : do / Calculate hit/miss  
+Activating --> ApplyEffect : Hit  
+Activating --> Cooldown : Miss / After use  
+
+ApplyEffect : do / Apply effect on opponent  
+ApplyEffect : do / Visual feedback  
+ApplyEffect --> OpponentStunned : Stun Shot  
+ApplyEffect --> OpponentConfused : Confusion Beam  
+ApplyEffect --> TrapPlaced : Trap  
+
+OpponentStunned : entry / Freeze opponent  
+OpponentStunned : do / 2 seconds  
+OpponentStunned : entry / Drop key (if has)  
+OpponentStunned --> Cooldown : Effect completed  
+
+OpponentConfused : entry / Invert controls  
+OpponentConfused : do / 5 seconds  
+OpponentConfused --> Cooldown : Effect completed  
+
+TrapPlaced : entry / Place at position  
+TrapPlaced : do / Wait for opponent  
+TrapPlaced --> TrapActivated : Opponent steps on  
+TrapPlaced --> Cooldown : Timeout 30s  
+
+TrapActivated : entry / Stun opponent  
+TrapActivated --> Cooldown : Auto  
+
+Cooldown : entry / Start cooldown timer  
+Cooldown : do / Show cooldown progress in UI  
+Cooldown : do / Button greyed out  
+Cooldown --> Available : Cooldown completed (10–20s depending on ability)  
+
+note right of Cooldown
+  Cooldown times:
+  - Stun Shot: 10s
+  - Confusion Beam: 15s
+  - Trap: 20s
+end note
+
+@enduml

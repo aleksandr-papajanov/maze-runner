@@ -1,0 +1,123 @@
+@startuml
+'
+' Översikt: Spelflöde från start till vinst
+' Detta aktivitetsdiagram visar hela spelcykeln för MazeRunner:
+' 1. Nyckel-sökning: Spelare utforskar labyrinten, använder förmågor strategiskt
+' 2. Kompass-assistans: Efter 5 minuter aktiveras kompasshjälp
+' 3. Slutspel: Nyckelinnehavare måste nå utgången medan motståndare jagar/campar
+' 4. Parallella strategier: Direkt mot utgång vs samla bonuspoäng, campa vs jaga
+' Diagrammet visar både spelare-perspektiv och strategiska valbeslut.
+'
+start
+
+:Spel aktivt;
+
+partition "Nyckel-sökning" {
+  repeat
+    :Utforska labyrint;
+    
+    if (Nyckel synlig?) then (ja)
+      :Rör sig mot nyckel;
+      
+      if (Motståndare närmar sig nyckel?) then (ja)
+        
+        fork
+          :Fortsätt mot nyckel;
+          :Försök plocka upp först;
+        fork again
+          :Använd förmåga på motståndare;
+          :Hindra dem från att nå nyckel;
+        end fork
+        
+      endif
+      
+      :Plocka upp nyckel;
+      #lightgreen:HAR NYCKEL!;
+      
+    else (nej)
+      if (Tid > 5 minuter?) then (ja)
+        :Kompass aktiverad;
+        :Se riktning till nyckel;
+      endif
+    endif
+    
+  repeat while (Någon har nyckel?) is (nej)
+}
+
+partition "Slutspel med nyckel" {
+  
+  fork
+    :===Nyckelinnehavare===;
+    
+    if (Strategi?) then (Direkt till utgång)
+      :Spring mot utgång;
+      :Undvik motståndare;
+      
+      if (Träffad av förmåga?) then (ja)
+        :Nyckel tappas!;
+        :Tillbaka till nyckel-sökning;
+      else (nej)
+        :Nå utgång;
+        #palegreen:VINST!;
+        stop
+      endif
+      
+    else (Samla mer poäng först)
+      :Samla bonuspoäng;
+      :Samla hemliga bokstäver;
+      
+      :Risk: Motståndare ser din position;
+      
+      if (Träffad?) then (ja)
+        :Nyckel tappas;
+      else (nej)
+        :Spring mot utgång;
+        if (Nå utgång säkert?) then (ja)
+          #palegreen:VINST med extra poäng!;
+          stop
+        endif
+      endif
+    endif
+    
+  fork again
+    :===Motståndare (utan nyckel)===;
+    
+    if (Strategi?) then (Campa vid utgång)
+      :Gå till utgång;
+      :Vänta på nyckelinnehavare;
+      :Förbered förmåga;
+      
+      if (Nyckelinnehavare närmar sig?) then (ja)
+        :Använd Stun Shot;
+        
+        if (Träff?) then (ja)
+          :Nyckel tappas;
+          :Plocka upp nyckel;
+          :Gå in i utgång;
+          #palegreen:VINST!;
+          stop
+        else (nej)
+          :Nyckelinnehavare flyr eller vinner;
+        endif
+      endif
+      
+    else (Jaga nyckelinnehavare)
+      :Använd kompass för riktning;
+      :Jaga nyckelinnehavare;
+      
+      if (Nära nog för förmåga?) then (ja)
+        :Använd Stun Shot eller Förvirringsstrål;
+        
+        if (Träff?) then (ja)
+          :Nyckel tappas;
+          :Plocka upp nyckel;
+          :Spring mot utgång;
+        endif
+      endif
+    endif
+  end fork
+}
+
+stop
+
+@enduml

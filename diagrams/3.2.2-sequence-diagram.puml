@@ -1,0 +1,96 @@
+@startuml
+'
+' Översikt: Multiplayer-sessionslivscykel
+' Detta sekvensdiagram visar hela spelflödet från anslutning till avslut:
+' 1. Lobby & Matchmaking: Spelare ansluter via REST API och WebSocket
+' 2. Beredskapscheck: System väntar på tillräckligt med spelare (eller admin-start)
+' 3. Bekräftelse: Alla spelare måste bekräfta innan nedräkning
+' 4. Spel: Realtidskommunikation via WebSocket för spelaktioner
+' 5. Avslut: Spara resultat, visa highscores
+' Visar interaktion mellan Frontend, REST API, WebSocket, GameController, Database och Admin.
+'
+' ==== Participants ====
+participant "Player[*]" as Player
+participant "Frontend" as Frontend
+participant "WebSocket (SignalR)" as WS
+participant "REST API" as REST
+participant "Game Controller" as GC
+participant "Database" as DB
+participant "Admin" as Admin
+
+' ==== Phase 1: Lobby & Player Joining ====
+Player -> Frontend: startGame()
+Frontend -> REST: POST /sessions/join-or-create
+alt No open session exists
+    REST -> GC: createSession()
+    GC -> DB: saveSession()
+    REST -->> Frontend: return new sessionId
+else Open session found
+    REST -->> Frontend: return existing sessionId
+end
+
+Frontend -> WS: connect(sessionId)
+Frontend -> WS: join(sessionId)
+WS -> GC: registerPlayer(sessionId)
+GC -> GC: updateSessionPlayers(sessionId, player)
+GC -> GC: validateMinPlayers()
+
+' ==== Phase 2: Minimum Player Check & AboutToStart Signal ====
+alt Not enough pairs
+    GC -> WS: broadcast PlayerJoined
+    WS -->> Frontend: updateLobby()
+    GC -> Admin: notifyInsufficientPairs()
+    alt Admin forces start
+        Admin -> GC: startGame(sessionId)
+        GC -> WS: broadcast AboutToStart
+        WS -->> Frontend: show "Game is about to start..."
+    else Admin does nothing
+        note right of Admin: Waiting for more players
+    end
+else Enough players
+    GC -> WS: broadcast AboutToStart
+    WS -->> Frontend: show "Game is about to start..."
+end
+
+' ==== Phase 3: Player Confirmations ====
+par All players confirm readiness
+    Player -> Frontend: confirmStart()
+    Frontend -> WS: PlayerConfirmed
+    WS -> GC: markPlayerConfirmed()
+end
+
+GC -> GC: validateAllConfirmed()
+GC -> WS: broadcast Countdown
+WS -->> Frontend: showCountdown()
+note over WS,GC: Countdown timer (5 seconds)
+
+' ==== Phase 4: Game Start ====
+GC -> DB: saveGameStart()
+GC -> GC: activateGame()
+GC -> WS: broadcast GameStarted
+WS -->> Frontend: renderGame()
+
+' ==== Phase 5: Game Process ====
+par Player actions
+    Frontend -> WS: sendPlayerAction(action)
+    WS -> GC: processAction()
+    GC -> DB: saveGameState()
+    GC -> GC: updateGameState()
+    GC -> WS: broadcastGameStateUpdate()
+    WS -->> Frontend: updateGameState()
+    GC -> GC: checkGameFinished(sessionId)
+end
+
+' ==== Phase 6: Game End ====
+alt Game finished
+    GC -> DB: saveFinalState()
+    GC -> WS: broadcast GameEnded
+    WS -->> Frontend: displayFinalScreen
+
+    Frontend -> REST: GET /sessions/{id}/highscores
+    REST -> GC: getHighScores()
+    GC -> DB: fetchHighScores()
+    REST -->> Frontend: showScores
+end
+
+@enduml
