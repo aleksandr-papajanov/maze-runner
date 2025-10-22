@@ -11,96 +11,120 @@ skinparam packageStyle rectangle
 skinparam shadowing true
 skinparam linetype ortho
 skinparam defaultFontName Arial
+left to right direction
 
-enum ConnectionState {
-    + CONNECTED
-    + DISCONNECTED
-    + RECONNECTING
-}
-
-package "Action Handling" {
-    interface IActionPublisher {
-        void Publish(IAction action)
+together {
+    package "Game Orchestration" {
+        class GameController {
+            ConnectionManager ConnectionManager
+            SessionManager SessionManager
+            
+            void StartGameLoop()
+            void ProcessGameTick()
+            void HandlePlayerConnect(Guid playerId)
+            void HandleDisconnect(Guid connectionId)
+        }
     }
     
-    interface IActionSubscriber {
-        void OnAction(IAction action)
-    }
+    note right of GameController
+      Orchestrates game flow:
+      - Manages game loop
+      - Coordinates connections and sessions
+    end note
 }
 
-package "Connection Management" {
-    interface IConnection {
-        Guid Id
-        ConnectionState State
-        DateTime ConnectedAt
-        DateTime? DisconnectedAt
+together {
+    enum ConnectionState {
+        + CONNECTED
+        + DISCONNECTED
+        + RECONNECTING
     }
     
-    class PlayerConnection {
-        Guid PlayerId
-        ConnectionState State
-        DateTime ConnectedAt
-        DateTime? DisconnectedAt
-        DateTime LastHeartbeat
+    package "Connection Management" {
+        interface IActionPublisher {
+            void Publish(IAction action)
+        }
         
-        void Publish(IAction action)
-        void OnAction(IAction action)
-    }
-
-    class SpectatorConnection {
-        Guid SpectatorId
-        ConnectionState State
-        DateTime ConnectedAt
-        DateTime? DisconnectedAt
+        interface IActionSubscriber {
+            void OnAction(IAction action)
+        }
         
-        void OnAction(IAction action)
+        interface IConnection {
+            Guid Id
+            ConnectionState State
+            DateTime ConnectedAt
+            DateTime? DisconnectedAt
+        }
+        
+        class PlayerConnection {
+            Guid PlayerId
+            ConnectionState State
+            DateTime ConnectedAt
+            DateTime? DisconnectedAt
+            DateTime LastHeartbeat
+            
+            void Publish(IAction action)
+            void OnAction(IAction action)
+        }
+    
+        class SpectatorConnection {
+            Guid SpectatorId
+            ConnectionState State
+            DateTime ConnectedAt
+            DateTime? DisconnectedAt
+            
+            void OnAction(IAction action)
+        }
+        
+        class ConnectionManager {
+            void AddConnection(IConnection connection)
+            void RemoveConnection(Guid connectionId)
+            IConnection? GetById(Guid id)
+            IEnumerable<PlayerConnection> GetActivePlayers()
+            IEnumerable<SpectatorConnection> GetActiveSpectators()
+            void Broadcast(IAction action)
+        }
     }
     
-    class ConnectionManager {
-        void AddConnection(IConnection connection)
-        void RemoveConnection(Guid connectionId)
-        IConnection? GetById(Guid id)
-        IEnumerable<PlayerConnection> GetActivePlayers()
-        IEnumerable<SpectatorConnection> GetActiveSpectators()
-        void Broadcast(IAction action)
-    }
+    note right of ConnectionManager
+      Manages all connections:
+      - Adds/removes connections
+      - Broadcasts actions to subscribers
+      - Tracks active players/spectators
+    end note
 }
 
-package "Session Management" {
-    class GameSession {
-        Guid Id
-        SessionState State
-        IEnumerable<PlayerConnection> Players
-        DateTime CreatedAt
-        DateTime? StartedAt
+together {
+    package "Session Management" {
+        class GameSession {
+            Guid Id
+            SessionState State
+            IEnumerable<PlayerConnection> Players
+            DateTime CreatedAt
+            DateTime? StartedAt
+            
+            void AttachPlayer(PlayerConnection connection)
+            void DetachPlayer(Guid playerId)
+            void ProcessAction(IAction action)
+            void Tick()
+        }
         
-        void AttachPlayer(PlayerConnection connection)
-        void DetachPlayer(Guid playerId)
-        void ProcessAction(IAction action)
-        void Tick()
+        class SessionManager {
+            IEnumerable<GameSession> ActiveSessions
+            
+            GameSession CreateSession()
+            GameSession? GetById(Guid sessionId)
+            GameSession? FindAvailableSession()
+            void RemoveSession(Guid sessionId)
+        }
     }
     
-    class SessionManager {
-        IEnumerable<GameSession> ActiveSessions
-        
-        GameSession CreateSession()
-        GameSession? GetById(Guid sessionId)
-        GameSession? FindAvailableSession()
-        void RemoveSession(Guid sessionId)
-    }
+    note bottom of GameSession
+      Tracks players via Players collection.
+      Processes actions and manages game state.
+    end note
 }
 
-package "Game Orchestration" {
-    class GameController {
-        ConnectionManager ConnectionManager
-        SessionManager SessionManager
-        
-        void StartGameLoop()
-        void ProcessGameTick()
-        void HandlePlayerConnect(Guid playerId)
-        void HandleDisconnect(Guid connectionId)
-    }
-}
 
 ' ===== Interface Implementations =====
 IConnection <|.. PlayerConnection
@@ -119,38 +143,5 @@ GameSession "1" o-- "2..*" PlayerConnection : has players
 
 ' ===== Connection States =====
 IConnection --> ConnectionState
-
-' ===== Notes =====
-note right of GameController
-  Orchestrates game flow:
-  - Manages game loop
-  - Coordinates connections and sessions
-end note
-
-note right of ConnectionManager
-  Manages all connections:
-  - Adds/removes connections
-  - Broadcasts actions to subscribers
-  - Tracks active players/spectators
-end note
-
-note right of PlayerConnection
-  Bidirectional:
-  - Publishes actions (IActionPublisher)
-  - Receives actions (IActionSubscriber)
-  - Uses PlayerId (not ClientId)
-end note
-
-note right of SpectatorConnection
-  Unidirectional:
-  - Only receives actions (IActionSubscriber)
-  - Cannot publish actions
-  - Uses SpectatorId (not ClientId)
-end note
-
-note bottom of GameSession
-  Tracks players via Players collection.
-  Processes actions and manages game state.
-end note
 
 @enduml

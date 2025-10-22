@@ -9,34 +9,7 @@ skinparam packageStyle rectangle
 skinparam shadowing true
 skinparam linetype ortho
 skinparam defaultFontName Arial
-
-package "Maze Structure" {
-    interface IMaze {
-        int Width
-        int Height
-        Point StartPoint
-        Point ExitPoint
-        KeyItem Key
-        IMazeCell GetCell(Point position)
-        bool IsValidMove(Point from, Point to)
-        IEnumerable<Point> GetVisibleCells(Point center, int radius)
-    }
-    
-    interface IMazeCell {
-        Point Position
-        CellType Type
-        ICollectible[] Collectibles
-        void AddCollectible(ICollectible item)
-        void RemoveCollectible(ICollectible item)
-    }
-    
-    enum CellType {
-        EMPTY
-        WALL
-        START
-        EXIT
-    }
-}
+left to right direction
 
 package "Player System" {
     interface IPlayer {
@@ -69,95 +42,129 @@ package "Player System" {
     }
 }
 
-package "Collectibles Base" {
-    interface ICollectible {
-        Guid Id
-        Point Position
-        void OnCollect(IPlayer player)
+together {
+    package "Maze Structure" {
+        interface IMaze {
+            int Width
+            int Height
+            Point StartPoint
+            Point ExitPoint
+            KeyItem Key
+            IMazeCell GetCell(Point position)
+            bool IsValidMove(Point from, Point to)
+            IEnumerable<Point> GetVisibleCells(Point center, int radius)
+        }
+        
+        interface IMazeCell {
+            Point Position
+            CellType Type
+            ICollectible[] Collectibles
+            void AddCollectible(ICollectible item)
+            void RemoveCollectible(ICollectible item)
+        }
+        
+        enum CellType {
+            EMPTY
+            WALL
+            START
+            EXIT
+        }
     }
     
-    interface IAutoActivatable {
-        void AutoActivate(IPlayer player)
-    }
-    
-    interface IScoreReward {
-        int Points
-        void AwardPoints(IPlayer player)
+    package "Collectibles Base" {
+        interface ICollectible {
+            Guid Id
+            Point Position
+            void OnCollect(IPlayer player)
+        }
+        
+        interface IAutoActivatable {
+            void AutoActivate(IPlayer player)
+        }
+        
+        interface IScoreReward {
+            int Points
+            void AwardPoints(IPlayer player)
+        }
     }
 }
 
-package "Items" {
-    interface IItem {
-        string Name
-        void Use(IPlayer player)
+together {
+    package "Items" {
+        interface IItem {
+            string Name
+            void Use(IPlayer player)
+        }
+        
+        class KeyItem {
+            bool IsCollected
+            void OnCollect(IPlayer player)
+        }
+        
+        class HealthPack {
+            int HealAmount
+            void AutoActivate(IPlayer player)
+        }
+        
+        class BonusScore {
+            int Points
+            void AutoActivate(IPlayer player)
+        }
+        
+        class SpeedBoostItem {
+            double SpeedMultiplier
+            TimeSpan Duration
+            void AutoActivate(IPlayer player)
+        }
+        
+        class VisionBoostItem {
+            int ExtraRadius
+            TimeSpan Duration
+            void AutoActivate(IPlayer player)
+        }
+        
+        class AbilityPickup {
+            IAbility GrantedAbility
+            void OnCollect(IPlayer player)
+        }
     }
     
-    class KeyItem {
-        bool IsCollected
-        void OnCollect(IPlayer player)
-    }
     
-    class HealthPack {
-        int HealAmount
-        void AutoActivate(IPlayer player)
-    }
     
-    class BonusScore {
-        int Points
-        void AutoActivate(IPlayer player)
-    }
-    
-    class SpeedBoostItem {
-        double SpeedMultiplier
-        TimeSpan Duration
-        void AutoActivate(IPlayer player)
-    }
-    
-    class VisionBoostItem {
-        int ExtraRadius
-        TimeSpan Duration
-        void AutoActivate(IPlayer player)
-    }
-    
-    class AbilityPickup {
-        IAbility GrantedAbility
-        void OnCollect(IPlayer player)
-    }
-}
-
-package "Abilities" {
-    interface IAbility {
-        string Name
-        TimeSpan Cooldown
-        DateTime? LastUsed
-        bool IsReady()
-        void Use(IPlayer caster, IPlayer target)
-    }
-    
-    class StunShotAbility {
-        TimeSpan StunDuration
-        void Use(IPlayer caster, IPlayer target)
-    }
-    
-    class ConfusionBeamAbility {
-        TimeSpan Duration
-        void Use(IPlayer caster, IPlayer target)
-    }
-    
-    class SpeedBoostAbility {
-        double SpeedMultiplier
-        TimeSpan Duration
-        void Use(IPlayer caster, IPlayer target)
-    }
-    
-    class CompassHelpAbility {
-        void Use(IPlayer caster, IPlayer target)
-    }
-    
-    class TrapAbility {
-        TimeSpan TrapDuration
-        Point TrapPosition
-        void Use(IPlayer caster, IPlayer target)
+    package "Abilities" {
+        interface IAbility {
+            string Name
+            TimeSpan Cooldown
+            DateTime? LastUsed
+            bool IsReady()
+            void Use(IPlayer caster, IPlayer target)
+        }
+        
+        class StunShotAbility {
+            TimeSpan StunDuration
+            void Use(IPlayer caster, IPlayer target)
+        }
+        
+        class ConfusionBeamAbility {
+            TimeSpan Duration
+            void Use(IPlayer caster, IPlayer target)
+        }
+        
+        class SpeedBoostAbility {
+            double SpeedMultiplier
+            TimeSpan Duration
+            void Use(IPlayer caster, IPlayer target)
+        }
+        
+        class CompassHelpAbility {
+            void Use(IPlayer caster, IPlayer target)
+        }
+        
+        class TrapAbility {
+            TimeSpan TrapDuration
+            Point TrapPosition
+            void Use(IPlayer caster, IPlayer target)
+        }
     }
 }
 
