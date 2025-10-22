@@ -78,11 +78,11 @@ package "Actions" {
 
 package "Action Bus" {
     interface IActionSubscriber {
-        void OnEvent(IAction gameEvent)
+        void OnAction(IAction action)
     }
 
     interface IActionPublisher {
-        void Publish(IAction gameEvent)
+        void Publish(IAction action)
     }
 
     class ActionFilter {

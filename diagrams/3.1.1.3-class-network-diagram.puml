@@ -1,11 +1,11 @@
 @startuml MazeRunner-Network
 '
-' Översikt: Nätverksarkitektur och sessionshantering
-' Detta diagram visar hur spelare och åskådare ansluter till systemet.
-' PlayerConnection implementerar både IActionSubscriber och IActionPublisher för
-' tvåvägskommunikation via sessionens action bus. SpectatorConnection får periodiska
-' snapshots av alla aktiva sessioner för att visa fullständig överblick på storskärm.
-' Varje session har sin egen isolerade action bus för oberoende 2-spelar-matcher.
+' Overview: Balanced architecture for connections and action handling
+' IConnection: common interface for all connections
+' PlayerConnection: bidirectional (publish + subscribe)
+' SpectatorConnection: unidirectional (subscribe only)
+' ConnectionManager: manages connections and broadcasts actions
+' GameController: orchestrates game flow
 '
 skinparam packageStyle rectangle
 skinparam shadowing true
@@ -18,105 +18,139 @@ enum ConnectionState {
     + RECONNECTING
 }
 
+package "Action Handling" {
+    interface IActionPublisher {
+        void Publish(IAction action)
+    }
+    
+    interface IActionSubscriber {
+        void OnAction(IAction action)
+    }
+}
+
 package "Connection Management" {
     interface IConnection {
         Guid Id
         ConnectionState State
         DateTime ConnectedAt
         DateTime? DisconnectedAt
-        void Disconnect(string reason)
     }
-
+    
     class PlayerConnection {
-        Guid SessionId
-        IPlayer Player
+        Guid PlayerId
+        ConnectionState State
+        DateTime ConnectedAt
+        DateTime? DisconnectedAt
         DateTime LastHeartbeat
-        int Latency
-        void OnEvent(IAction action)
+        
         void Publish(IAction action)
+        void OnAction(IAction action)
     }
 
     class SpectatorConnection {
-        bool ReceiveFullMap
-        void ReceiveSnapshot(ISessionSnapshot snapshot)
+        Guid SpectatorId
+        ConnectionState State
+        DateTime ConnectedAt
+        DateTime? DisconnectedAt
+        
+        void OnAction(IAction action)
+    }
+    
+    class ConnectionManager {
+        void AddConnection(IConnection connection)
+        void RemoveConnection(Guid connectionId)
+        IConnection? GetById(Guid id)
+        IEnumerable<PlayerConnection> GetActivePlayers()
+        IEnumerable<SpectatorConnection> GetActiveSpectators()
+        void Broadcast(IAction action)
     }
 }
 
 package "Session Management" {
-    interface ISessionSnapshot {
-        Guid SessionId
-        SessionState State
-        IMaze Maze
-        IEnumerable<IPlayer> Players
-        IEnumerable<ICollectible> ActiveItems
-        DateTime CreatedAt
-        DateTime? StartedAt
-        DateTime? CompletedAt
-        Guid? WinnerId
-    }
-
-    interface IGameSession {
+    class GameSession {
         Guid Id
         SessionState State
-        Guid? WinnerId
-        IMaze Maze
         IEnumerable<PlayerConnection> Players
-        IActionBus ActionBus
         DateTime CreatedAt
         DateTime? StartedAt
-        DateTime? CompletedAt
-
+        
         void AttachPlayer(PlayerConnection connection)
-        void DetachPlayer(Guid playerId, string reason)
-
+        void DetachPlayer(Guid playerId)
         void ProcessAction(IAction action)
         void Tick()
-        void CheckWinCondition()
-        void EndSession(Guid winnerId)
-
-        ISessionSnapshot GetFullSnapshot()
-        ISessionSnapshot GetPlayerSnapshot(Guid playerId)
     }
-
-    interface ISessionManager {
-        IEnumerable<IGameSession> ActiveSessions
-        IGameSession CreateSession()
-        IGameSession? FindAvailableSession()
-        IGameSession? GetById(Guid sessionId)
+    
+    class SessionManager {
+        IEnumerable<GameSession> ActiveSessions
+        
+        GameSession CreateSession()
+        GameSession? GetById(Guid sessionId)
+        GameSession? FindAvailableSession()
         void RemoveSession(Guid sessionId)
     }
 }
 
 package "Game Orchestration" {
-    interface IGameController {
-        ISessionManager SessionManager
-        IEnumerable<SpectatorConnection> Spectators
+    class GameController {
+        ConnectionManager ConnectionManager
+        SessionManager SessionManager
         
-        PlayerConnection CreateConnection(IPlayer player)
-        SpectatorConnection CreateConnection()
-
-        IGameSession Join(PlayerConnection player)
-        IGameSession Join(SpectatorConnection spectator)
+        void StartGameLoop()
+        void ProcessGameTick()
+        void HandlePlayerConnect(Guid playerId)
+        void HandleDisconnect(Guid connectionId)
     }
 }
 
-IConnection <|-- PlayerConnection
-IConnection <|-- SpectatorConnection
-
-IActionSubscriber <|.. PlayerConnection
+' ===== Interface Implementations =====
+IConnection <|.. PlayerConnection
+IConnection <|.. SpectatorConnection
 IActionPublisher <|.. PlayerConnection
+IActionSubscriber <|.. PlayerConnection
 IActionSubscriber <|.. SpectatorConnection
 
-IGameController "1" --> "1" ISessionManager
-IGameController "1" o-- "*" SpectatorConnection
+' ===== Composition & Ownership =====
+GameController "1" *-- "1" ConnectionManager : owns
+GameController "1" *-- "1" SessionManager : owns
 
-ISessionManager "1" --> "*" IGameSession
+ConnectionManager "1" o-- "*" IConnection : manages
+SessionManager "1" --> "*" GameSession : manages
+GameSession "1" o-- "2..*" PlayerConnection : has players
 
-IGameSession "1" o-- "2" PlayerConnection : players >
-IGameSession "1" --> "1" IActionBus
-IGameSession "1" --> "1" IMaze
-
-PlayerConnection "1" --> "1" IPlayer
+' ===== Connection States =====
 IConnection --> ConnectionState
+
+' ===== Notes =====
+note right of GameController
+  Orchestrates game flow:
+  - Manages game loop
+  - Coordinates connections and sessions
+end note
+
+note right of ConnectionManager
+  Manages all connections:
+  - Adds/removes connections
+  - Broadcasts actions to subscribers
+  - Tracks active players/spectators
+end note
+
+note right of PlayerConnection
+  Bidirectional:
+  - Publishes actions (IActionPublisher)
+  - Receives actions (IActionSubscriber)
+  - Uses PlayerId (not ClientId)
+end note
+
+note right of SpectatorConnection
+  Unidirectional:
+  - Only receives actions (IActionSubscriber)
+  - Cannot publish actions
+  - Uses SpectatorId (not ClientId)
+end note
+
+note bottom of GameSession
+  Tracks players via Players collection.
+  Processes actions and manages game state.
+end note
 
 @enduml

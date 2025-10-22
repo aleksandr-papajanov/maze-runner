@@ -4,7 +4,7 @@
 ' This diagram shows MazeRunner's layered architecture:
 ' - Client Layer: React-based player and spectator clients
 ' - Communication Layer: SignalR (WebSocket) for realtime, REST for initial connection
-' - Server Core Layer: Game Controller, Game Logic, Action Bus, Domain Model
+' - Server Core Layer: Game Controller, Session Manager, Connection Manager, Game Logic
 ' - Persistence Layer: SQLite for high scores and session history
 ' Shows clear interfaces and data dependencies between modules.
 '
@@ -28,12 +28,11 @@ package "Client Layer (Browser)" {
 }
 
 package "Communication Layer" {
-    component [SignalR Hub] as SignalR {
-        portin PlayerHub
-        portin SpectatorHub
+    component "SignalR Hub" as SignalR <<Thin Transport Adapter>> {
+        note right: Delegates to ConnectionManager
     }
     
-    component [REST API] as REST {
+    component "REST API" as REST {
         portin "/sessions"
         portin "/highscores"
     }
@@ -43,7 +42,6 @@ package "Server Core Layer" <<C# ASP.NET Core>> {
     component "Game Controller" as GameController {
         component [Session Manager] as SessionMgr
         component [Connection Manager] as ConnMgr
-        component [Spectator Manager] as SpecMgr
     }
     
     component "Game Logic" as GameLogic {
@@ -53,10 +51,13 @@ package "Server Core Layer" <<C# ASP.NET Core>> {
         component [Win Condition] as WinCheck
     }
     
+    component "Connection Types" as Connections {
+        component [Player Connection] as PlayerConn
+        component [Spectator Connection] as SpectatorConn
+    }
+    
     component "Action Bus" as ActionBus {
-        component [Event Publisher] as Publisher
-        component [Event Subscribers] as Subscribers
-        component [Action Filter] as Filter
+        note right: Each session owns its\nisolated Action Bus
     }
     
     component "Domain Model" as Domain {
@@ -68,33 +69,46 @@ package "Server Core Layer" <<C# ASP.NET Core>> {
 }
 
 package "Persistence Layer" {
-    database [SQLite Database] as DB {
+    database "SQLite Database" as DB {
         component [High Scores] as Scores
         component [Session History] as History
     }
 }
 
 ' Client to Communication
-PlayerClient -down-> PlayerHub : "WebSocket\n(game actions)"
+PlayerClient -down-> SignalR : "WebSocket\n(actions)"
 PlayerClient -down-> REST : "HTTP\n(join/create)"
-SpectatorClient -down-> SpectatorHub : "WebSocket\n(snapshots)"
+SpectatorClient -down-> SignalR : "WebSocket\n(connect)"
 
-' Communication to Server Core
-PlayerHub -down-> GameController : "Process\nActions"
-SpectatorHub -down-> GameController : "Request\nSnapshots"
+' Communication to Server Core (SignalR is thin adapter)
+SignalR -down-> ConnMgr : "Delegate all\nmessages"
 REST -down-> GameController : "Session\nManagement"
 
-' Server Core Internal
-GameController -right-> GameLogic : "Manage\nSessions"
-GameController -down-> ActionBus : "Subscribe/\nPublish"
-GameLogic -down-> ActionBus : "Publish\nEvents"
-ActionBus -up-> GameController : "Notify\nSubscribers"
-GameLogic --> Domain : "Use"
-Session --> ActionBus : "Own\nSession Bus"
+' GameController internal structure
+GameController --> SessionMgr : "owns"
+GameController --> ConnMgr : "owns"
+
+' Connection Manager manages connections
+ConnMgr --> PlayerConn : "manages"
+ConnMgr --> SpectatorConn : "manages"
+
+' Session Manager manages sessions
+SessionMgr --> Session : "manages"
+
+' Game Session composition
+Session --> ActionBus : "owns"
+Session --> MazeGen : "uses"
+Session --> Collision : "uses"
+Session --> WinCheck : "uses"
+Session --> Domain : "uses domain entities"
+
+' Connections interact with sessions
+PlayerConn --> ActionBus : "publishes/\nsubscribes"
+PlayerConn --> Session : "belongs to"
 
 ' Server to Persistence
-GameLogic -down-> DB : "Save State\n& Scores"
-GameController -down-> DB : "Query\nScores"
+Session -down-> DB : "Save State\n& Scores"
+SessionMgr -down-> DB : "Query\nHistory"
 
 note right of PlayerClient
   Responsive UI for:
@@ -103,10 +117,20 @@ note right of PlayerClient
   Fog of war rendering
 end note
 
+note right of ConnMgr
+  **Single entry point for WebSocket messages**
+  • Handles both players & spectators
+  • Routes actions to correct connection
+  • Manages connection lifecycle
+  • No separate SpectatorManager
+  
+  SignalR Hub is just thin adapter!
+end note
+
 note right of ActionBus
   Pub/Sub pattern
   Isolated per session
-  Loose coupling
+  PlayerConnection = Publisher + Subscriber
 end note
 
 note bottom of DB

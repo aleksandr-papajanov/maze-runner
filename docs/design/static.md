@@ -46,94 +46,35 @@ Spelare kommunicerar via sessionens action bus, medan åskådare får fullständ
 Statisk design - Compile-time systemarkitektur och moduler.
 
 ## Övergripande Arkitektur
-MazeRunner-systemet följer en **lager-baserad klient-server arkitektur** med centraliserad speltillståndshantering. All spellogik körs på en enda server för att säkerställa synkronisering och förhindra desync-problemen som upplevdes i tidigare projekt.
+MazeRunner följer en **lager-baserad arkitektur** med centraliserad spellogik på servern. SignalR används som tunn transportadapter som delegerar till ConnectionManager.
 
-**Arkitekturmönster**: Klient-Server med WebSocket-kommunikation  
-**Distributionsmodell**: Enkelserver-applikation som körs på laptop med webbaserade klienter
+## Systemlager
 
-## Systemlager och Moduler
+### **Client Layer (Browser)**
+- **Player Client & Spectator Client**: React + TypeScript med WebSocket-kommunikation
 
-Detta diagram visar fyra huvudlager:
+### **Communication Layer**
+- **SignalR Hub**: Tunn transportadapter som delegerar alla meddelanden till ConnectionManager
+- **REST API**: Initial sessionhantering och high scores
 
-### **Layer 1: Client Layer (Browser)**
-- **Player Client**: React-baserad spelklient med responsiv UI
-  - Game Renderer: Canvas-baserad labyrintrendering med fog of war
-  - Input Controller: Hanterar touch (joystick) och tangentbord (WASD)
-  - UI Components: HUD, förmåga-knappar, poäng-display
-  - WebSocket Client: SignalR-anslutning för realtidsuppdateringar
+### **Server Core Layer (C# ASP.NET Core)**
+- **Game Controller**: Äger SessionManager och ConnectionManager
+- **Session Manager**: Skapar och hanterar sessioner
+- **Connection Manager**: Enda entry point för WebSocket-meddelanden, hanterar både spelare och åskådare
+- **Game Logic**: Session, Maze Generator, Collision Detection, Win Condition
+- **Connection Types**: PlayerConnection (bidirektionell), SpectatorConnection (mottagning)
+- **Action Bus**: Pub/Sub-mönster, isolerad per session
+- **Domain Model**: Player, Maze, Collectibles, Abilities
 
-- **Spectator Client**: Åskådarvy som visar alla aktiva sessioner
-  - Full Map Renderer: Ingen fog of war, visar fullständig labyrint
-  - WebSocket Client: Tar emot periodiska snapshots
+### **Persistence Layer**
+- **SQLite Database**: Embedded databas för high scores och sessionshistorik
 
-### **Layer 2: Communication Layer**
-- **SignalR Hub**: WebSocket-server för bidirektionell realtidskommunikation
-  - PlayerHub: Hanterar spelactions (move, ability use, collect)
-  - SpectatorHub: Broadcastar snapshots till åskådare
-
-- **REST API**: HTTP-endpoints för initial anslutning
-  - `/sessions`: Join-or-create, session info
-  - `/highscores`: Query och post high scores
-
-### **Layer 3: Server Core Layer (C# ASP.NET Core)**
-- **Game Controller**: Orchestrerar alla sessioner och anslutningar
-  - Session Manager: Skapar, matchar och rensar sessioner
-  - Connection Manager: Hanterar player connections och disconnects
-  - Spectator Manager: Hanterar åskådare, broadcastar snapshots
-
-- **Game Logic**: Kärnspelmekanik
-  - Game Session: Äger sin egen Action Bus, hanterar 2 spelare
-  - Maze Generator: Skapar randomiserade labyrinter
-  - Collision Detection: Validerar rörelser, detekterar insamling
-  - Win Condition: Kontrollerar om spelare nått utgång med nyckel
-
-- **Action Bus**: Event-driven kommunikation (pub/sub-mönster)
-  - Event Publisher: Publicerar IAction-händelser
-  - Event Subscribers: Registrerar lyssnare med filter
-  - Action Filter: Filtrerar på SessionId/PlayerId/ActionType
-  - *Viktigt*: Varje session har sin egen isolerade action bus
-
-- **Domain Model**: Spelentiteter
-  - Player: Tillstånd, position, inventory, abilities
-  - Maze & Cells: Labyrintstruktur, väggar, cells
-  - Collectibles: Nyckel, bonuspoäng, power-ups
-  - Abilities: Stun Shot, Confusion Beam, Speed Boost, Traps
-
-### **Layer 4: Persistence Layer**
-- **SQLite Database**: Embedded databas (ingen extern server)
-  - High Scores: Spara vinnare och poäng
-  - Session History: Logga sessioner för analys
-
-## Kommunikationsflöden
-
-**Spelare → Server:**
-1. HTTP GET → REST API → GameController (join session)
-2. WebSocket connect → SignalR PlayerHub
-3. Game actions → PlayerHub → GameController → GameLogic
-4. GameLogic publicerar till Action Bus
-5. Action Bus notifierar subscribers (andra spelare i session)
-
-**Server → Spelare:**
-1. Action Bus event → PlayerConnection.OnEvent()
-2. SignalR broadcast → WebSocket → Player Client
-3. Client uppdaterar rendering
-
-**Server → Åskådare:**
-1. GameController.BroadcastAllSessionsToSpectators() (periodisk, t.ex. 100ms)
-2. ISessionSnapshot för varje aktiv session
-3. SignalR SpectatorHub → SpectatorConnection.ReceiveSnapshot()
-
-## Teknisk Stack
-- **Frontend**: React med TypeScript för responsivt UI
-- **Backend**: C# med ASP.NET Core för spelserver
-- **Kommunikation**: SignalR (WebSocket) för realtidsuppdateringar, REST API för initial anslutning
-- **Databas**: SQLite för high scores och sessionsdata
-- **Hosting**: Lokal server på laptop eller lättviktig molndistribution
+## Nyckelprinciper
+- ConnectionManager är enda WebSocket entry point
+- SignalR delegerar direkt till ConnectionManager (ingen affärslogik i Hub)
+- Varje GameSession äger sin isolerade Action Bus
+- PlayerConnection är både publisher och subscriber
+- SpectatorConnection är endast subscriber
 
 ![Module Diagram](/diagrams/3.1.2-module-diagram.png)
 [View PlantUML source](/diagrams/3.1.2-module-diagram.puml)
-
-## Distributionsarkitektur
-- **Utveckling**: Lokal utvecklingsmiljö med React dev server och C# backend
-- **Produktion**: Enkel körbar fil som kör både React build och C# server på demonstrations-laptop
-- **Skalbarhet**: Enkelserver-instans designad för maximum 10 samtidiga spelare (5 sessioner)
