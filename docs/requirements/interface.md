@@ -19,13 +19,13 @@ Relaterade funktionella krav (FK): FK002–FK003, FK005, FK006–FK012, FK027, F
 - Mobil: on‑screen joystick (vänster), tre förmågeknappar (höger), statusfält (tid, poäng, nyckel, kompass), begränsad sikt (fog of war)
 - Desktop: WASD för rörelse, JKL för förmågor, samma statusfält och siktlogik som mobil
 
-![Bild](/diagrams/2.5.1-interface.jpg)
+![Device-preview](/diagrams/2.5.1-device-preview.jpg)
 
 ### Åskådarvy
 - Full kartöversikt utan fog of war, båda spelare synliga
 - Spelarstatus på vänster/höger sida, stor timer upptill, sessionväljare nertill
 
-![Bild](/diagrams/2.5.2-interface.jpg)
+![Screen preview](/diagrams/2.5.2-screen-preview.jpg)
 
 ## Storyboards (för otydliga användarfall)
 
@@ -34,18 +34,18 @@ Relaterade funktionella krav (FK): FK002–FK003, FK005, FK006–FK012, FK027, F
 
 1) P1 (röd) ser P2 (blå) med nyckeln  → 2) P1 trycker Sömneliksir-knappen → 3) P2 fryser (2s), nyckeln faller → 4) P1 plockar upp nyckeln och springer mot utgången
 
-![Bild](/diagrams/2.5.4-interface.jpg)
+![Storyboard](/diagrams/2.5.4-storyboard.jpg)
 
 ### Storyboard 2: QR‑kod → vänteläge → spelstart – UC1, FK005
 **Scenario:** Elev skannar QR-kod och kommer in i spel.
 
 1) QR på projektor → 2) Telefon öppnar URL → 3) Vänteskärm "Väntar på motståndare..." → 5) Nedräkning 3‑2‑1 → 6) Spelvy visas
 
-![Bild](/diagrams/2.5.5-interface.jpg)
+![Storyboard](/diagrams/2.5.5-storyboard.jpg)
 
 ### Storyboard 3: Hitta nyckel och nå utgången – UC3, UC5, FK002–FK003
 **Scenario:** P1 hittar nyckeln, springer mot utgången och vinner.
 
 1) P1 rör sig genom labyrinten (fog of war) → 2) P1 ser nyckelikonen → 3) P1 går över nyckeln, den försvinner och visas i inventariet → 4) Kompass aktiveras och pekar mot utgången → 5) P1 når utgången (markerad dörr/portal) → 6) "Victory!" visas, P2 får "Defeat" → 7) Resultatskärm med tid och poäng
 
-![Bild](/diagrams/2.5.6-interface.jpg)
+![Storyboard](/diagrams/2.5.6-storyboard.jpg)
