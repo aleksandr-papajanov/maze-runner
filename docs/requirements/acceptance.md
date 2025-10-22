@@ -73,7 +73,7 @@ Bedömningsskala:
 | FK015 | Begränsad viewport         | Fog of war-effekt runt karaktär                         | M       | H     | M    | FK001, FK027         |
 | FK016 | Visuell feedback           | Indikatorer för actions och effekter                    | M       | H     | L    | FK001, IFK018        |
 | FK017 | Auto-avslutning            | Spel avslutas vid vinst/urkoppling                      | M       | H     | M    | FK003, IFK011        |
-| FK023 | 5 samtidiga sessioner      | 10 spelare totalt utan prestandaförsämring              | H       | H     | M    | FK001, IFK003        |
+| FK023 | 4 samtidiga sessioner      | 8 spelare totalt utan prestandaförsämring               | H       | H     | M    | FK001, IFK003        |
 | FK024 | Auto matchmaking           | Automatisk spelarparning                                | M       | H     | M    | FK001, FK005         |
 | FK025 | Åskådarvy full karta       | Separat skärm med hela labyrinten                       | M       | H     | M    | FK001, AF003         |
 | FK027 | Enhetsanpassade kontroller | Touchjoystick (mobil) vs tangentbord                    | M       | H     | M    | FK001, IFK006        |

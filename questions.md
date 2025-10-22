@@ -64,7 +64,7 @@
 4. Multiplayer och Tekniska Krav
 
 - Vad är det förväntade maximala antalet par som spelar samtidigt under evenemanget ("öppet hus")?
-**Svar**: Maximum 5 samtidiga sessioner (10 spelare totalt). Bara cirka 10 personer kan fysiskt få plats runt båset ändå. Även om 30 sessioner körde skulle det inte vara en tung dataload.
+**Svar**: Maximum 4 samtidiga sessioner (8 spelare totalt). Bara cirka 10 personer kan fysiskt få plats runt båset ändå. Även om 30 sessioner körde skulle det inte vara en tung dataload.
 
 - Är varje par helt oberoende, eller är interaktion/påverkan mellan olika spelpar möjlig?
 **Svar**: Varje par är helt oberoende. Ingen interaktion mellan olika spelsessioner.

@@ -12,7 +12,7 @@ Detta dokument definierar alla icke-funktionella krav för MazeRunner-systemet, 
 | --- | ----------- | ------ | ---- |
 | **IFK001** | Spelinstallationstid från laptop-uppstart till spelbart tillstånd | <2 minuter | Låg |
 | **IFK002** | Spelarrörelsens svarstid under normala nätverksförhållanden | <100ms | Hög |
-| **IFK003** | Stöd för 5 samtidiga sessioner utan prestandaförsämring | 10 samtidiga spelare | Medel |
+| **IFK003** | Stöd för 4 samtidiga sessioner utan prestandaförsämring | 8 samtidiga spelare | Medel |
 | **IFK004** | 90% av spelen slutförs inom 5 minuter, tillåt 7-8 minuter för återstående 10% | 5-8 min intervall | Låg |
 | **IFK005** | Kompasshjälpsystem aktiveras efter 5 minuter för att hjälpa spelare | Auto-trigger | Låg |
 
@@ -118,7 +118,7 @@ Detta dokument definierar alla icke-funktionella krav för MazeRunner-systemet, 
 - **IFK012**: Automatisk återhämtning (kräver robust tillståndshantering)
 
 ### Medelrisk-krav
-- **IFK003**: 5 samtidiga sessioner (serverlasttestning behövs)
+- **IFK003**: 4 samtidiga sessioner (serverlasttestning behövs)
 - **IFK007**: Multi-webbläsarkompatibilitet (korswebbläsartestning krävs)
 - **IFK008**: Viewport-skalning (responsiv designkomplexitet)
 - **IFK010**: 99% drifttid (kräver övervakning och snabb återhämtning)

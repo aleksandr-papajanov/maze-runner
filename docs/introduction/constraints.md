@@ -1,57 +1,48 @@
 # 1.4 Avgränsning
 
-Beskrivning av sådant som hade kunnat ingå i uppgiften men explicit uteslutits från arbetet.
+## Uteslutet från Projektet
 
-## Uteslutet från Projektets Omfattning
+**Implementation och Kodning:**
+- Spelimplementation i React och C#
+- Frontend- och backend-utveckling
+- Databaskonfiguration
+- WebSocket/SignalR-integration
 
-### Implementation och Kodning
-- Faktisk implementation av spelet i React och C#
-- Utveckling av frontend-komponenter och UI-kod
-- Backend-serverimplementation och API-utveckling
-- Databaskonfiguration och datalagring
-- WebSocket/SignalR-integration och testning
+*Motivering: Projektet fokuserar på analys och design. Implementation överskrider 8-timmars tidsramen per teammedlem.*
 
-**Motivering**: Detta projekt fokuserar på analys- och designfasen. Implementation skulle kräva betydligt mer tid än de 8 timmar som allokerats per teammedlem.
+**Detaljerad UI/UX-Design:**
+- Högtrogna mockups och prototyper
+- Detaljerade färg- och typografispecifikationer
+- Animationsdesign
 
-### Detaljerad UI/UX-Design
-- Högtrogna designmockups och prototyper
-- Detaljerad färgpalett och typografispecifikationer
-- Pixel-perfekta layoutspecifikationer
-- Animationsdesign och övergångar
+*Motivering: Grundläggande UI-design och wireframes ingår, men detaljerad visuell design är bortom omfattningen.*
 
-**Motivering**: Projektet inkluderar grundläggande UI-design och wireframes, men detaljerad visuell design är bortom omfattningen.
-
-### Testning och Prestanda
-- Faktisk prestandatestning och optimering
+**Testning och Prestanda:**
+- Prestandatestning och optimering
 - Lastbalansering och skalbarhetstestning
 - Cross-browser kompatibilitetstestning
-- Användbarhets- och användartestning med målgrupp
+- Användartestning
 
-**Motivering**: Testning kräver ett fungerande system. Projektet inkluderar teststrategier men inte faktisk testutförande.
+*Motivering: Testning kräver fungerande system. Teststrategier ingår, men inte utförande.*
 
-### Distribution och Drift
-- Deployment-procedurer och hosting-konfiguration
-- CI/CD pipeline-uppsättning
+**Distribution och Drift:**
+- Deployment-procedurer
+- CI/CD pipeline
 - Produktionsmiljö-konfiguration
 - Övervaknings- och loggningssystem
 
-**Motivering**: Distribution och drift är post-implementation aktiviteter.
+*Motivering: Post-implementation aktiviteter.*
 
-## Inkluderat i Projekt (För Tydlighet)
+## Begränsningar
 
-- Kravanalys baserad på intressentintervju
-- Systemdesign med UML-diagram
-- Teknisk arkitekturspecifikation
-- Projektutförandeplanering
+**Tekniska:**
+- Endast webbläsare (inga native appar)
+- Måste fungera på äldre mobila enheter
+- Standard wifi, graciell försämring vid dålig anslutning
+- Visuell feedback prioriterad (bullrig miljö)
 
-## Tekniska Begränsningar
-- **Plattform**: Endast webbläsare (inga inhemska appar)
-- **Prestanda**: Måste fungera på äldre mobila enheter
-- **Nätverk**: Designad för standard wifi, graciell försämring för dåliga anslutningar
-- **Ljud**: Visuell feedback prioriterad på grund av bullrig miljö
-
-## Projektbegränsningar  
-- **Tid**: 8-timmars dokumentationsutvecklingstidsram
-- **Team**: 2 medlemmar med kollaborativ ansats
-- **Omfattning**: Endast analys och design, ingen implementering
-- **Intressentåtkomst**: Enkel expertintervjusession med Josef Hallberg
+**Projekt:**
+- Tid: 8 timmar per teammedlem
+- Team: 2 medlemmar
+- Omfattning: Analys och design
+- Intressent: En expertintervju med Josef Hallberg

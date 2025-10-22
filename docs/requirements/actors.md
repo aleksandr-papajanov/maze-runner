@@ -136,7 +136,7 @@ Detta diagram fokuserar på spelarens användarfall med implementationsdetaljer:
 
 **Aktör**: Spelare  
 **Syfte**: Snabb anslutning utan URL-inmatning  
-**Förvillkor**: Spelserver aktiv, enhet med kamera, <10 spelare
+**Förvillkor**: Spelserver aktiv, enhet med kamera, <8 spelare
 
 **Huvudflöde**:
 1. Spelare skannar QR-kod eller öppnar URL

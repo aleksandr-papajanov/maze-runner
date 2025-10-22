@@ -60,7 +60,7 @@ Detta dokument definierar alla funktionella krav för MazeRunner-systemet, organ
 
 | ID | Krav | Prioritet | Anteckningar |
 | --- | ----------- | -------- | ----- |
-| **FK023** | Stöd för 5 samtidiga spelsessioner (10 spelare totalt) | P1 | Evenemangskarav |
+| **FK023** | Stöd för 4 samtidiga spelsessioner (8 spelare totalt) | P1 | Evenemangskarav |
 | **FK024** | Automatisk matchmaking - första tillgängliga spelare paras ihop med nästa anslutande spelare | P1 | Förenklad UX |
 | **FK025** | Åskådarvy visar hela labyrinten och båda spelarnas positioner på separat skärm | P1 | Publikengagemang |
 | **FK026** | Lärare kan växla mellan olika aktiva spelsessioner på åskådardisplay | P1 | Evenemangshantering |

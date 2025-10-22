@@ -1,43 +1,33 @@
 # 1.3 Problembeskrivning
 
-Konkret beskrivning av vad som ska åstadkommas.
+## Omfattning
 
-## Vad ska åstadkommas
+Detta dokumentationsprojekt levererar komplett analys- och designdokumentation för MazeRunner:
 
-Detta dokumentationsprojekt ska leverera en komplett analys- och designdokumentation för MazeRunner, ett webbaserat multiplayer labyrintspel. Projektet omfattar:
-
-### Systemanalys och Kravspecifikation
+**Systemanalys och Kravspecifikation:**
 - Intressentanalys och användarkarakteristik
 - Funktionella och icke-funktionella krav
 - Användningsfall och användarflöden
 - Interfacespecifikation med storyboards
 
-### Systemdesign
-- **Statisk design (Compile-time)**:
-  - Klassdiagram för backend (C#) och frontend (React) komponenter
-  - Moduldiagram som visar systemarkitektur
-- **Dynamisk design (Run-time)**:
-  - Aktivitetsdiagram för spelsessionsflöde
-  - Sekvensdiagram för realtidsinteraktioner
-  - Tillståndsdiagram för spelsession och spelarstatus
+**Systemdesign:**
+- Statisk design: Klassdiagram och moduldiagram
+- Dynamisk design: Aktivitets-, sekvens- och tillståndsdiagram
 
-### Projektplanering och Genomförande
-- Projektledning, teamstruktur och roller
+**Projektplanering:**
+- Projektledning och teamstruktur
 - Resurs- och aktivitetsplan
-- Riskhantering och kvalitetssäkring
 
-## Leverabler
+## Avgränsning
 
-Detta dokumentationsprojekt täcker den kompletta analys- och designfasen för MazeRunner, inklusive:
-
-## Inkluderat i Projekt
+**Inkluderat:**
 - Kravanalys baserad på intressentintervju
 - Systemdesign med UML-diagram
-- Teknisk arkitekturspecifikation  
+- Teknisk arkitekturspecifikation
 - Projektutförandeplanering
 
-## Exkluderat från Projekt
-- Faktisk spelimplementering/kodning
-- Detaljerade UI/UX-designmockuper
+**Exkluderat:**
+- Spelimplementering och kodning
+- Detaljerade UI/UX-mockuper
 - Prestandatestning och optimering
-- Distributions- och underhållsprocedurer
+- Distribution och underhållsprocedurer

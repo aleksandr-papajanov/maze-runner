@@ -101,7 +101,7 @@ Spelare kan använda förmågor för att stoppa varandra:
 - **Snabb uppstart**: Från QR-kod skanning till spelande under 1 minut
 - **Smidigt spelande**: <100ms svarstid för rörelser
 - **Tillförlitlig**: Fungerar även med fläckig wifi, hanterar urkopplingar graciellt
-- **Skalbar**: Stödjer 5 samtidiga spel (10 spelare) utan problem
+- **Skalbar**: Stödjer 4 samtidiga spel (8 spelare) utan problem
 
 ## Social och Åskådarupplevelse
 

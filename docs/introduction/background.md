@@ -1,29 +1,72 @@
 # 1.1 Bakgrund
 
-Kort övergripande beskrivning av teknikområdet och tekniker som används i projektet.
+## Projektets Ursprung
 
-## Teknikområde
+MazeRunner-projektet initierades av Josef Hallberg, universitetslektor vid Luleå Tekniska Universitet, som ett svar på behovet av ett tillförlitligt och engagerande demonstrationsverktyg för öppet hus-evenemang. Projektet bygger på hans 4-åriga erfarenhet av att utveckla interaktiva demonstrationsspel för att engagera gymnasiestudenter i datavetenskap.
 
-MazeRunner är ett webbaserat multiplayer labyrintspel designat för universitets öppet hus-demonstrationer på Luleå Tekniska Universitet (LTU). Projektet använder moderna webbteknologier för att skapa en interaktiv spelupplevelse:
+### Initiala Diskussioner och Problemidentifiering
 
-- **Frontend-teknologi**: React med TypeScript för responsivt användargränssnitt
-- **Backend-teknologi**: C# med ASP.NET Core för spelserver och logik
+Under förberedelserna för öppet hus 2025 identifierades flera kritiska problem med befintliga demonstrationssystem:
+
+**Tidigare System - Haptisk Teknologi:**
+- Krävde komplex hårdvaruinstallation med specialiserad utrustning
+- Frekventa drivrutinskonflikter vid operativsystemuppdateringar
+- Opålitlig drift under demonstrationer (systemkraschar mitt i presentationer)
+- Lång installations- och felsökningstid (flera timmar)
+- Hög underhållsbörda som krävde konstant teknisk support
+
+**Josef Hallbergs tidigare spelprototyper:**
+- Stötte på synkroniseringsproblem vid multiplayer-implementering
+- Unity-exportkomplexitet gjorde distribution svår
+- Begränsad plattformskompatibilitet
+
+Dessa erfarenheter ledde till en tydlig kravbild: ett system som "alltid fungerar" och prioriterar tillförlitlighet över teknisk komplexitet.
+
+## Projektets Vision
+
+Huvudmålet formulerades som att transformera det traditionella öppet hus-samtalet från "Är du intresserad av datavetenskap?" till "Vill du spela ett spel?" - en mer naturlig och engagerande ingång till diskussioner om utbildningen.
+
+**Kärnidé:**
+- Ett webbaserat multiplayer labyrintspel där två gymnasiestudenter tävlar
+- Publiken följer på storskärm och hejar på sina favoriter
+- Snabba spelsessioner (5 minuter) skapar kontinuerligt flöde av nya spelare
+- Demonstrerar moderna webbutvecklingstekniker genom studentskapad mjukvara
+
+## Teknikval och Lösningsansats
+
+Efter intressentintervju med Josef Hallberg fastställdes följande tekniska riktlinjer:
+
+**Teknisk Stack:**
+- **Frontend**: React med TypeScript för responsivt användargränssnitt
+- **Backend**: C# med ASP.NET Core för spelserver och logik
 - **Realtidskommunikation**: SignalR/WebSocket för multiplayer-synkronisering
 - **Datalagring**: SQLite för high scores och sessionsdata
 
-## Teknisk Kontext
+**Design-filosofi:**
+- Webbaserad lösning eliminerar installationsproblem
+- Klient-server arkitektur förhindrar synkroniseringsproblem (allt speltillstånd på server)
+- Ingen app-nedladdning krävs - bara skanna QR-kod och spela
+- Fungerar på 6-7 år gamla smartphones och moderna webbläsare
 
-Det nuvarande hårdvarubaserade demonstrationssystemet (haptisk teknologi) har visat sig opålitligt på grund av komplexa installationskrav, driverkompabilitetsproblem och frekventa tekniska fel. Huvudproblem med det tidigare systemet inkluderar:
+**Praktiska Krav:**
+- Installation från laptop till körande demo: under 2 minuter
+- Stödja 4 samtidiga spelsessioner (8 spelare totalt)
+- Fungera konsekvent över olika enheter och plattformar
+- Minimal underhållsbörda för långsiktig användning (4+ år)
 
-- **Komplex hårdvaruinstallation**: Krävde specialiserad hårdvara och driverinstallationer
-- **Tillförlitlighetsproblem**: Gick ofta sönder med operativsystemuppdateringar  
-- **Installationstid**: Tog betydande tid att konfigurera och felsöka
-- **Underhållsbörda**: Krävde konstant teknisk support och uppdateringar
+## Användningskontext
 
-## Lösningsfilosofi
+**Målgrupp:**
+- **Primära spelare**: Gymnasiestudenter (16-25 år) som besöker öppet hus
+- **Åskådare**: Föräldrar, vänner och andra besökare som tittar på storskärm
+- **Demonstratör**: Josef Hallberg och andra universitetslärare
 
-MazeRunner förkroppsligar en "fungerar alltid"-filosofi, prioriterar tillförlitlighet och enkelhet över teknisk komplexitet. En enkel webbaserad lösning behövs som kan installeras under 2 minuter och fungerar konsekvent över olika enheter och miljöer.
+**Typiskt Scenario:**
+1. Student skannar QR-kod med mobil eller laptop
+2. Matchas automatiskt med annan redo spelare
+3. 5-minuters labyrintäventyr där de tävlar om att hitta nyckel och nå utgång
+4. Publiken ser hela spelet på storskärm och hejar
+5. Vinnare får ange initialer i high score-lista
+6. Naturligt samtal om programmering och datavetenskap följer
 
-## Långsiktig Vision
-
-Josef Hallberg har utvecklat interaktiva demonstrationsspel för LTU öppet hus-evenemang i 4 på varandra följande år. Tidigare projekt stötte på synkroniseringsproblem och Unity-exportkomplexitet. MazeRunner är designat för flerårig användning med minimal underhåll, transformerar den typiska "Är du intresserad av datavetenskap?"-ansatsen till "Vill du spela ett spel?"
+Denna bakgrund etablerar MazeRunner som en praktisk, tillförlitlig lösning som kombinerar underhållning med utbildningsdemonstration, designad för att engagera nästa generation datavetare.
