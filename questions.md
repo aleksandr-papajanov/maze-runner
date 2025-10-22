@@ -19,7 +19,7 @@
 **Svar**: Primärt visuell feedback är viktigt på grund av bullrig miljö (100+ personer). Behöver se projektiler avfyras, splash-effekter när träffad, visuella indikatorer för statuseffekter. Ljudeffekter är sekundära.
 
 - Vilken typ av rörelsemekanik används i labyrinten (tangentbord/piltangenter, svep, klick)?
-**Svar**: Mobil: on-screen joystick med vänster tumme, förmågor med höger tumme. Desktop: WASD-tangenter med 8-riktnings rörelse, förmågor med tangentbordstangenter som JKL om mus inte är tillgänglig.
+**Svar**: Mobil: on-screen joystick med vänster tumme, förmågor med höger tumme. Desktop: WASD-tangenter med 4-riktnings rörelse, förmågor med tangentbordstangenter som JKL om mus inte är tillgänglig.
 
 - Hur många föremål kan vara i labyrinten samtidigt?
 **Svar**: Begränsat inventarium - kanske 3 olika förmågetyper, använd en och den fylls på efter några sekunder, eller samla nya från labyrinten.

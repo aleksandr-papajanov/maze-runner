@@ -78,7 +78,7 @@ Detta dokument definierar alla funktionella krav för MazeRunner-systemet, organ
 | **FK027** | Kontroller anpassas till enhetstyp (touch-joystick vs tangentbord) | P1 | Multiplattform |
 | **FK028** | Tydlig visuell distinktion mellan spelaravatarer med riktningsindikatorer | P1 | Tydlighet |
 | **FK029** | Spelstatusvisning (timer, förmågor, poäng, inventory) | P1 | Informationsdesign |
-| **FK030** | 8-riktningsrörelse (inte bara 4-riktningar) | P1 | Smidig navigering |
+| **FK030** | 4-riktningsrörelse (uppför, ner, vänster, höger) | P1 | Enkel navigering |
 | **FK031** | Mobilkontroller - vänster tumme joystick, höger tumme förmågeknappar | P1 | Mobil UX |
 | **FK032** | Skrivbordskontroller - WASD-rörelse, JKL-förmågeaktivering | P1 | Skrivbords-UX |
 | **FK033** | Kompasshjälpsystem - efter 5 minuter, visa riktning till nyckel eller motståndare | P1 | Förhindrar frustration |

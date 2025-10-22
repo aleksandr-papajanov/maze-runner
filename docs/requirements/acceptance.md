@@ -31,7 +31,7 @@ För att projektet ska anses vara komplett måste följande kriterier uppfyllas:
 | -------- | ----------- |
 | Förmågasystem | Sömnpotion, förvirringsstrål, projektiler, fällor |
 | Manuell förmåga-aktivering | 3 knappar (mobil) eller JKL-tangenter (desktop) |
-| 8-riktnings rörelse-stöd | För förbättrad navigering |
+| 4-riktnings rörelse-stöd | För enkel navigering |
 | Poängsamlingssystem | Äpplen/mynt för high score-spårning |
 | Bokstavssamlings sidoutmaning | Hemligt ord-slutförande |
 | High score topplista | Topp 10 med initialinmatning |
