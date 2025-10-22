@@ -5,8 +5,8 @@
 # 4. Genomförande
 
 ## Innehållsförteckning
-- [4.1 Projektledning och Genomförande](execution/timeline.md) - Hur projektet planeras och genomförs
-- [4.2 Resurs och Aktivitetsplan](execution/resources.md) - Vilka resurser som behövs
+- [4.1 Projektledning och Genomförande](timeline.md) - Hur projektet planeras och genomförs
+- [4.2 Resurs och Aktivitetsplan](resources.md) - Vilka resurser som behövs
 
 ## Översikt
 

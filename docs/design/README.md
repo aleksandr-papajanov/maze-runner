@@ -5,8 +5,8 @@
 # 3. Systemdesign
 
 ## Innehållsförteckning
-- [3.1 Statisk design (Compile-time)](design/architecture-static.md) - Hur systemets klasser och moduler är strukturerade
-- [3.2 Dynamisk design (Run-time)](design/architecture-dynamic.md) - Hur systemet beter sig när det körs
+- [3.1 Statisk design (Compile-time)](architecture-static.md) - Hur systemets klasser och moduler är strukturerade
+- [3.2 Dynamisk design (Run-time)](architecture-dynamic.md) - Hur systemet beter sig när det körs
 
 ## Översikt
 
