@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../../assets/logo.png" alt="Logo" width="100%" />
+</p>
+
 # 2.1 Användarkarakteristik - Aktörer
 
 ## Primära Aktörer och Användare
@@ -96,8 +100,11 @@ Detta diagram visar alla aktörer och deras användarfall i MazeRunner-systemet:
 - UC2-UC4 (Spelhandlingar) → UC13 (Synkronisera): All interaktion kräver realtidssynk
 - UC5 (Nå utgång) → UC16 (Detektera vinst): System kontrollerar vinstvillkor
 
-![Usecase diagram](/diagrams/2.2.1-usecase-diagram.png)
-[View PlantUML source](/diagrams/2.2.1-usecase-diagram.puml)
+[![Usecase diagram](/diagrams/2.2.1-usecase-diagram.png)](/diagrams/2.2.1-usecase-diagram.png)
+
+<p align="center">
+  <a href="/diagrams/2.2.1-usecase-diagram.puml">View PlantUML source</a>
+</p>
 
 ## 2.2.2 Spelarinteraktion - Detaljerat
 
@@ -123,8 +130,11 @@ Detta diagram fokuserar på spelarens användarfall med implementationsdetaljer:
 - **Include** (`..>`): Obligatoriskt beroende (måste ha nyckel för att vinna)
 - **Extend** (`..>`): Valfri funktion (high score är frivillig)
 
-![Usecase diagram](/diagrams/2.2.2-usecase-diagram.png)
-[View PlantUML source](/diagrams/2.2.2-usecase-diagram.puml)
+[![Usecase diagram](/diagrams/2.2.2-usecase-diagram.png)](/diagrams/2.2.2-usecase-diagram.png)
+
+<p align="center">
+  <a href="/diagrams/2.2.2-usecase-diagram.puml">View PlantUML source</a>
+</p>
 
 ---
 

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../../assets/logo.png" alt="Logo" width="100%" />
+</p>
+
 # 3.2 Dynamisk Design (Runtime-beteende)
 
 Dynamisk design - Run-time beteende, interaktioner och tillståndsövergångar.
@@ -20,8 +24,11 @@ Detta aktivitetsdiagram visar hela spelflödet för MazeRunner:
 
 **Vinstvillkor**: Första spelare som når utgången med nyckeln vinner
 
-![Aktivitetsdiagram](/diagrams/3.2.1-activity-diagram.png)
-[View PlantUML source](/diagrams/3.2.1-activity-diagram.puml)
+[![Aktivitetsdiagram](/diagrams/3.2.1-activity-diagram.png)](/diagrams/3.2.1-activity-diagram.png)
+
+<p align="center">
+  <a href="/diagrams/3.2.1-activity-diagram.puml">View PlantUML source</a>
+</p>
 
 ## 3.2.2 Sekvensdiagram - Multiplayer-sessionslivscykel
 
@@ -52,8 +59,11 @@ Detta sekvensdiagram visar kommunikationsflödet mellan alla systemkomponenter:
 - Visa vinnare och highscores
 - Session rensas
 
-![Sekvensdiagram](/diagrams/3.2.2-sequence-diagram.png)
-[View PlantUML source](/diagrams/3.2.2-sequence-diagram.puml)
+[![Sekvensdiagram](/diagrams/3.2.2-sequence-diagram.png)](/diagrams/3.2.2-sequence-diagram.png)
+
+<p align="center">
+  <a href="/diagrams/3.2.2-sequence-diagram.puml">View PlantUML source</a>
+</p>
 
 ## 3.2.3 Tillståndsdiagram - Förmågas Livscykel
 
@@ -80,5 +90,8 @@ Detta tillståndsdiagram visar hur förmågor och power-ups fungerar genom hela 
   - Trap: 20s
 - När cooldown slutar blir förmågan tillgänglig igen
 
-![Tillståndsdiagram](/diagrams/3.2.3-state-diagram.png)
-[View PlantUML source](/diagrams/3.2.3-state-diagram.puml)
+[![Tillståndsdiagram](/diagrams/3.2.3-state-diagram.png)](/diagrams/3.2.3-state-diagram.png)
+
+<p align="center">
+  <a href="/diagrams/3.2.3-state-diagram.puml">View PlantUML source</a>
+</p>

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../../assets/logo.png" alt="Logo" width="100%" />
+</p>
+
 # 3.1.1 Klassdiagram
 
 Statisk design - Compile-time klassstruktur.
@@ -12,8 +16,11 @@ Detta diagram visar spelets huvudkomponenter och domänmodell:
 
 Designen använder interface-baserad arkitektur för flexibilitet och testbarhet.
 
-![Class Diagram](/diagrams/3.1.1.1-class-diagram.png)
-[View PlantUML source](/diagrams/3.1.1.1-class-diagram.puml)
+[![Class Diagram](/diagrams/3.1.1.1-class-diagram.png)](/diagrams/3.1.1.1-class-diagram.png)
+
+<p align="center">
+  <a href="/diagrams/3.1.1.1-class-diagram.puml">View PlantUML source</a>
+</p>
 
 ## 3.1.1.2 Action Bus och Händelsesystem
 
@@ -25,8 +32,11 @@ Detta diagram visar event-driven kommunikationsarkitekturen:
 
 Alla spelkomponenter kommunicerar via action bus för löst kopplad, utbyggbar arkitektur.
 
-![Action Bus Diagram](/diagrams/3.1.1.2-class-bus-diagram.png)
-[View PlantUML source](/diagrams/3.1.1.2-class-bus-diagram.puml)
+[![Action Bus Diagram](/diagrams/3.1.1.2-class-bus-diagram.png)](/diagrams/3.1.1.2-class-bus-diagram.png)
+
+<p align="center">
+  <a href="/diagrams/3.1.1.2-class-bus-diagram.puml">View PlantUML source</a>
+</p>
 
 ## 3.1.1.3 Nätverksarkitektur och Sessionshantering
 
@@ -38,8 +48,11 @@ Detta diagram visar hur klienter ansluter och hur sessioner hanteras:
 
 Spelare kommunicerar via sessionens action bus, medan åskådare får fullständiga snapshots centralt.
 
-![Network Diagram](/diagrams/3.1.1.3-class-network-diagram.png)
-[View PlantUML source](/diagrams/3.1.1.3-class-network-diagram.puml)
+[![Network Diagram](/diagrams/3.1.1.3-class-network-diagram.png)](/diagrams/3.1.1.3-class-network-diagram.png)
+
+<p align="center">
+  <a href="/diagrams/3.1.1.3-class-network-diagram.puml">View PlantUML source</a>
+</p>
 
 # 3.1.2 Moduldiagram - Systemarkitektur
 
@@ -76,5 +89,8 @@ MazeRunner följer en **lager-baserad arkitektur** med centraliserad spellogik p
 - PlayerConnection är både publisher och subscriber
 - SpectatorConnection är endast subscriber
 
-![Module Diagram](/diagrams/3.1.2-module-diagram.png)
-[View PlantUML source](/diagrams/3.1.2-module-diagram.puml)
+[![Module Diagram](/diagrams/3.1.2-module-diagram.png)](/diagrams/3.1.2-module-diagram.png)
+
+<p align="center">
+  <a href="/diagrams/3.1.2-module-diagram.puml">View PlantUML source</a>
+</p>

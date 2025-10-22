@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../../assets/logo.png" alt="Logo" width="100%" />
+</p>
+
 ## 4.2 Resurs- och Aktivitetsplan
 
 Projektet kräver följande resurser:

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../../assets/logo.png" alt="Logo" width="100%" />
+</p>
+
 # 2.3 Icke-Funktionella Krav
 
 ## Översikt

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../../assets/logo.png" alt="Logo" width="100%" />
+</p>
+
 ## 4.1 Projektledning och Genomförande
 
 Projektet genomförs i två grupper med målet att utveckla ett tvåspelarläge till spelet Maze Runner som ska användas vid öppet hus för att demonstrera datateknikutbildningen. Projektägaren (kursansvarig) fungerar som kravställare och uppdragsgivare, medan studentgrupperna står för design, utveckling och implementation.
