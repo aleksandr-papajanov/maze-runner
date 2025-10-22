@@ -164,4 +164,4 @@ Detta dokument definierar alla icke-funktionella krav för MazeRunner-systemet, 
 
 ---
 
-För prioritering, riskbedömning och implementeringsplan, se [2.4 Användarkrav](acceptance.md).
+För prioritering, riskbedömning och implementeringsplan, se [2.4 Användarkrav](acceptance-criteria.md).

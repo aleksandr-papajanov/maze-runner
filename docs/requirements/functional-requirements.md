@@ -114,4 +114,4 @@ Detta dokument definierar alla funktionella krav för MazeRunner-systemet. Krave
 
 **Totalt**: 38 Funktionella Krav
 
-För prioritering, Kostnad/Värde/Risk-analys och implementeringsplan, se [2.4 Användarkrav](acceptance.md).
+För prioritering, Kostnad/Värde/Risk-analys och implementeringsplan, se [2.4 Användarkrav](acceptance-criteria.md).
