@@ -1,9 +1,13 @@
+<p align="center">
+  <img src="./assets/logo.png" alt="Logo" width="100%" />
+</p>
+
 # 4. Genomförande
 
 ## Innehållsförteckning
-- [4.1 Projektledning och Genomförande](execution/timeline.md)
-- [4.2 Resurs och Aktivitetsplan](execution/resources.md)
+- [4.1 Projektledning och Genomförande](execution/timeline.md) - Hur projektet planeras och genomförs
+- [4.2 Resurs och Aktivitetsplan](execution/resources.md) - Vilka resurser som behövs
+
 ## Översikt
-Denna sektion tillhandahåller en övergripande beskrivning av projektets genomförande för Maze Runner. Den omfattar hur projektet planerades, organiserades och utfördes, inklusive roller, arbetsmetodik, kommunikation och resursfördelning.
-Avsnittet redogör även för hur uppgifter fördelas mellan projektmedlemmarna samt hur flexibilitet och anpassning hanterades under utvecklingsprocessen.
-Syftet är att ge en tydlig bild av hur projektet gick från planering till färdig leverans med fokus på effektivitet, samarbete och kvalitetssäkring.
+
+Denna sektion tillhandahåller en övergripande beskrivning av projektets genomförande för MazeRunner. Den omfattar hur projektet planeras, organiseras och utförs, inklusive arbetsmetodik och resursfördelning.
